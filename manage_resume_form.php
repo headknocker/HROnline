@@ -84,7 +84,11 @@
 	<script type="text/javascript" src="js/jquery.dropdown.js"></script>
 	<script type="text/javascript" src="js/inputmask.js"></script>
 	<script type="text/javascript" src="js/jquery.inputmask.js"></script>
+
+	<!-- custom css -->
+	<link rel="stylesheet" type="text/css" href="custom_css/manage_resume_form.css">
 	
+
 	<?php
 	if(isset($_GET['iNt3RvI3w3r'])){
 		echo"<script>";
@@ -108,216 +112,7 @@
 
 <style type="text/css">
 
-	/*@import "compass/css3";*/
-
-	label {
-		color: #000000 !important
-	}
-
-	.msg-block {
-	  margin-right: 145px;
-	}
-
-	div.help-block.with-error{
-		color: text-danger;
-	}
-
-	form.ng-minlength {
-	    background-color:red;
-	}
-
-	/* The switch - the box around the slider */
-	.switch {
-	  position: relative;
-	  display: inline-block;
-	  width: 40px;
-	  height: 25px;
-	}
-
-	/* Hide default HTML checkbox */
-	.switch input {display:none;}
-
-	/* The slider */
-	.slider {
-	  position: absolute;
-	  cursor: pointer;
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  background-color: #ccc;
-	  -webkit-transition: .4s;
-	  transition: .4s;
-	}
-
-	.slider:before {
-	  position: absolute;
-	  content: "";
-	  height: 19px;
-	  width: 19px;
-	  left: 3px;
-	  bottom: 3px;
-	  background-color: white;
-	  -webkit-transition: .4s;
-	  transition: .4s;
-	}
-	.img{
-		position: absolute;
-		top: 150px;
-		left: 8%;
-		right: 5%;
-		z-index: 0;
-		background-attachment: fixed;
-		background-position: center;
-
-	}
-	input.form-control{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	    color: #000000;
-	}
-	input.form-control.date{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	    color: #000000;
-	}
-	input#placeofbirth.form-control{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	}
-	input#curaddress.form-control{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	}
-	input#provaddress.form-control{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	}
-	input#mplace_birth.form-control{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	}
-	input#fplace_birth.form-control{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	}
-	input.fakeinput.select.form-control{
-	 	background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	}
-	textarea.form-control{
-		background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
-	    background: rgba(255, 255, 255, 0.5);
-	}
-
-	input:checked + .slider {
-	  background-color: #2196F3;
-	}
-
-	input:focus + .slider {
-	  box-shadow: 0 0 1px #2196F3;
-	}
-
-	input:checked + .slider:before {
-	  -webkit-transform: translateX(16px);
-	  -ms-transform: translateX(16px);
-	  transform: translateX(16px);
-	}
-
-	input:text {
-		color: black;
-	}
-	button.btn.btn-raised.btn-primary.pull-right{
-		z-index: 1;
-	}
-
-
-
-
-
-	/* Rounded sliders */
-	.slider.round {
-	  border-radius: 34px;
-	}
-
-	.slider.round:before {
-	  border-radius: 50%;
-	}
-	/* Hover in fresh/work exp.
-	.btn-default:hover{
-	  color: #fff;
-	  background-color: #0066ff;
-      border-color: #285e8e; 
-	}*/
-	#btn_freshgrad,
-	#btn_experienced{
-		display: inline-block;
-		vertical-align: top;
-		width:48%;
-	}
-	.active {
-		-webkit-box-shadow: 0px 8px 8px #888;
-		background-color: #0066ff !important;
-		border-style: solid;
-		color:white;
-		border-color: #4286f4 #0000ff;
-	}
 	
-	.logo{
-		height:140px;
-		width:20%;
-		margin-bottom:-1%;
-	}
-	@media only screen and (max-width: 360px) {
-		#candidate_container{
-			margin-top:10%;
-		}
-		.logo{
-			height:100px;
-			width:40%;
-			margin-bottom:-1%;
-		}
-	}@media only screen and (max-width: 412px) {
-		#candidate_container{
-			margin-top:10%;
-		}
-		.logo{
-			height:100px;
-			width:40%;
-			margin-bottom:-1%;
-		}
-	}@media only screen and (max-width: 414px) {
-		#candidate_container{
-			margin-top:10%;
-		}
-		.logo{
-			height:100px;
-			width:40%;
-			margin-bottom:-1%;
-		}
-	}#footer{
-		font-size:12px;
-		margin-top:2%;
-	}
-	body{
-		font-family: 'Open Sans', sans-serif;
-	}
-	.fade-scale {
-	  transform: scale(0);
-	  opacity: 0;
-	  -webkit-transition: all .5s linear;
-	  -o-transition: all .5s linear;
-	  transition: all .5s linear;
-	}
-
-	.fade-scale.in {
-	  opacity: 1;
-	  transform: scale(1);
-	}
-	#AboutUs{
-		text-decoration:none;
-		
-	}
 	
 </style>
 <script type="text/javascript">
@@ -661,11 +456,11 @@ error_reporting(0);
 				    			<label>Are You amenable to shifting schedule?</label>
 				    			<div class="radio radio-primary">
 						          <label>
-						            <input type="radio" name="sched" id="sched2" value="YES" <?php if($schedule=='YES')echo'checked';?>>
+						            <input type="radio" name="sched" id="sched2" value="YES" disabled <?php if($schedule=='YES')echo'checked';?>>
 						            YES
 						          </label>
 						          <label>
-						            <input type="radio" name="sched" id="sched2" value="NO" <?php if($schedule=='NO')echo'checked';?>>
+						            <input type="radio" name="sched" id="sched2" value="NO" disabled <?php if($schedule=='NO')echo'checked';?>>
 						            NO
 						          </label>
 						        </div>
@@ -675,12 +470,12 @@ error_reporting(0);
 				    			<label>Are You willing to work on weekends/holidays?</label>
 				    			<div class="radio radio-primary">
 						          <label>
-						            <input type="radio" name="holidays" id="holidays2" value="YES" <?php if($hdays=='YES')echo'checked';?>>
+						            <input type="radio" name="holidays" id="holidays2" value="YES" disabled <?php if($hdays=='YES')echo'checked';?>>
 						            YES
 						          </label>
 								  
 						          <label>
-						            <input type="radio" name="holidays" id="holidays2" value="NO" <?php if($hdays=='NO')echo'checked';?>>
+						            <input type="radio" name="holidays" id="holidays2" value="NO" disabled <?php if($hdays=='NO')echo'checked';?>>
 						            NO
 						          </label>
 						        </div>
@@ -693,7 +488,7 @@ error_reporting(0);
 								<div class="form-group"><!-- EMPLOYMENT DATE -->
 			      					<label><i class="fa fa-calendar" ></i> Available date for employment <label class="text-danger">*</label></label>
 			      					<div class="input-group">
-				      					<input data-provide="datepicker" autocomplete="off" onkeydown="return false;" class="form-control date" name="empdate" id ="empdate" data-date-disable-touch-keyboard="true" data-date-end-date="+30d" data-date-autoclose="true" data-date-format="MM dd, yyyy" style="color: transparent;text-shadow: 0 0 0 black;" required>	
+				      					<input data-provide="datepicker" autocomplete="off" onkeydown="return false;" class="form-control date" name="empdate" id ="empdate" data-date-disable-touch-keyboard="true" data-date-end-date="+30d" data-date-autoclose="true" data-date-format="MM dd, yyyy" style="color: transparent;text-shadow: 0 0 0 black;" disabled required>	
 			      						<span class="input-group-addon add-on"><a href="" onclick="$('#empdate').focus();"><span class="fa fa-calendar"></span></a>
 									</div>
 			      					<div class="help-block with-errors" style="color: red"></div>
@@ -703,7 +498,7 @@ error_reporting(0);
 							<div class="form-group" id="salary_group" ><!-- SALARY -->
 		  						<label for="salary"></i>Expected Salary</label>
 								<div class="input-group">
-									<select id="salary" class="select form-control" name="salaryexpectation" >
+									<select id="salary" class="select form-control" name="salaryexpectation" disabled>
 										<option value="Intern" <?php if($salary == 'Intern')echo'selected'?>>Intern</option>
 										<option value="10,000.00 - 15,000.00" <?php if($salary == '10,000.00 - 15,000.00')echo'selected'?>>&#8369;10,000.00 - &#8369;15,000.00</option>
 										<option value="16,000.00 - 20,000.00"<?php if($salary == '16,000.00 - 20,000.00')echo'selected'?>>&#8369;16,000.00 - &#8369;20,000.00</option>
@@ -728,24 +523,24 @@ error_reporting(0);
 							<div class="form-group label-floating" >
 								<label for="lname" class="control-label">Last Name <label class="text-danger">*</label></label>
 								<input class="form-control" value="<?php echo $lname;
-								?>" type="text" minlength="2" name="lname" id="lname" required>
+								?>" type="text" minlength="2" name="lname" id="lname" disabled required>
 								<div class="help-block with-errors" style="color: red"></div>
 							</div>	
 							<div class="form-group label-floating">
 								<label for="fname" class="control-label">First Name <label class="text-danger">*</label></label>
 								<input name="fname" id="fname" value="<?php echo $fname;
-								?>" class="form-control"  minlength="2" required  >
+								?>" class="form-control"  minlength="2" disabled required  >
 								<div class="help-block with-errors" style="color: red"></div>
 							</div>
 							<div class="form-group label-floating">
 								<label for="mname" class="control-label">Middle Name</label>
-								<input type="text" name="mname" value="<?php echo $mname;
+								<input type="text" name="mname" disabled value="<?php echo $mname;
 								?>" id="mname" class="form-control">
 								
 							</div>
 							<div class="form-group label-floating">
 								<label for="ename" class="control-label">Name Extension</label>
-								<input type="text" name="ename" value="<?php echo $ename;
+								<input type="text" name="ename" disabled value="<?php echo $ename;
 								?>" id="ename" class="form-control">
 							</div>
   
@@ -754,11 +549,11 @@ error_reporting(0);
 				    			<label>Gender</label>
 				    			<div class="radio radio-primary">
 						          <label>
-						            <input type="radio" name="sex123" id="s1" value="Male" <?php if($gender=="Male")echo'checked';?>>
+						            <input type="radio" name="sex123" id="s1" value="Male" disabled <?php if($gender=="Male")echo'checked';?>>
 						            MALE	
 						          </label>
 						          <label>
-						            <input type="radio" name="sex123" id="s1" value="Female" <?php if($gender=="Female")echo'checked';?>>
+						            <input type="radio" name="sex123" id="s1" value="Female" disabled <?php if($gender=="Female")echo'checked';?>>
 						            FEMALE
 						          </label>
 						        </div>
@@ -767,13 +562,13 @@ error_reporting(0);
 						<div class="col-md-6">
 							<div class="form-group label-floating">
 								<label for="nickname" class="control-label">Nick Name</label>
-								<input type="text" value ="<?php echo $nick_name;?>" name="nickname123" id="nickname" class="form-control">
+								<input type="text" value ="<?php echo $nick_name;?>" name="nickname123" id="nickname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating ">
 								<label for="date-ofbirth" class="control-label"><i class="fa fa-calendar" ></i> Date of Birth <label class="text-danger">*</label></label>
 								
 								<div class="input-group" id="datePicker">
-									<input data-provide="datepicker" style="color: transparent;text-shadow: 0 0 0 black;" name="bday123" id="bday123" value ="<?php echo $bday;?>" class="form-control date" data-date-end-date="-17y" data-date-autoclose="true" onkeydown="return false;" data-date-format="MM dd, yyyy" required>
+									<input data-provide="datepicker" style="color: transparent;text-shadow: 0 0 0 black;" name="bday123" id="bday123" value ="<?php echo $bday;?>" class="form-control date" data-date-end-date="-17y" data-date-autoclose="true" onkeydown="return false;" data-date-format="MM dd, yyyy" disabled required>
 									<span class="input-group-addon add-on"><a href="" onclick="$('#bday123').focus();"><span class="fa fa-calendar"></span></a>
 									
            			 			</div>
@@ -781,7 +576,7 @@ error_reporting(0);
 							</div>
 							<div class="form-group label-floating">
 								<label for="placeofbirth" class="control-label">Select place of birth <label class="text-danger">*</label></label>
-								<input type="text" value="<?php
+								<input type="text" disabled value="<?php
 								if($pbo_mun==''&&$pbo_reg==''&&$pbo_pro==''){
 									echo $place_birth;
 								}
@@ -795,7 +590,7 @@ error_reporting(0);
 								
 							<div class="form-group label-floating">
 								<label for="citizen" class="control-label" >Citizenship <label class="text-danger">*</label></label>
-								<select class="select form-control" name="citizen" id="citizen" >
+								<select class="select form-control" name="citizen" id="citizen" disabled>
 								
 										      		<?php  
 						      							include('connect.php');
@@ -818,7 +613,7 @@ error_reporting(0);
 								<div class="col-md-6">
 									<div class="form-group label-static">
 										<label for="cstatus" class="control-label">Civil Status</label>
-				      					<select id="cstatus" class="select form-control" name="cstatus" onchange="showspec(this)">
+				      					<select id="cstatus" class="select form-control" name="cstatus" onchange="showspec(this)" disabled>
 											<?php if($civil_status!='Single'&&$civil_status!='Married'&&$civil_status!='Annuled'&&$civil_status!='Widowed'&&$civil_status!='Separated')echo '<option value="'.$civil_status.'">'.$civil_status.'</option>'; ?>
 											
 				      						<option value="Single" <?php if($civil_status=='Single')echo'selected';?>>Single</option>
@@ -925,19 +720,19 @@ error_reporting(0);
 										
 										$exp_data = explode(" ' ",$height);
 										echo $exp_data[0];
-										?>" name="feet" class="form-control" id="feet">
+										?>" name="feet" class="form-control" id="feet" disabled>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group label-floating">
 										<label for="inches" class="control-label">Inches (in.)</label>
-										<input type="number" value='<?php echo $exp_data[1];?>' name="inch" class="form-control" id="inches">
+										<input type="number" value='<?php echo $exp_data[1];?>' name="inch" class="form-control" id="inches" disabled>
 									</div>
 								</div>
 							</div>
 							<div class="form-group label-floating">
 								<label for="bloodtype" class="control-label">Blood type</label>
-								<select class="select form-control" id="bloodtype" name="btype">
+								<select class="select form-control" id="bloodtype" name="btype" disabled>
 									<option <?php if($blood=="O+")echo 'selected';?> value="O+">O+</option>
 									<option <?php if($blood=="BA")echo 'selected';?> value="BA">B+&#45;</option>
 									<option <?php if($blood=="Om")echo 'selected';?> value="Om">O&#45;</option>
@@ -954,11 +749,11 @@ error_reporting(0);
 							<label>Weight</label>
 							<div class="form-group label-floating">
 								<label for="pounds" class="control-label">Pounds (lbs:)</label>
-								<input type="number" name="weight" value="<?php echo $weight;?>" class="form-control" id="pounds">
+								<input type="number" name="weight" value="<?php echo $weight;?>" class="form-control" id="pounds" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label for="religion" class="control-label">Religion</label>
-								<input type="text" name="religion123" value="<?php echo $religion;?>" class="form-control" id="religion">
+								<input type="text" name="religion123" value="<?php echo $religion;?>" class="form-control" id="religion" disabled>
 							</div>
 						</div>
 					</div>
@@ -973,7 +768,7 @@ error_reporting(0);
 								else{
 									echo $curMunicupality.', '.$curProvince;
 								}
-								?>' type="text" id="curaddress" name="currentaddress" data-toggle="modal" data-target="#modalCA" style="color: transparent;text-shadow: 0 0 0 black;" autocomplete="off" onkeydown='return false;'required />
+								?>' type="text" id="curaddress" name="currentaddress" data-toggle="modal" data-target="#modalCA" style="color: transparent;text-shadow: 0 0 0 black;" autocomplete="off" onkeydown='return false;'required disabled />
 								<div class="help-block with-errors" style="color:red"></div>
 							</div>
 						</div>
@@ -984,7 +779,7 @@ error_reporting(0);
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="current_home_num">Home No. and Street<label class="text-danger">*</label></label>
-									<input type="text" name="current_home_num" value='<?php echo $curStreet;?>' class="form-control" id="current_home_num" required>
+									<input type="text" name="current_home_num" value='<?php echo $curStreet;?>' class="form-control" id="current_home_num" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 								
@@ -992,7 +787,7 @@ error_reporting(0);
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="current_barangay">Barangay<label class="text-danger">*</label></label>
-									<input type="text" name="current_barangay" value='<?php echo $curBarangay;?>' class="form-control" id="current_barangay" required>
+									<input type="text" name="current_barangay" value='<?php echo $curBarangay;?>' class="form-control" id="current_barangay" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 								
@@ -1012,7 +807,7 @@ error_reporting(0);
 							else{
 								echo $provMunicipality.', '.$provProvince;
 							}
-							?>' type="text" id="provaddress" name="provinceaddress" data-toggle="modal" data-target="#modalPA" readonly>
+							?>' type="text" id="provaddress" name="provinceaddress" data-toggle="modal" data-target="#modalPA" readonly disabled>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group label-floating">
@@ -1020,14 +815,14 @@ error_reporting(0);
 								<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="provincial_home_num">Home No. and Street</label>
-									<input type="text" value="<?php echo $provStreet;?>" name="provincial_home_num" class="form-control" id="provincial_home_num">
+									<input type="text" value="<?php echo $provStreet;?>" name="provincial_home_num" class="form-control" id="provincial_home_num" disabled>
 									
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="provincial_barangay">Barangay</label>
-									<input type="text" value="<?php echo $provBarangay;?>" name="provincial_barangay" class="form-control" id="provincial_barangay">
+									<input type="text" value="<?php echo $provBarangay;?>" name="provincial_barangay" class="form-control" id="provincial_barangay" disabled>
 								</div>
 							</div>
 							</div>
@@ -1043,20 +838,20 @@ error_reporting(0);
 								<div class="col-md-6">
 									<div class="form-group label-floating">
 										<label class="control-label" for="email">E-Mail Address<label class="text-danger">*</label></label>
-										<input onblur="updateemail();" value="<?php echo $email;?>" type="email" name="email" class="form-control" id="email" required>
+										<input onblur="updateemail();" value="<?php echo $email;?>" type="email" name="email" class="form-control" id="email" required disabled>
 										<div id='emailhelp' class="help-block with-errors" style="color: red"></div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group label-floating">
 										<label class="control-label" for="skype">Skype User Id</label>
-										<input type="text" value="<?php echo $skype;?>" name="skype_userid" class="form-control" id="skype">
+										<input type="text" value="<?php echo $skype;?>" name="skype_userid" class="form-control" id="skype" disabled>
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group label-floating">
 										<label class="control-label" for="facebook">Facebook account</label>
-										<input class="form-control" value="<?php echo $fb;?>" type="text" name="facebook">
+										<input class="form-control" value="<?php echo $fb;?>" type="text" name="facebook" disabled>
 									</div>
 								</div>
 								<div class="col-md-12">
@@ -1064,7 +859,7 @@ error_reporting(0);
 										<label class="control-label" for="twitter">Twitter account</label>
 										<div class="input-group">
 											<span class="input-group-addon">@</span>
-											<input class="form-control" value='<?php echo $twit;?>' type="text" name="twitter">
+											<input class="form-control" value='<?php echo $twit;?>' type="text" name="twitter" disabled>
 										</div>
 									</div>
 								</div>
@@ -1075,7 +870,7 @@ error_reporting(0);
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="telno">Home Tel No.</label>
-									<input data-inputmask="'mask': '(99)-999-9999'" type="text" name="home_telnum" class="form-control" id="telno" ng-minlength="7" value="<?php echo $hometel;?>" >
+									<input data-inputmask="'mask': '(99)-999-9999'" type="text" name="home_telnum" class="form-control" id="telno" ng-minlength="7" value="<?php echo $hometel;?>" disabled>
 								</div> 
 							</div>
 							<script>
@@ -1085,7 +880,7 @@ error_reporting(0);
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="celno">Mobile No.<label class="text-danger">*</label></label>
-									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num" class="form-control" id="mobile_number" minlength='11' value="<?php echo $mob_num;?>" required>
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num" class="form-control" id="mobile_number" minlength='11' value="<?php echo $mob_num;?>" required disabled>
 									<span style="color: red;display:none;" id="number_validator">Invalid Contact Number.</span>
 									<div class="help-block with-errors" style="color: red;"></div>
 								</div>
@@ -1093,26 +888,26 @@ error_reporting(0);
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="celno2">Mobile No.<small>(Optional)</small></label>
-									<input value="<?php echo $mob_num2;?>" data-inputmask="'mask': '9999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2"  >
+									<input value="<?php echo $mob_num2;?>" data-inputmask="'mask': '9999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2" disabled >
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="celno3">Mobile No.<small>(Optional)</small></label>
-									<input value="<?php echo $mob_num3;?>" data-inputmask="'mask': '9999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" >
+									<input value="<?php echo $mob_num3;?>" data-inputmask="'mask': '9999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" disabled>
 								</div>
 							</div>
 							<div class="col-md-6" ng-app="">
 								<div class="form-group label-floating">
 									<label style="font-size: 11px;" class="control-label text-sm" for="contactperson">Contact Person in case of emergency</label><label class="text-danger">*</label>
-									<input class="form-control" value="<?php echo $contact_name;?>" type="text" name="contact_name" id="contactperson" minlength="2" required>
+									<input class="form-control" value="<?php echo $contact_name;?>" type="text" name="contact_name" id="contactperson" minlength="2" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group label-floating">
 									<label class="control-label" for="contactpersonno" style="font-size: 11px">Contact Details</label><label class="text-danger">*</label>
-									<input class="form-control" type="number" value="<?php echo $contact_details;?>" name="contact_details" id="contactpersonno" minlength="2" required>
+									<input class="form-control" type="number" value="<?php echo $contact_details;?>" name="contact_details" id="contactpersonno" minlength="2" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
@@ -1136,7 +931,7 @@ error_reporting(0);
 								     
 								      	<div id="phil">
 									      	<div id="region">
-										      	<select class="select form-control" name="Region_name" id="cregionid" onchange="cregionfunction(this)">
+										      	<select class="select form-control" name="Region_name" id="cregionid" onchange="cregionfunction(this)" disabled>
 										      		<?php  
 						      							include('connect.php');
 						      							$sql = "SELECT * FROM `tbl_region`";
@@ -1169,7 +964,7 @@ error_reporting(0);
 								     
 								      	<div id="phil">
 									      	<div id="region">
-										      	<select class="select form-control" name="Region_name" id="pregionid" onchange="pregionfunction(this)">
+										      	<select class="select form-control" name="Region_name" id="pregionid" onchange="pregionfunction(this)" disabled>
 										      		<?php  
 						      							include('connect.php');
 						      							$sql = "SELECT * FROM `tbl_region`";
@@ -1206,7 +1001,7 @@ error_reporting(0);
 								
 								echo $s_lname;
 								
-								?>"  name="spouse_lastname" class="form-control" >
+								?>"  name="spouse_lastname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 					      		<label class="control-label" for="sfname">Spouse's First Name</label>
@@ -1222,7 +1017,7 @@ error_reporting(0);
 								
 								echo $s_mname;
 								
-								?>"  name="spouse_midname" class="form-control" >
+								?>"  name="spouse_midname" class="form-control" disabled>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -1235,7 +1030,7 @@ error_reporting(0);
 									$sp_res = explode("^^",$spouse_occ);
 									echo $sp_res[0];
 									}
-								?>" id="occupation" class="form-control">
+								?>" id="occupation" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label class="control-label" for="employer-name">Company Name</label>
@@ -1246,7 +1041,7 @@ error_reporting(0);
 									$sp_res2 = explode("^^",$spouse_occ);
 									echo $sp_res2[1];
 									}
-								?>" name="spouse_empname" id="employer-name" class="form-control">
+								?>" name="spouse_empname" id="employer-name" class="form-control" disabled>
 								
 							</div>
 						</div>
@@ -1264,7 +1059,7 @@ error_reporting(0);
 										$sl = explode("%%",$spouse_name);
 										echo $sl[0];
 									}
-								?>"  name="widowed_lname" class="form-control" >
+								?>"  name="widowed_lname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 					      		<label class="control-label" for="sfname">Spouse's First Name</label>
@@ -1276,7 +1071,7 @@ error_reporting(0);
 										$sf2 = explode("**",$sf[1]);
 										echo $sf2[0];
 									}
-								?>"  name="widowed_fname" class="form-control" >
+								?>"  name="widowed_fname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 					      		<label class="control-label" for="smname">Spouse's Middle Name</label>
@@ -1288,7 +1083,7 @@ error_reporting(0);
 										$sm2 = explode("**",$sm[1]);
 										echo $sm2[1];
 									}
-								?>" name="widowed_midname" class="form-control" >
+								?>" name="widowed_midname" class="form-control" disabled>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -1299,19 +1094,19 @@ error_reporting(0);
 							<h3 style="padding-top: 3%;" align="center">Father's Information</h3>
 							<div class="form-group label-floating">
 								<label class="control-label" for="flname">Father's Last name</label>
-								<input type="text" name="flname" value="<?php echo $f_lname;?>" id="flname" class="form-control">
+								<input type="text" name="flname" value="<?php echo $f_lname;?>" id="flname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label class="control-label" for="ffname">Father's First Name</label>
 								<input type="text" name="ffname" value="<?php
 								echo $f_fname;
-								?>" id="ffname" class="form-control">
+								?>" id="ffname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label class="control-label" for="fmname">Father's Middle Name</label>
 								<input type="text" name="fmname" value="<?php
 								echo $f_mname;
-								?>" id="fmname" class="form-control">
+								?>" id="fmname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label class="control-label" for="fplace_birth">Place of Birth</label>
@@ -1325,7 +1120,7 @@ error_reporting(0);
 								else{
 									echo $f_municipality.', '.$f_province;
 								}
-							?>' id="fplace_birth" class="form-control" data-toggle="modal" data-target="#modalFPB" readonly>
+							?>' id="fplace_birth" class="form-control" data-toggle="modal" data-target="#modalFPB" readonly disabled>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -1334,19 +1129,19 @@ error_reporting(0);
 								<label class="control-label" for="mlname">Mother's Maiden name</label>
 								<input type="text" name="mother_lname" value="<?php
 								echo $m_lname;
-								?>" id="mlname" class="form-control">
+								?>" id="mlname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label class="control-label" for="mfname">Mother's First Name</label>
 								<input type="text" name="mother_fname" value="<?php
 								echo $m_fname;
-								?>" id="mfname" class="form-control">
+								?>" id="mfname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label class="control-label" for="mmname">Mother's Middle Name</label>
 								<input type="text" name="mother_midname" value="<?php
 								echo $m_mname;
-								?>" id="mmname" class="form-control">
+								?>" id="mmname" class="form-control" disabled>
 							</div>
 							<div class="form-group label-floating">
 								<label class="control-label" for="mplace_birth">Place of Birth</label>
@@ -1360,13 +1155,13 @@ error_reporting(0);
 								else{
 									echo $m_municipality.', '.$m_province;
 								}
-							?>' id="mplace_birth" class="form-control" data-toggle="modal" data-target="#modalMPB" readonly>
+							?>' id="mplace_birth" class="form-control" data-toggle="modal" data-target="#modalMPB" readonly disabled>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-12">
 						<label class="switch col-md-4">
-							<input id="positive" type="checkbox" <?php if($have_child==1)echo'checked';?> >
+							<input id="positive" type="checkbox" <?php if($have_child==1)echo'checked';?>>
 							<div class="slider round"></div>
 						</label>
 						<h5 class="col-md-5">  Do you have Child/Children?</h5>	
@@ -1375,7 +1170,7 @@ error_reporting(0);
                     <div class="wawsibling btn-group-sm" data-click-state=<?php echo $have_child;?> style="display:<?php if($have_child==1)echo'none'; else echo'block';?>;" id="siblings">
                     	<div class="row">
                     		<div class="col-md-12">	
-                      			<button type="button" class="btn btn-sm btn-raised btn-info add_field_button_sibling">Add Sibling</button>
+                      			<!-- <button type="button" class="btn btn-sm btn-raised btn-info add_field_button_sibling">Add Sibling</button> -->
                     		</div>
                     	</div>
                       <div class="input_fields_wrap_sibling">
@@ -1394,13 +1189,13 @@ error_reporting(0);
 									<div class="col-md-7">
 									  <div class="form-group label-floating">
 										<label class="control-label" for="sibling" >Enter sibling name</label>
-										<input type="text" value="'.$row["SIBLING_NAME"].'" name="sibling'.$s_count.'" id="sibling" class="form-control">
+										<input type="text" value="'.$row["SIBLING_NAME"].'" name="sibling'.$s_count.'" id="sibling" class="form-control" disabled>
 									  </div>
 									</div> 
 									<div class="col-md-3">
 									  <div class="form-group label-floating">
 										<label class="control-label" for="sage">Age</label>
-										<input id="sage" class="form-control" value="'.$row["SIBLING_AGE"].'" type="number" name="sibling_age'.$s_count.'"/>
+										<input id="sage" class="form-control" value="'.$row["SIBLING_AGE"].'" type="number" name="sibling_age'.$s_count.'" disabled />
 									  </div>
 									</div>
 									<button type=button style="margin-top: 8%" class="btn btn-raised btn-danger btn-sm pull-right remove_field">Remove</button>
@@ -1417,13 +1212,13 @@ error_reporting(0);
 									<div class="col-md-7">
 										<div class="form-group label-floating">
 											<label class="control-label" for="sibling" >Enter sibling name</label>
-											<input type="text" name="sibling1" id="sibling" class="form-control">
+											<input type="text" name="sibling1" id="sibling" class="form-control" disabled>
 										</div>
 									</div> 
 									<div class="col-md-3">
 									  <div class="form-group label-floating">
 										<label class="control-label" for="sage">Age</label>
-										<input id="sage" class="form-control" type="number" name="sibling_age1"/>
+										<input id="sage" class="form-control" type="number" name="sibling_age1" disabled />
 									  </div>
 									</div>
 								</div>
@@ -1441,7 +1236,7 @@ error_reporting(0);
                             <!-- fillings -->
                           </div>
                         <div class="col-md-6">
-                          <button type="button" class="btn btn-raised btn-sm btn-info add_field_button">Add Dependents</button>
+                          <!-- <button type="button" class="btn btn-raised btn-sm btn-info add_field_button">Add Dependents</button> -->
                         </div>
                           <div class="col-md-6">
                             <!-- fillings -->
@@ -1465,16 +1260,16 @@ error_reporting(0);
 										<div class="col-md-7">
 										  <div class="form-group label-floating">
 											<label class="control-label" for="child" >Enter child name</label>
-											<input type="text" value="'.$row["CHILD_NAME"].'" name="child_name'.$c_count.'" id="child" class="form-control">
+											<input type="text" value="'.$row["CHILD_NAME"].'" name="child_name'.$c_count.'" id="child" class="form-control" disabled>
 										  </div>
 										</div> 
 										<div class="col-md-3">
 										  <div class="form-group label-floating">
 											<label class="control-label" for="age">Age</label>
-											<input id="age" class="form-control" value="'.$row["CHILD_AGE"].'" type="number" name="child_age'.$c_count.'"/>
+											<input id="age" class="form-control" value="'.$row["CHILD_AGE"].'" type="number" name="child_age'.$c_count.'" disabled />
 										  </div>
 										</div>
-										<button type=button style="margin-top: 8%" class="btn btn-raised btn-sm btn-danger pull-right remove_field">Remove</button>
+										<!-- <button type=button style="margin-top: 8%" class="btn btn-raised btn-sm btn-danger pull-right remove_field">Remove</button> -->
 									</div>
 								</div>';
 								$c_count++;
@@ -1490,16 +1285,16 @@ error_reporting(0);
 											<div class="col-md-7">
 											  <div class="form-group label-floating">
 												<label class="control-label" for="child" >Enter child name</label>
-												<input type="text" name="child_name1" id="child" class="form-control">
+												<input type="text" name="child_name1" id="child" class="form-control" disabled>
 											  </div>
 											</div> 
 											<div class="col-md-3">
 											  <div class="form-group label-floating">
 												<label class="control-label" for="age">Age</label>
-												<input id="age" class="form-control" type="number" name="child_age1"/>
+												<input id="age" class="form-control" type="number" name="child_age1" disabled />
 											  </div>
 											</div>
-											<button type=button style="margin-top: 8%" class="btn btn-raised btn-sm btn-danger pull-right remove_field">Remove</button>
+											<!-- <button type=button style="margin-top: 8%" class="btn btn-raised btn-sm btn-danger pull-right remove_field">Remove</button> -->
 										</div>
 									</div>';
 								
@@ -1526,12 +1321,12 @@ error_reporting(0);
 								<div class="form-group">
 									<div class="">
 								      	<label>
-								      		<input type="checkbox" name="" onclick="if(this.checked){fshowCountry()} else {fhideCountry()}"> If Birthplace is outside the Philippines
+								      		<input type="checkbox" name="" onclick="if(this.checked){fshowCountry()} else {fhideCountry()}" disabled> If Birthplace is outside the Philippines
 								      	</label>
 								    </div>
 								</div>
 								<div id="fcountry" style="display:none;">
-									<select class="select form-control" name="fCountry_name" id="fcountryid" onchange="fcountryfunction(this)">
+									<select class="select form-control" name="fCountry_name" id="fcountryid" onchange="fcountryfunction(this)" disabled>
 									    <?php  
 					      					include('connect.php');
 					      					$sql = "SELECT * FROM `tbl_country`";
@@ -1544,7 +1339,7 @@ error_reporting(0);
 								</div>
 								<div id="fphil">
 									<div id="fregion">
-										<select class="select form-control" name="fRegion_name" id="fregionid" onchange="fregionfunction(this)">
+										<select class="select form-control" name="fRegion_name" id="fregionid" onchange="fregionfunction(this)" disabled>
 										    <?php  
 						      					include('connect.php');
 						      					$sql = "SELECT * FROM `tbl_region`";
@@ -1582,12 +1377,12 @@ error_reporting(0);
 								<div class="form-group">
 									<div class="">
 								      	<label>
-								      		<input type="checkbox" name="" onclick="if(this.checked){mshowCountry()} else {mhideCountry()}"> If Birthplace is outside the Philippines
+								      		<input type="checkbox" name="" onclick="if(this.checked){mshowCountry()} else {mhideCountry()}" disabled > If Birthplace is outside the Philippines
 								      	</label>
 								    </div>
 								</div>
 								<div id="mcountry" style="display:none;">
-									<select class="select form-control" name="mCountry_name" id="mcountryid" onchange="mcountryfunction(this)">
+									<select class="select form-control" name="mCountry_name" id="mcountryid" onchange="mcountryfunction(this)" disabled>
 									    <?php  
 					      					include('connect.php');
 					      					$sql = "SELECT * FROM `tbl_country`";
@@ -1600,7 +1395,7 @@ error_reporting(0);
 								</div>
 								<div id="mphil">
 									<div id="mregion">
-										<select class="select form-control" name="mRegion_name" id="mregionid" onchange="mregionfunction(this)">
+										<select class="select form-control" name="mRegion_name" id="mregionid" onchange="mregionfunction(this)" disabled>
 										    <?php  
 						      					include('connect.php');
 						      					$sql = "SELECT * FROM `tbl_region`";
@@ -1630,7 +1425,7 @@ error_reporting(0);
                 	<img class="img" src="lady liberty.png" style=" width: 85%;">
                     <h6 style="padding-top: 30px"><i class="fa fa-briefcase"> </i><b> WORK EXPERIENCE <small>(Most recent on top)</small></b></h6>  
                     <hr>
-                            <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_work">Add Work Experience</button>
+                           <!-- <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_work">Add Work Experience</button> -->
                     
 					<?php 
 						include('connect.php');
@@ -1665,7 +1460,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="from"><i class="fa fa-calendar"></i> From:</label>
 									  <div class="input-group">
-										<input class="form-control date" value="'.$date11.'" data-provide="datepicker" name="datefrom" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" value="'.$date11.'" data-provide="datepicker" name="datefrom" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1674,7 +1469,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="to"><i class="fa fa-calendar"></i> To:</label>
 									  <div class="input-group">
-										<input class="form-control date" data-provide="datepicker" value="'.$date22.'" name="dateto" id="dateto" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" data-provide="datepicker" value="'.$date22.'" name="dateto" id="dateto" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1682,7 +1477,7 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_name">Company Name</label>
-									  <input class="form-control" type="text" value="'.$tempE[0].'" name="company_name" id="employers_name1"';
+									  <input disabled class="form-control" type="text" value="'.$tempE[0].'" name="company_name" id="employers_name1"';
 									  if($app_stat=='exp'){
 										  echo 'required';
 									  }
@@ -1693,13 +1488,13 @@ error_reporting(0);
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_contact_number">Contact number</label>
-									  <input class="form-control" type="number" value="'.$res_con[1].'" name="contactnum" id="employers_contact_number">
+									  <input class="form-control" type="number" value="'.$res_con[1].'" name="contactnum" id="employers_contact_number" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_address">Company address</label>
-									  <input class="form-control" type="text" value="'.$tempA[1].'" name="compadd" id="employers_address">
+									  <input class="form-control" type="text" value="'.$tempA[1].'" name="compadd" id="employers_address" disabled>
 									</div>
 								  </div>
 								  </div>
@@ -1707,25 +1502,25 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="position-title">Position Title</label>
-									  <input class="form-control" type="text" value="'.$row["1.2 Position Title"].'" name="position" id="position-title">
+									  <input class="form-control" type="text" value="'.$row["1.2 Position Title"].'" name="position" id="position-title" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
-									  <input class="form-control" type="text" value="'.$row["1.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor" id="name-supervisor">
+									  <input class="form-control" type="text" value="'.$row["1.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor" id="name-supervisor" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="monthly-salary">Monthly salary</label>
-									  <input class="form-control" type="number" value="'.$row["1.4 Monthly Salary"].'" name="salary" id="monthlysalary">
+									  <input class="form-control" type="number" value="'.$row["1.4 Monthly Salary"].'" name="salary" id="monthlysalary" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="reason">Reason of leaving</label>
-									  <input class="form-control" value="'.$row["1.5 Reason for Leaving"].'" type="text" name="reason" id="reason">
+									  <input class="form-control" value="'.$row["1.5 Reason for Leaving"].'" type="text" name="reason" id="reason" disabled>
 									</div>
 								  </div>
 							  </div>';
@@ -1748,7 +1543,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="from"><i class="fa fa-calendar"></i> From:</label>
 									  <div class="input-group">
-										<input class="form-control date" value="'.$date2[0].'" data-provide="datepicker" name="datefrom2" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" value="'.$date2[0].'" data-provide="datepicker" name="datefrom2" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1757,7 +1552,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="to"><i class="fa fa-calendar"></i> To:</label>
 									  <div class="input-group">
-										<input class="form-control date" data-provide="datepicker" value="'.$date2[1].'" name="dateto2" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" data-provide="datepicker" value="'.$date2[1].'" name="dateto2" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1765,46 +1560,46 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_name">Company Name</label>
-									  <input class="form-control" type="text" value="'.$tempE2[0].'" name="company_name2" id="employers_name1">
+									  <input class="form-control" type="text" value="'.$tempE2[0].'" name="company_name2" id="employers_name1" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_contact_number">Contact number</label>
-									  <input class="form-control" type="number" value="'.$res_con2[1].'" name="contactnum2" id="employers_contact_number">
+									  <input class="form-control" type="number" value="'.$res_con2[1].'" name="contactnum2" id="employers_contact_number" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_address">Company address</label>
-									  <input class="form-control" type="text" value="'.$tempA2[1].'" name="compadd2" id="employers_address">
+									  <input class="form-control" type="text" value="'.$tempA2[1].'" name="compadd2" id="employers_address" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="position-title">Position Title</label>
-									  <input class="form-control" type="text" value="'.$row["2.2 Position Title"].'" name="position2" id="position-title">
+									  <input class="form-control" type="text" value="'.$row["2.2 Position Title"].'" name="position2" id="position-title" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
-									  <input class="form-control" type="text" value="'.$row["2.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor2" id="name-supervisor">
+									  <input class="form-control" type="text" value="'.$row["2.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor2" id="name-supervisor" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="monthly-salary">Monthly salary</label>
-									  <input class="form-control" type="number" value="'.$row["2.4 Monthly Salary"].'" name="salary2" id="monthly-salary">
+									  <input class="form-control" type="number" value="'.$row["2.4 Monthly Salary"].'" name="salary2" id="monthly-salary" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="reason">Reason of leaving</label>
-									  <input class="form-control" value="'.$row["2.5 Reason for Leaving"].'" type="text" name="reason2" id="reason">
+									  <input class="form-control" value="'.$row["2.5 Reason for Leaving"].'" type="text" name="reason2" id="reason" disabled>
 									</div>
 								  </div>
-								  <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+								  <!-- <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button> -->
 							  </div>';
 							}if($row['3. Inclusive Dates']==''||$row["3.1 Employer's Name, Address and Phone"]==''||$row["3.2 Position Title"]==''||$row["3.3 Name_Position and Contact No. of Immediate Supervisor"]==''||$row["3.4 Monthly Salary"]==''||$row["3.5 Reason for Leaving"]==''){
 								
@@ -1825,7 +1620,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="from"><i class="fa fa-calendar"></i> From:</label>
 									  <div class="input-group">
-										<input class="form-control date" value="'.$date3[0].'" data-provide="datepicker" name="datefrom3" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" value="'.$date3[0].'" data-provide="datepicker" name="datefrom3" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1834,7 +1629,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="to"><i class="fa fa-calendar"></i> To:</label>
 									  <div class="input-group">
-										<input class="form-control date" data-provide="datepicker" value="'.$date3[1].'" name="dateto3" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" data-provide="datepicker" value="'.$date3[1].'" name="dateto3" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1842,46 +1637,46 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_name3">Company Name</label>
-									  <input class="form-control" type="text" value="'.$tempE3[0].'" name="company_name3" id="employers_name2">
+									  <input class="form-control" type="text" value="'.$tempE3[0].'" name="company_name3" id="employers_name2" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_contact_number">Contact number</label>
-									  <input class="form-control" type="number" value="'.$res_con3[1].'" name="contactnum3" id="employers_contact_number">
+									  <input class="form-control" type="number" value="'.$res_con3[1].'" name="contactnum3" id="employers_contact_number" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_address">Company address</label>
-									  <input class="form-control" type="text" value="'.$tempA3[1].'" name="compadd3" id="employers_address">
+									  <input class="form-control" type="text" value="'.$tempA3[1].'" name="compadd3" id="employers_address" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="position-title">Position Title</label>
-									  <input class="form-control" type="text" value="'.$row["3.2 Position Title"].'" name="position3" id="position-title">
+									  <input class="form-control" type="text" value="'.$row["3.2 Position Title"].'" name="position3" id="position-title" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
-									  <input class="form-control" type="text" value="'.$row["3.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor3" id="name-supervisor">
+									  <input class="form-control" type="text" value="'.$row["3.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor3" id="name-supervisor" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="monthly-salary">Monthly salary</label>
-									  <input class="form-control" type="number" value="'.$row["3.4 Monthly Salary"].'" name="salary3" id="monthly-salary">
+									  <input class="form-control" type="number" value="'.$row["3.4 Monthly Salary"].'" name="salary3" id="monthly-salary" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="reason">Reason of leaving</label>
-									  <input class="form-control" value="'.$row["3.5 Reason for Leaving"].'" type="text" name="reason3" id="reason">
+									  <input class="form-control" value="'.$row["3.5 Reason for Leaving"].'" type="text" name="reason3" id="reason" disabled>
 									</div>
 								  </div>
-								  <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+								  <!-- <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button> -->
 							  </div>';
 							}if($row['4. Inclusive Dates']==''||$row["4.1 Employer's Name, Address and Phone"]==''||$row["4.2 Position Title"]==''||$row["4.3 Name_Position and Contact No. of Immediate Supervisor"]==''||$row["4.4 Monthly Salary"]==''||$row["4.5 Reason for Leaving"]==''){
 								
@@ -1902,7 +1697,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="from"><i class="fa fa-calendar"></i> From:</label>
 									  <div class="input-group">
-										<input class="form-control date" value="'.$date4[0].'" data-provide="datepicker" name="datefrom4" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" value="'.$date4[0].'" data-provide="datepicker" name="datefrom4" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1911,7 +1706,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="to"><i class="fa fa-calendar"></i> To:</label>
 									  <div class="input-group">
-										<input class="form-control date" data-provide="datepicker" value="'.$date4[1].'" name="dateto4" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" data-provide="datepicker" value="'.$date4[1].'" name="dateto4" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1919,46 +1714,46 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_name">Company Name</label>
-									  <input class="form-control" type="text" value="'.$tempE4[0].'" name="company_name4" id="employers_name3">
+									  <input class="form-control" type="text" value="'.$tempE4[0].'" name="company_name4" id="employers_name3" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_contact_number">Contact number</label>
-									  <input class="form-control" type="number" value="'.$res_con4[1].'" name="contactnum4" id="employers_contact_number">
+									  <input class="form-control" type="number" value="'.$res_con4[1].'" name="contactnum4" id="employers_contact_number" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_address">Company address</label>
-									  <input class="form-control" type="text" value="'.$tempA4[1].'" name="compadd4" id="employers_address">
+									  <input class="form-control" type="text" value="'.$tempA4[1].'" name="compadd4" id="employers_address" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="position-title">Position Title</label>
-									  <input class="form-control" type="text" value="'.$row["4.2 Position Title"].'" name="position4" id="position-title">
+									  <input class="form-control" type="text" value="'.$row["4.2 Position Title"].'" name="position4" id="position-title" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
-									  <input class="form-control" type="text" value="'.$row["4.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor4" id="name-supervisor">
+									  <input class="form-control" type="text" value="'.$row["4.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor4" id="name-supervisor" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="monthly-salary">Monthly salary</label>
-									  <input class="form-control" type="number" value="'.$row["4.4 Monthly Salary"].'" name="salary4" id="monthly-salary">
+									  <input class="form-control" type="number" value="'.$row["4.4 Monthly Salary"].'" name="salary4" id="monthly-salary" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="reason">Reason of leaving</label>
-									  <input class="form-control" value="'.$row["4.5 Reason for Leaving"].'" type="text" name="reason4" id="reason">
+									  <input class="form-control" value="'.$row["4.5 Reason for Leaving"].'" type="text" name="reason4" id="reason" disabled>
 									</div>
 								  </div>
-								  <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+								  <!-- <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button> -->
 							  </div>';
 							}if($row['5. Inclusive Dates']==''||$row["5.1 Employer's Name, Address and Phone"]==''||$row["5.2 Position Title"]==''||$row["5.3 Name_Position and Contact No. of Immediate Supervisor"]==''||$row["5.4 Monthly Salary"]==''||$row["5.5 Reason for Leaving"]==''){
 								
@@ -1979,7 +1774,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="from"><i class="fa fa-calendar"></i> From:</label>
 									  <div class="input-group">
-										<input class="form-control date" value="'.$date5[0].'" data-provide="datepicker" name="datefrom5" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" value="'.$date5[0].'" data-provide="datepicker" name="datefrom5" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1988,7 +1783,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="to"><i class="fa fa-calendar"></i> To:</label>
 									  <div class="input-group">
-										<input class="form-control date" data-provide="datepicker" value="'.$date5[1].'" name="dateto5" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" data-provide="datepicker" value="'.$date5[1].'" name="dateto5" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -1996,46 +1791,46 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_name">Company Name</label>
-									  <input class="form-control" type="text" value="'.$tempE5[0].'" name="company_name5" id="employers_name4">
+									  <input class="form-control" type="text" value="'.$tempE5[0].'" name="company_name5" id="employers_name4" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_contact_number">Contact number</label>
-									  <input class="form-control" type="number" value="'.$res_con5[1].'" name="contactnum5" id="employers_contact_number">
+									  <input class="form-control" type="number" value="'.$res_con5[1].'" name="contactnum5" id="employers_contact_number" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_address">Company address</label>
-									  <input class="form-control" type="text" value="'.$tempA5[1].'" name="compadd5" id="employers_address">
+									  <input class="form-control" type="text" value="'.$tempA5[1].'" name="compadd5" id="employers_address" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="position-title">Position Title</label>
-									  <input class="form-control" type="text" value="'.$row["5.2 Position Title"].'" name="position5" id="position-title">
+									  <input class="form-control" type="text" value="'.$row["5.2 Position Title"].'" name="position5" id="position-title" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
-									  <input class="form-control" type="text" value="'.$row["5.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor5" id="name-supervisor">
+									  <input class="form-control" type="text" value="'.$row["5.3 Name_Position and Contact No. of Immediate Supervisor"].'" name="supervisor5" id="name-supervisor" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="monthly-salary">Monthly salary</label>
-									  <input class="form-control" type="number" value="'.$row["5.4 Monthly Salary"].'" name="salary5" id="monthly-salary">
+									  <input class="form-control" type="number" value="'.$row["5.4 Monthly Salary"].'" name="salary5" id="monthly-salary" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="reason">Reason of leaving</label>
-									  <input class="form-control" value="'.$row["5.5 Reason for Leaving"].'" type="text" name="reason5" id="reason">
+									  <input class="form-control" value="'.$row["5.5 Reason for Leaving"].'" type="text" name="reason5" id="reason" disabled>
 									</div>
 								  </div>
-								  <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+								  <!-- <button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button> -->
 							  </div>';
 							} 
 							
@@ -2050,7 +1845,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="from"><i class="fa fa-calendar"></i> From:</label>
 									  <div class="input-group">
-										<input class="form-control date"  data-provide="datepicker" name="datefrom" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date"  data-provide="datepicker" name="datefrom" id="from" data-date-autoclose="true"   data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -2059,7 +1854,7 @@ error_reporting(0);
 									<div class="form-group label-floating">
 									  <label class="control-label" for="to"><i class="fa fa-calendar"></i> To:</label>
 									  <div class="input-group">
-										<input class="form-control date" data-provide="datepicker"  name="dateto" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										<input class="form-control date" data-provide="datepicker"  name="dateto" id="to" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 									  </div>
 									</div>
@@ -2067,20 +1862,20 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_name">Company Name</label>
-									  <input class="form-control" type="text"  name="company_name" id="employers_name1">
+									  <input class="form-control" type="text"  name="company_name" id="employers_name1" disabled>
 									  <div class="help-block with-errors" style="color: red"></div>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_contact_number">Contact number</label>
-									  <input class="form-control" type="number"  name="contactnum" id="employers_contact_number">
+									  <input class="form-control" type="number"  name="contactnum" id="employers_contact_number" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="employers_address">Company address</label>
-									  <input class="form-control" type="text"  name="compadd" id="employers_address">
+									  <input class="form-control" type="text"  name="compadd" id="employers_address" disabled>
 									  <div class="help-block with-errors" style="color: red"></div>
 									</div>
 								  </div>
@@ -2089,27 +1884,27 @@ error_reporting(0);
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="position-title">Position Title</label>
-									  <input class="form-control" type="text"  name="position" id="position-title">
+									  <input class="form-control" type="text"  name="position" id="position-title" disabled>
 									  <div class="help-block with-errors" style="color: red"></div>
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
-									  <input class="form-control" type="text"  name="supervisor" id="name-supervisor">
+									  <input class="form-control" type="text"  name="supervisor" id="name-supervisor" disabled>
 									</div>
 								  </div>
 								  <div class="col-md-2">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="monthly-salary">Monthly salary</label>
-									  <input class="form-control" type="number"  name="salary" id="monthlysalary">
+									  <input class="form-control" type="number"  name="salary" id="monthlysalary" disabled>
 									  <div class="help-block with-errors" style="color: red"></div>
 									</div>
 								  </div>
 								  <div class="col-md-3">
 									<div class="form-group label-floating">
 									  <label class="control-label" for="reason">Reason of leaving</label>
-									  <input class="form-control"  type="text" name="reason" id="reason">
+									  <input class="form-control"  type="text" name="reason" id="reason" disabled>
 									  <div class="help-block with-errors" style="color: red"></div>
 									</div>
 								  </div>
@@ -2129,7 +1924,7 @@ error_reporting(0);
 	                    	<div class="col-md-4">
 	                    		<div class="form-group label-floating">
 	                    			<label class="control-label" for="school">Name of School</label>
-	                    			<input type="text" value="<?php echo $elem_name;?>" name="elem_name" class="form-control" id="school">
+	                    			<input type="text" value="<?php echo $elem_name;?>" name="elem_name" class="form-control" id="school" disabled>
 	                    		</div>
 	                    	</div>
 	                    	<div class="col-md-3">
@@ -2140,14 +1935,14 @@ error_reporting(0);
 									$elem_from = explode(" - ",$elem_inclusive_date);
 									echo $elem_from[0];
 									}
-									?>" name="elem_datefrom" id="pfrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+									?>" name="elem_datefrom" id="pfrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 									<div class="input-group-addon">to</div>
 									<input data-provide="datepicker" value="<?php
 									if($elem_inclusive_date!=''){
 									$elem_to = explode(" - ",$elem_inclusive_date);
 									echo $elem_to[1];
 									}
-									?>" name="elem_dateto" id="pto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+									?>" name="elem_dateto" id="pto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 								</div>
 			                   <!--  <div class="col-md-6">
 			                    	<div class="form-group label-floating">
@@ -2165,7 +1960,7 @@ error_reporting(0);
 	                    	<div class="col-md-4">
 	                    		<div class="form-group label-floating">
 	                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
-	                    			<input type="text" value="<?php echo $elem_scholar;?>" class="form-control" id="scholarship" name="elem_scholarship">
+	                    			<input type="text" value="<?php echo $elem_scholar;?>" class="form-control" id="scholarship" name="elem_scholarship" disabled>
 	                    		</div>
 	                    	</div>
 	                    	<div class="col-md-12">
@@ -2174,7 +1969,7 @@ error_reporting(0);
 	                    	<div class="col-md-4">
 	                    		<div class="form-group label-floating">
 	                    			<label class="control-label" for="school">Name of School</label>
-	                    			<input type="" value="<?php echo $hs_name;?>" name="hs_name" class="form-control" id="school">
+	                    			<input type="" value="<?php echo $hs_name;?>" name="hs_name" class="form-control" id="school" disabled>
 	                    		</div>
 	                    	</div>
 	                    	<div class="col-md-3">
@@ -2185,14 +1980,14 @@ error_reporting(0);
 									$hs_from = explode(" - ",$hs_inclusive_date);
 									echo $hs_from[0];
 									}
-									?>" name="hs_datefrom" id="sfrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+									?>" name="hs_datefrom" id="sfrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 									<div class="input-group-addon">to</div>
 									<input data-provide="datepicker" value="<?php
 									if($hs_inclusive_date!=''){
 									$hs_to = explode(" - ",$hs_inclusive_date);
 									echo $hs_to[1];
 									}
-									?>" name="hs_dateto" id="sto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+									?>" name="hs_dateto" id="sto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 								</div>
 
 
@@ -2212,7 +2007,7 @@ error_reporting(0);
 	                    	<div class="col-md-4">
 	                    		<div class="form-group label-floating">
 	                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
-	                    			<input type="text" value="<?php echo $hs_scholar;?>" class="form-control" id="scholarship" name="hs_scholarship">
+	                    			<input type="text" value="<?php echo $hs_scholar;?>" class="form-control" id="scholarship" name="hs_scholarship" disabled>
 	                    		</div>
 	                    	</div>
 	                    	<div class="col-md-12">
@@ -2228,15 +2023,14 @@ error_reporting(0);
 												echo "";
 											}
 										
-									?> 
-									>Graduated 
+									?> disabled>Graduated 
 	                    		</label>
 	                    	</div>
 	                    	<div id="tertiary">
 		                    	<div class="col-md-4">
 		                    		<div class="form-group label-floating">
 		                    			<label class="control-label" for="school">Name of School</label>
-		                    			<input type="" name="col_name" id="col_name" value="<?php echo $col_name;?>" class="form-control" id="school">
+		                    			<input type="" name="col_name" id="col_name" value="<?php echo $col_name;?>" class="form-control" id="school" disabled>
 		                    		</div>
 		                    	</div>
 								
@@ -2247,7 +2041,7 @@ error_reporting(0);
 										<input data-provide="datepicker" value="<?php
 									$col_from = explode(" - ",$col_inclusive_date);
 									echo $col_from[0];
-									?>" name="col_datefrom" id="col_datefrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly >
+									?>" name="col_datefrom" id="col_datefrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 											<div class="input-group-addon">to</div>
 											
 											<input data-provide="datepicker" value="<?php
@@ -2257,7 +2051,7 @@ error_reporting(0);
 											}else{
 												echo'';
 											}
-										?>" name="col_dateto" id="col_dateto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+										?>" name="col_dateto" id="col_dateto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 									</div>
 
 			                    </div>
@@ -2269,7 +2063,7 @@ error_reporting(0);
 										<input data-provide="datepicker" value="<?php
 									$col_from = explode(" - ",$col_inclusive_date);
 									echo $col_from[0];
-									?>" name="col_datefrom2" id="col_datefrom2" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly >
+									?>" name="col_datefrom2" id="col_datefrom2" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 											
 									</div>
 
@@ -2281,13 +2075,13 @@ error_reporting(0);
 			                    	<div class="col-md-6">
 			                    		<div class="form-group label-floating">
 			                    			<label class="control-label" for="degree" style="font-size: small;">Degree Course /Vocational</label>
-			                    			<input type="text" id="col_degree" value="<?php echo $col_course;?>" class="form-control" name="col_degree">
+			                    			<input type="text" id="col_degree" value="<?php echo $col_course;?>" class="form-control" name="col_degree" disabled>
 			                    		</div>
 			                    	</div>
 			                    	<div class="col-md-6">
 			                    		<div class="form-group label-floating">
 			                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
-			                    			<input type="text" class="form-control" value="<?php echo $col_scholar;?>" id="col_scholarship" name="col_scholarship">
+			                    			<input type="text" class="form-control" value="<?php echo $col_scholar;?>" id="col_scholarship" name="col_scholarship" disabled>
 			                    		</div>
 			                    	</div>
 			                    </div>
@@ -2299,7 +2093,7 @@ error_reporting(0);
 		                    	<div class="col-md-4">
 		                    		<div class="form-group label-floating">
 		                    			<label class="control-label" for="school">Name of School</label>
-		                    			<input type="" name="grad_name" value="<?php echo $grad_name;?>" class="form-control" id="grad_name">
+		                    			<input type="" name="grad_name" value="<?php echo $grad_name;?>" class="form-control" id="grad_name" disabled>
 		                    		</div>
 		                    	</div>
 		                    	<div class=" col-md-3">
@@ -2312,7 +2106,7 @@ error_reporting(0);
 										else{
 											echo"";
 										}
-									?>" name="grad_datefrom" id="grad_datefrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+									?>" name="grad_datefrom" id="grad_datefrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 										<div class="input-group-addon">to</div>
 										<input data-provide="datepicker" value="<?php
 										if($grad_inclusive_date!=''){
@@ -2322,7 +2116,7 @@ error_reporting(0);
 										else{
 											echo'';
 										}
-									?>" name="grad_dateto" id="grad_dateto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
+									?>" name="grad_dateto" id="grad_dateto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly disabled>
 									</div>
 
 			                    	<!-- <div class="col-md-6">
@@ -2342,13 +2136,13 @@ error_reporting(0);
 			                    	<div class="col-md-6">
 			                    		<div class="form-group label-floating">
 			                    			<label class="control-label" for="degree" style="font-size: small;">Degree Course /Vocational</label>
-			                    			<input type="text" id="grad_degree" value="<?php echo $grad_degree;?>" class="form-control" name="grad_degree">
+			                    			<input type="text" id="grad_degree" value="<?php echo $grad_degree;?>" class="form-control" name="grad_degree" disabled>
 			                    		</div>
 			                    	</div>
 			                    	<div class="col-md-6">
 			                    		<div class="form-group label-floating">
 			                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
-			                    			<input type="text" class="form-control" value="<?php echo $grad_scholar;?>" id="grad_scholarship" name="grad_scholarship">
+			                    			<input type="text" class="form-control" value="<?php echo $grad_scholar;?>" id="grad_scholarship" name="grad_scholarship" disabled>
 			                    		</div>
 			                    	</div>
 			                    </div>
@@ -2357,7 +2151,7 @@ error_reporting(0);
                     <div class="col-md-12">
                     	<h6 style="padding-top: 30px"><i class="fa fa-id-card"> </i><b> Professional Qualifications</b></small></h6>  
                     	<hr>
-                            <button type="button" class="btn btn-raised btn-info btn-sm add_field_button_professional">Add Professional Qualification</button>
+                            <!-- <button type="button" class="btn btn-raised btn-info btn-sm add_field_button_professional">Add Professional Qualification</button> -->
                     </div>
                     <div class="input_fields_wrap_professional">                     	
 	                    <?php
@@ -2372,37 +2166,37 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license">License/Certification</label>
-												<input type="text" value="'.$row['PROF_License1'].'" class="form-control" name="license1" id="license" >
+												<input type="text" value="'.$row['PROF_License1'].'" class="form-control" name="license1" id="license" disabled>
 											</div>
 										</div>
 										<div class="col-md-1">
 											<div class="form-group label-floating">
 												<label class="control-label" for="rate">Rating</label>
-												<input type="text" id="rate" value="'.$row['PROF_Rating1'].'" class="form-control" name="rating1">
+												<input type="text" id="rate" value="'.$row['PROF_Rating1'].'" class="form-control" name="rating1" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dateg"><i class="fa fa-calendar" ></i> Date Grandted</label>
-													<input data-provide="datepicker" value="'.$row['PROF_DateGranted1'].'" id="dateg" class="form-control date" name="dategranted1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="'.$row['PROF_DateGranted1'].'" id="dateg" class="form-control date" name="dategranted1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="institution">Granting Institution</label>
-												<input type="text" class="form-control" value="'.$row['PROF_Institution1'].'" id="institution" name="institution1">
+												<input type="text" class="form-control" value="'.$row['PROF_Institution1'].'" id="institution" name="institution1" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license-number">License Number</label>
-												<input type="number" class="form-control" value="'.$row['PROF_Licensennum1'].'" id="license-number" name="licensenum1">
+												<input type="number" class="form-control" value="'.$row['PROF_Licensennum1'].'" id="license-number" name="licensenum1" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dater"><i class="fa fa-calendar" ></i> Date Release</label>
-													<input data-provide="datepicker" value="'.$row['PROF_DateReleased1'].'" class="form-control date" id="dater" name="datereleased1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="'.$row['PROF_DateReleased1'].'" class="form-control date" id="dater" name="datereleased1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 									</div>';
@@ -2414,37 +2208,37 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license">License/Certification</label>
-												<input type="text" value="'.$row['PROF_License2'].'" class="form-control" name="license2" id="license">
+												<input type="text" value="'.$row['PROF_License2'].'" class="form-control" name="license2" id="license" disabled>
 											</div>
 										</div>
 										<div class="col-md-1">
 											<div class="form-group label-floating">
 												<label class="control-label" for="rate">Rating</label>
-												<input type="text" id="rate" value="'.$row['PROF_Rating2'].'" class="form-control" name="rating2">
+												<input type="text" id="rate" value="'.$row['PROF_Rating2'].'" class="form-control" name="rating2" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dateg"><i class="fa fa-calendar" ></i> Date Grandted</label>
-													<input data-provide="datepicker" value="'.$row['PROF_DateGranted2'].'" id="dateg" class="form-control date" name="dategranted2" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="'.$row['PROF_DateGranted2'].'" id="dateg" class="form-control date" name="dategranted2" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="institution">Granting Institution</label>
-												<input type="text" class="form-control" value="'.$row['PROF_Institution2'].'" id="institution" name="institution2">
+												<input type="text" class="form-control" value="'.$row['PROF_Institution2'].'" id="institution" name="institution2" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license-number">License Number</label>
-												<input type="number" class="form-control" value="'.$row['PROF_Licensennum2'].'" id="license-number" name="licensenum2">
+												<input type="number" class="form-control" value="'.$row['PROF_Licensennum2'].'" id="license-number" name="licensenum2" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dater"><i class="fa fa-calendar" ></i> Date Release</label>
-													<input data-provide="datepicker" value="'.$row['PROF_DateReleased2'].'" class="form-control date" id="dater" name="datereleased2" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="'.$row['PROF_DateReleased2'].'" class="form-control date" id="dater" name="datereleased2" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 									</div>';
@@ -2456,37 +2250,37 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license">License/Certification</label>
-												<input type="text" value="'.$row['PROF_License3'].'" class="form-control" name="license3" id="license">
+												<input type="text" value="'.$row['PROF_License3'].'" class="form-control" name="license3" id="license" disabled>
 											</div>
 										</div>
 										<div class="col-md-1">
 											<div class="form-group label-floating">
 												<label class="control-label" for="rate">Rating</label>
-												<input type="text" id="rate" value="'.$row['PROF_Rating3'].'" class="form-control" name="rating3">
+												<input type="text" id="rate" value="'.$row['PROF_Rating3'].'" class="form-control" name="rating3" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dateg"><i class="fa fa-calendar" ></i> Date Grandted</label>
-													<input data-provide="datepicker" value="'.$row['PROF_DateGranted3'].'" id="dateg" class="form-control date" name="dategranted3" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="'.$row['PROF_DateGranted3'].'" id="dateg" class="form-control date" name="dategranted3" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="institution">Granting Institution</label>
-												<input type="text" class="form-control" value="'.$row['PROF_Institution3'].'" id="institution" name="institution3">
+												<input type="text" class="form-control" value="'.$row['PROF_Institution3'].'" id="institution" name="institution3" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license-number">License Number</label>
-												<input type="number" class="form-control" value="'.$row['PROF_Licensennum3'].'" id="license-number" name="licensenum3">
+												<input type="number" class="form-control" value="'.$row['PROF_Licensennum3'].'" id="license-number" name="licensenum3" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dater"><i class="fa fa-calendar" ></i> Date Release</label>
-													<input data-provide="datepicker" value="'.$row['PROF_DateReleased3'].'" class="form-control date" id="dater" name="datereleased3" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="'.$row['PROF_DateReleased3'].'" class="form-control date" id="dater" name="datereleased3" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 									</div>';
@@ -2498,37 +2292,37 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license">License/Certification</label>
-												<input type="text" value="" class="form-control" name="license1" id="license" >
+												<input type="text" value="" class="form-control" name="license1" id="license" disabled>
 											</div>
 										</div>
 										<div class="col-md-1">
 											<div class="form-group label-floating">
 												<label class="control-label" for="rate">Rating</label>
-												<input type="text" id="rate" value="" class="form-control" name="rating1">
+												<input type="text" id="rate" value="" class="form-control" name="rating1" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dateg"><i class="fa fa-calendar" ></i> Date Grandted</label>
-													<input data-provide="datepicker" value="" id="dateg" class="form-control date" name="dategranted1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="" id="dateg" class="form-control date" name="dategranted1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="institution">Granting Institution</label>
-												<input type="text" class="form-control" value="" id="institution" name="institution1">
+												<input type="text" class="form-control" value="" id="institution" name="institution1" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="license-number">License Number</label>
-												<input type="number" class="form-control" value="" id="license-number" name="licensenum1">
+												<input type="number" class="form-control" value="" id="license-number" name="licensenum1" disabled>
 											</div>
 										</div>
 										<div class="col-md-2">
 											<div class="form-group label-floating">
 												<label class="control-label" for="dater"><i class="fa fa-calendar" ></i> Date Release</label>
-													<input data-provide="datepicker" value="" class="form-control date" id="dater" name="datereleased1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+													<input data-provide="datepicker" value="" class="form-control date" id="dater" name="datereleased1" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 											</div>
 										</div>
 									</div>';
@@ -2550,7 +2344,7 @@ error_reporting(0);
 					<img class="img" src="lady liberty.png" style=" width: 85%;" >
                 	<h6 style="padding-top: 30px"><i class="fa fa-language"> </i><b> Language proficiency</b> </h6>  
                     <hr>
-					<button type="button" class="btn btn-raised btn-sm btn-info add_field_button_language" value="Add another text input" onClick="addInput('dynamicInput');">Add Language</button>
+					<!-- <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_language" value="Add another text input" onClick="addInput('dynamicInput');">Add Language</button> -->
 					<div class="input_fields_wrap_language" >
 						<?php
 						include("connect.php");
@@ -2564,7 +2358,7 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="language">Language you know</label>
-												<input type="text" value="'.$row["ONE_LANGUAGE"].'" class="form-control" id="language" name=" language">
+												<input type="text" value="'.$row["ONE_LANGUAGE"].'" class="form-control" id="language" name=" language" disabled>
 											</div>
 										</div>
 										<div class="col-md-12"></div>
@@ -2573,7 +2367,7 @@ error_reporting(0);
 												<label> 
 													<input type="checkbox" name="speak" value="yes"';
 													if($row["ONE_SPEAK"]=='yes')echo'checked';else echo'';
-													echo'> Speak
+													echo' disabled> Speak
 												</label>
 											</div>
 										</div>
@@ -2582,7 +2376,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="write" value="yes"';
 													if($row["ONE_WRITE"]=='yes')echo'checked';else echo'';
-													echo'> Write
+													echo' disabled> Write
 												</label>
 											</div>
 										</div>
@@ -2591,7 +2385,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="read" value="yes"'; 
 													if($row["ONE_READ"]=='yes')echo'checked';else echo'';
-													echo'> Read
+													echo' disabled> Read
 												</label>
 											</div>
 										</div>
@@ -2602,7 +2396,7 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="language">Language you know</label>
-												<input type="text" value="'.$row["TWO_LANGUAGE"].'" class="form-control" id="language" name="language2">
+												<input type="text" value="'.$row["TWO_LANGUAGE"].'" class="form-control" id="language" name="language2" disabled>
 											</div>
 										</div>
 										<div class="col-md-12"></div>
@@ -2610,7 +2404,7 @@ error_reporting(0);
 											<div class="form-group">
 												<label>  
 													<input type="checkbox" name="speak2" value="yes"'; 
-													if($row["TWO_SPEAK"]=='yes')echo'checked';else echo'';echo'> Speak
+													if($row["TWO_SPEAK"]=='yes')echo'checked';else echo'';echo' disabled> Speak
 												</label>
 											</div>
 										</div>
@@ -2619,7 +2413,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="write2" value="yes"'; 
 													if($row["TWO_WRITE"]=='yes')echo'checked';else echo'';
-													echo'> Write
+													echo' disabled> Write
 												</label>
 											</div>
 										</div>
@@ -2628,7 +2422,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="read2" value="yes"';
 													if($row["TWO_READ"]=='yes')echo'checked';else echo'';
-													echo'> Read
+													echo' disabled> Read
 												</label>
 											</div>
 										</div><button type=button class="btn btn-sm btn-raised btn-danger remove_field" style="margin-top: 3%">Remove</button>
@@ -2639,7 +2433,7 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="language">Language you know</label>
-												<input type="text" value="'.$row["THREE_LANGUAGE"].'" class="form-control" id="language" name=" language3">
+												<input type="text" value="'.$row["THREE_LANGUAGE"].'" class="form-control" id="language" name=" language3" disabled>
 											</div>
 										</div>
 										<div class="col-md-12"></div>
@@ -2648,7 +2442,7 @@ error_reporting(0);
 												<label> 
 													<input type="checkbox" name="speak3" value="yes"';
 													if($row["THREE_SPEAK"]=='yes')echo'checked';else echo'';
-													echo'> Speak
+													echo' disabled> Speak
 												</label>
 											</div>
 										</div>
@@ -2657,7 +2451,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="write3" value="yes"';
 													if($row["THREE_WRITE"]=='yes')echo'checked';else echo'';
-													echo'> Write
+													echo' disabled> Write
 												</label>
 											</div>
 										</div>
@@ -2666,7 +2460,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="read3" value="yes"';
 													if($row["THREE_READ"]=='yes')echo'checked';else echo'';
-													echo'> Read
+													echo' disabled> Read
 												</label>
 											</div>
 										</div><button type=button class="btn btn-sm btn-raised btn-danger remove_field" style="margin-top: 3%">Remove</button>
@@ -2677,7 +2471,7 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="language">Language you know</label>
-												<input type="text" value="'.$row["FOUR_LANGUAGE"].'" class="form-control" id="language" name=" language4">
+												<input type="text" value="'.$row["FOUR_LANGUAGE"].'" class="form-control" id="language" name=" language4" disabled>
 											</div>
 										</div>
 										<div class="col-md-12"></div>
@@ -2686,7 +2480,7 @@ error_reporting(0);
 												<label> 
 													<input type="checkbox" name="speak4" value="yes"';
 													if($row["FOUR_SPEAK"]=='yes')echo'checked';else echo'';
-													echo'> Speak
+													echo' disabled> Speak
 												</label>
 											</div>
 										</div>
@@ -2695,7 +2489,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="write4" value="yes"';
 													if($row["FOUR_SPEAK"]=='yes')echo'checked';else echo'';
-													echo'> Write
+													echo' disabled> Write
 												</label>
 											</div>
 										</div>
@@ -2704,7 +2498,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="read4" value="yes"';
 													if($row["FOUR_READ"]=='yes')echo'checked';else echo'';
-													echo'> Read
+													echo' disabled> Read
 												</label>
 											</div>
 										</div><button type=button class="btn btn-sm btn-raised btn-danger remove_field" style="margin-top: 3%">Remove</button>
@@ -2715,7 +2509,7 @@ error_reporting(0);
 										<div class="col-md-3">
 											<div class="form-group label-floating">
 												<label class="control-label" for="language">Language you know</label>
-												<input type="text" value="'.$row["FIVE_LANGUAGE"].'" class="form-control" id="language" name=" language5">
+												<input type="text" value="'.$row["FIVE_LANGUAGE"].'" class="form-control" id="language" name=" language5" disabled>
 											</div>
 										</div>
 										<div class="col-md-12"></div>
@@ -2724,7 +2518,7 @@ error_reporting(0);
 												<label> 
 													<input type="checkbox" name="speak5" value="yes"';
 													if($row["FIVE_SPEAK"]=='yes')echo'checked';else echo'';
-													echo'> Speak
+													echo' disabled> Speak
 												</label>
 											</div>
 										</div>
@@ -2733,7 +2527,7 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="write5" value="yes"';
 													if($row["FIVE_WRITE"]=='yes')echo'checked';else echo'';
-													echo'> Write
+													echo' disabled> Write
 												</label>
 											</div>
 										</div>
@@ -2742,10 +2536,10 @@ error_reporting(0);
 												<label>  
 													<input type="checkbox" name="read5" value="yes"';
 													if($row["FIVE_READ"]=='yes')echo'checked';else echo'';
-													echo'> Read
+													echo' disabled> Read
 												</label>
 											</div>
-										</div><button type=button class="btn btn-sm btn-raised btn-danger remove_field" style="margin-top: 3%">Remove</button>
+										</div><!-- <button type=button class="btn btn-sm btn-raised btn-danger remove_field" style="margin-top: 3%">Remove</button> -->
 									</div>';
 								}
 							}
@@ -2754,28 +2548,28 @@ error_reporting(0);
 							<div class="col-md-3">
 								<div class="form-group label-floating">
 									<label class="control-label" for="language">Language you know</label>
-									<input type="text" class="form-control" id="language" name=" language">
+									<input type="text" class="form-control" id="language" name=" language" disabled>
 								</div>
 							</div>
 							<div class="col-md-12"></div>
 							<div class="col-md-1">
 								<div class="form-group">
 									<label> 
-										<input type="checkbox" name="speak" value="yes"> Speak
+										<input type="checkbox" name="speak" value="yes" disabled> Speak
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1">
 								<div class="form-group">
 									<label>  
-										<input type="checkbox" name="write" value="yes"> Write
+										<input type="checkbox" name="write" value="yes" disabled> Write
 									</label>
 								</div>
 							</div>
 							<div class="col-md-1">
 								<div class="form-group">
 									<label>  
-										<input type="checkbox" name="read" value="yes"> Read
+										<input type="checkbox" name="read" value="yes" disabled> Read
 									</label>
 								</div>
 							</div>
@@ -2792,7 +2586,7 @@ error_reporting(0);
 						<div class="form-group label-floating">
 							<label class="control-label" for="checkup"><i class="fa fa-calendar" ></i> Last physical check-up </label>
 							<div class="input-group">
-								<input data-provide="datepicker" id="checkup" value="<?php echo $checkup;?>" class="form-control date" name="checkup" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
+								<input data-provide="datepicker" id="checkup" value="<?php echo $checkup;?>" class="form-control date" name="checkup" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly disabled>
 								<span class="input-group-addon add-on"><span class="fa fa-calendar"></span>
 							</div>
 						</div>
@@ -2800,7 +2594,7 @@ error_reporting(0);
 					<div class="row col-md-12">
 						<div class="col-md-4">
 							<div class="input_fields_wrap_skill">
-								<button type="button" class="btn btn-raised btn-sm btn-info add_field_button_skill">ADD</button>
+								<!-- <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_skill">ADD</button> -->
 									<?php 
 										include("connect.php");
 										$other_select = "SELECT o.*, a.ID FROM tbl_othersinfo o inner join tbl_application a on a.ID = o.ID WHERE a.REFERENCE_NO = '$ref_code'";
@@ -2812,19 +2606,19 @@ error_reporting(0);
 												$skill_c++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="skill1">Special Skill/Hobbies</label>
-														<input type="text" class="form-control" value="'.$row["SKILLS1"].'" id="skill1" name="skill1"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["SKILLS1"].'" id="skill1" name="skill1" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 												</div>';
 											}if($row["SKILLS2"]!=''){
 												$skill_c++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="skill2">Special Skill/Hobbies</label>
-														<input type="text" class="form-control" value="'.$row["SKILLS2"].'" id="skill2" name="skill2"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["SKILLS2"].'" id="skill2" name="skill2" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 												</div>';
 											}if($row["SKILLS3"]!=''){
 												$skill_c++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="skill3">Special Skill/Hobbies</label>
-														<input type="text" class="form-control" value="'.$row["SKILLS3"].'" id="skill3" name="skill3"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["SKILLS3"].'" id="skill3" name="skill3" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 												</div>';
 											}
 											
@@ -2833,7 +2627,7 @@ error_reporting(0);
 										if($skill_c==0){
 											echo'<div class="form-group label-floating">
 														<label class="control-label" for="skill1">Special Skill/Hobbies</label>
-														<input type="text" class="form-control" id="skill1" name="skill1">
+														<input type="text" class="form-control" id="skill1" name="skill1" disabled>
 											</div>';
 										}
 											?>
@@ -2841,7 +2635,7 @@ error_reporting(0);
 						</div>
 						<div class="col-md-4">
 							<div class="input_fields_wrap_nacad">
-								<button type="button" class="btn btn-raised btn-sm btn-info add_field_button_nacad">ADD</button>
+								<!-- <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_nacad">ADD</button> -->
 								<?php 
 										include("connect.php");
 										$other_select = "SELECT o.*, a.ID FROM tbl_othersinfo o inner join tbl_application a on a.ID = o.ID WHERE a.REFERENCE_NO = '$ref_code'";
@@ -2853,19 +2647,19 @@ error_reporting(0);
 												$ac_count++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="nacad">Non-Academic Distinction / Recognition</label>
-														<input type="text" class="form-control" value="'.$row["RECOGNITION1"].'" id="nacad" name="recognition1"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["RECOGNITION1"].'" id="nacad" name="recognition1" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 													</div>';
 											}if($row["RECOGNITION2"]!=''){
 												$ac_count++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="nacad">Non-Academic Distinction / Recognition</label>
-														<input type="text" class="form-control" value="'.$row["RECOGNITION2"].'" id="nacad" name="recognition2"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["RECOGNITION2"].'" id="nacad" name="recognition2" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 													</div>';
 											}if($row["RECOGNITION3"]!=''){
 												$ac_count++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="nacad">Non-Academic Distinction / Recognition</label>
-														<input type="text" class="form-control" value="'.$row["RECOGNITION3"].'" id="nacad" name="recognition3"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["RECOGNITION3"].'" id="nacad" name="recognition3" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 													</div>';
 											}
 											
@@ -2874,7 +2668,7 @@ error_reporting(0);
 											if($ac_count==0){
 												echo'<div class="form-group label-floating">
 													<label class="control-label" for="nacad1">Non-Academic Distinction / Recognition</label>
-													<input type="text" class="form-control" id="nacad1" name="recognition1">
+													<input type="text" class="form-control" id="nacad1" name="recognition1" disabled>
 												</div>';
 											}
 										?>
@@ -2886,7 +2680,7 @@ error_reporting(0);
 						</div>
 						<div class="col-md-4">
 							<div class="input_fields_wrap_org">
-								<button type="button" class="btn btn-raised btn-sm btn-info add_field_button_org">ADD</button>
+								<!-- <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_org">ADD</button> -->
 									<?php 
 										include("connect.php");
 										$org_select = "SELECT o.*, a.ID FROM tbl_othersinfo o inner join tbl_application a on a.ID = o.ID WHERE a.REFERENCE_NO = '$ref_code'";
@@ -2898,19 +2692,19 @@ error_reporting(0);
 												$org_count++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="org1">Membership in Association / Organization</label>
-														<input type="text" class="form-control" value="'.$row["ORG1"].'" id="org1" name="org1"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["ORG1"].'" id="org1" name="org1" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 												</div>';
 											}if($row["ORG2"]!=''){
 												$org_count++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="org2">Membership in Association / Organization</label>
-														<input type="text" class="form-control" value="'.$row["ORG2"].'" id="org" name="org2"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["ORG2"].'" id="org" name="org2" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 												</div>';
 											}if($row["ORG3"]!=''){
 												$org_count++;
 												echo'<div class="form-group label-floating">
 														<label class="control-label" for="org3">Membership in Association / Organization</label>
-														<input type="text" class="form-control" value="'.$row["ORG3"].'" id="org3" name="org3"><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
+														<input type="text" class="form-control" value="'.$row["ORG3"].'" id="org3" name="org3" disabled><button type=button class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button>
 												</div>';
 											}
 											$y++;
@@ -2918,7 +2712,7 @@ error_reporting(0);
 											if($org_count==0){
 												echo'<div class="form-group label-floating">
 													<label class="control-label" for="org1">Membership in Association / Organization</label>
-													<input type="text" class="form-control" id="org1" name="org1">
+													<input type="text" class="form-control" id="org1" name="org1" disabled>
 												</div>';
 											}
 										?>
@@ -2935,21 +2729,21 @@ error_reporting(0);
 							<div class="col-md-5">
 								<div class="form-group label-floating">
 									<label class="control-label" for="rname">Name<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" value="<?php echo $ref_name1;?>" id="rname" name="ONE_REFNAME" minlength="2" required>
+									<input type="text" class="form-control" value="<?php echo $ref_name1;?>" id="rname" name="ONE_REFNAME" minlength="2" required disabled>
            			 				<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group label-floating">
 									<label class="control-label" for="cname">Company Name<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" value="<?php echo $ref_add1;?>" id="company_name1" name="ONE_REFADDRESS" minlength="2" required>
+									<input type="text" class="form-control" value="<?php echo $ref_add1;?>" id="company_name1" name="ONE_REFADDRESS" minlength="2" required disabled>
            			 				<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group label-floating">
 									<label class="control-label" for="eadd">Tel No. / Email Address<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" id="email1" value="<?php echo $ref_num1;?>" name="ONE_REFCONTACT" minlength="2" required>
+									<input type="text" class="form-control" id="email1" value="<?php echo $ref_num1;?>" name="ONE_REFCONTACT" minlength="2" required disabled>
            			 				<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
@@ -2958,21 +2752,21 @@ error_reporting(0);
 							<div class="col-md-5">
 								<div class="form-group label-floating">
 									<label class="control-label" for="rname2">Name<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" id="rname2" value="<?php echo $ref_name2;?>" name="TWO_REFNAME" required>
+									<input type="text" class="form-control" id="rname2" value="<?php echo $ref_name2;?>" name="TWO_REFNAME" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group label-floating">
 									<label class="control-label" for="cname">Company Name<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" id="cname2" value="<?php echo $ref_add2;?>" name="TWO_REFADDRESS" required>
+									<input type="text" class="form-control" id="cname2" value="<?php echo $ref_add2;?>" name="TWO_REFADDRESS" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group label-floating">
 									<label class="control-label" for="eadd2">Tel No. / Email Address<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" id="eadd2" value="<?php echo $ref_num2;?>" name="TWO_REFCONTACT" required>
+									<input type="text" class="form-control" id="eadd2" value="<?php echo $ref_num2;?>" name="TWO_REFCONTACT" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
@@ -2981,21 +2775,21 @@ error_reporting(0);
 							<div class="col-md-5">
 								<div class="form-group label-floating">
 									<label class="control-label" for="rname">Name<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" id="rname3" value="<?php echo $ref_name3;?>" name="THREE_REFNAME" required>
+									<input type="text" class="form-control" id="rname3" value="<?php echo $ref_name3;?>" name="THREE_REFNAME" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group label-floating">
 									<label class="control-label" for="cname3">Company Name<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" id="cname3" value="<?php echo $ref_add3;?>" name="THREE_REFADDRESS" required>
+									<input type="text" class="form-control" id="cname3" value="<?php echo $ref_add3;?>" name="THREE_REFADDRESS" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group label-floating">
 									<label class="control-label" for="eadd3">Tel No. / Email Address<label class="text-danger">*</label></label>
-									<input type="text" class="form-control" id="eadd3" value="<?php echo $ref_num3;?>" name="THREE_REFCONTACT" required>
+									<input type="text" class="form-control" id="eadd3" value="<?php echo $ref_num3;?>" name="THREE_REFCONTACT" required disabled>
 									<div class="help-block with-errors" style="color: red"></div>
 								</div>
 							</div>
@@ -3004,7 +2798,7 @@ error_reporting(0);
 					      <div class="col-md-4">
 					      	<div class="form-group">
 					      		<label for="inputFile">File</label>
-					      		<input type="file" name="fileToUpload" id="fileToUpload" accept="application/msword, application/pdf">
+					      		<input type="file" name="fileToUpload" id="fileToUpload" accept="application/msword, application/pdf" disabled>
 						 	 	<div class="input-group">
 									<input type="text" readonly="" class="form-control" placeholder="Upload Resume in PDF or DocX Format">
 									<span class="input-group-btn input-group-sm">
@@ -3019,10 +2813,10 @@ error_reporting(0);
 					      	<div class="form-group label-floating">
 						        <center><label class="control-label" for="source">Your Photo:</label><br>
 						        <a href="#" onclick="document.getElementById('fileup').click(); return false;"><img style="border-radius:50%;" id="blah" src="<?php if($image_directory!=''){echo $image_directory;}else{echo'img/profileBanner.png';}?>" width=100 height=100 alt="your image" /></a></br></br><center>
-								<input type="file" name="fileup" id="fileup" accept="image/*" onchange="readURL(this);"/>
+								<input type="file" name="fileup" id="fileup" accept="image/*" onchange="readURL(this);" disabled />
 					      	</div>
 					      </div>
-					      <div class="col-md-4">
+					      <!--<div class="col-md-4">
 					      	<div class="form-group label-floating">
 						        <label class="control-label" for="source">Application Source</label>
 						        <select id="source" name="sourcex" class="select form-control" onchange="showsource(this)">
@@ -3038,13 +2832,13 @@ error_reporting(0);
 						        	<option value="Others">Others</option>
 						        </select>
 					      	</div>
-					      </div>
+					      </div> 
 						  <div class="col-md-4">
 							<div id="souceothers" style="display:none;" class="form-group label-floating">
 						      	<label class="control-label" for="sourcespec">Please specify</label>
 						      	<input type="text" id="sourcespec" class="form-control" name="sourcespec">
 						    </div>
-						  </div>
+						  </div> -->
 						  
 						</div>
 					</div>

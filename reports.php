@@ -6,9 +6,9 @@
 	//unset($_SESSION['currentYear']);
 	$_SESSION['previous-page'] = 'reports.php';
 	$id = $_SESSION['id'];
-	$startDate = "";
-	$endDate = "";
-	if(isset($_POST['startDate'])){
+	$startDate = "2017-01-01";
+	$endDate = date('Y-m-d');
+	/* if(isset($_POST['startDate'])){
 		$startDate = $_POST['startDate'];
 		$endDate = $_POST['endDate'];
 		unset($_POST['startDate']);
@@ -16,7 +16,7 @@
 	}else{
 		$startDate = date('Y-m-d', strtotime('first day of this month'));
 		$endDate = date('Y-m-d', strtotime('-1d')); 
-	}
+	} */
 	$currentYear = date('Y',strtotime($endDate)); 
 ?>
 
@@ -61,9 +61,10 @@
 		<!-- Inline CSS based on choices in "Settings" tab -->
 		<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 
-
+		<div style="position:fixed;bottom:20px;right:20px;z-index:100;background-color:#f44336;color:#fff;box-shadow:0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12)" id="printReport" class="btn" onclick="save()">Print</div>
+		
 		<div id="main" >
-			<div class="row" style ="position:fixed; z-index:1; width:100%; margin-top:-20px; background-color:#dfe5ec;" id = 'topDiv'>
+			<div class="row" style ="z-index:1; width:100%; margin-top:-20px; background-color:#dfe5ec;" id = 'topDiv'>
 				<nav  class="navbar navbar-inverse" >
 				  <div class="container-fluid" id= 'navHead' style = 'background-color:#dfe5ec;'>
 						<a class="navbar-brand" style="cursor:pointer; z-index:1;" href="#"><h4 style="font-family:'Trebuchet MS', Helvetica, sans-serif; cursor:pointer; z-index:1; color:#00008B;" onclick="openNav()"><i class="fa fa-bars"></i> Menu</h4></a>		  
@@ -83,11 +84,10 @@
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#97b6ca;'>
 									<h4 style='color:black'><b>Monthly Number of Applicants (<span id="thisYear"><?php echo $currentYear; ?></span>)</b>
-										<legend class="text-center"><i href="#chart7" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right "></i></legend></h4>
+										<!--<legend class="text-center"><i href="#chart7" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right "></i></legend>--></h4>
 									</div>
-									<div id="chart7" class="panel-collapse collapse in">
+									<div id="chart7">
 										<div class="panel-body container-fluid" style="width: 100% ;height: 450px ;">
-										<span class ="btn"><a  style = "float:right; top:10%;" class = "fa fa-print" id ="printFixData" onclick = "save()">Print</a></span>  
                                             <div class="container">
                                             <h2 style="font-family:'Trebuchet MS', Helvetica, sans-serif; margin-left:16em;"><!--Months Graph--> </h2>
 											<div id="chart7" class="panel-collapse collapse in">
@@ -109,10 +109,10 @@
 					<div class="col-lg-12">
 					<div class="panel-heading " style = 'background-color:#97b6ca;color:black'>
 					<h4><b>Total Number of Applicants within Set Date</b></h4>
-						<legend class="text-center" style ='margin-bottom:1%;'><i href="#adjustDate" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='adjustDate'> </i></legend>
+						<!--<legend class="text-center" style ='margin-bottom:1%;'><i href="#adjustDate" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='adjustDate'> </i></legend>-->
 					<h1> </h1>
 					</div>
-			<div id ='adjustDate' class="collapse" style = 'background-color: #dfe5ec; padding-top:1.5%;'>
+			<div id ='adjustDate' style = 'background-color: #dfe5ec; padding-top:1.5%;'>
 						<div class= 'row' > 
 							<div class="bootstrap-iso" >
 							   <div class="col-md-6 col-sm-6 col-xs-12">
@@ -181,8 +181,8 @@
 					</div>
 					<h1></h1>
 					 
-						<div class="row" style = 'margin-left:10%;'>
-							<div class="col-md-5">
+						<div class="row">
+							<div class="col-md-10" style="width:70%; margin-left:16%">
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#dab358'>
 										<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Age Bracket </h3>
@@ -198,7 +198,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-5" id='ab' style = 'margin-right:10%; float:right;'>
+							<div class="col-md-5" id='ab' style = 'display:none'>
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#dab358'>
 										<h3 class="text-center" id='a' style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Gender</h3>
@@ -224,8 +224,8 @@
 					<div class="col-lg-12">
 					<div class="panel-heading " style = 'background-color:#97b6ca;color:black;'>
 					<h4><b>Application Source and Status Graph</b>
-					<legend class="text-center" style ='margin-bottom:1%;'><i href="#fixInfo" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='fixInfo'></i></legend></h4></div>
-                 <div id ='fixInfo' class="collapse" style = 'background-color: #dfe5ec; padding-top:2%;'>	
+					<!--<legend class="text-center" style ='margin-bottom:1%;'><i href="#fixInfo" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='fixInfo'></i></legend>--></h4></div>
+                 <div id ='fixInfo' style = 'background-color: #dfe5ec; padding-top:2%;'>	
 						<h1></h1>
 					<div class= 'row' > 
 							<div class="bootstrap-iso" >
@@ -268,7 +268,7 @@
 
 					
 						<div class="row">
-							<div class="col-md-6">
+							<!--<div class="col-md-6">
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#dab358'>
 										<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Application Source</h3>
@@ -281,8 +281,8 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
+							</div>-->
+							<div class="col-lg-10" style = 'width:70%; margin-left:16%'>
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color: #dab358'>
 										<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Applicant Status</h3>
@@ -312,6 +312,23 @@
                                           <div class="container"></div>
 										<div class="panel-body">
 											<canvas id="myChart9" height="180px"></canvas>
+											<hr>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class = 'row' >
+							<div class="col-lg-12">
+								<div class="panel panel-info">
+									<div class="panel-heading " style = 'background-color:#dab358'>
+									<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Applicant Locations</h3>
+									</div>
+									<div id="chart9" class="panel-collapse collapse in">
+                                          <div class="container"></div>
+										<div class="panel-body">
+											<canvas id="myChart10" height="180px"></canvas>
 											<hr>
 										</div>
 									</div>
@@ -360,6 +377,7 @@
 		var ageJobfair = [];
 		var ageGoogle = [];
 		var allSource = [];
+		var allLocation = [];
 		var stats=[];
 		curDate = new Date();
 		var createdDateTo2 = "";
@@ -548,7 +566,7 @@
 				}
 			});
 
-			  function save() {
+			  /* function save() {
 				document.getElementById("myChart7").style.border = "2px solid";
 				var canvas = document.getElementById();
 				var dataURL = canvas.toDataURL();
@@ -557,7 +575,7 @@
 
 				document.getElementById("imageDownload").href = dataURL;
 
-			}
+			} */
 			
 			
 		}
@@ -591,7 +609,7 @@
 			
 			
 		function save(){
-			var canvas = document.getElementById("myChart7");
+			/* var canvas = document.getElementById("myChart7");
 			var dataUrl = canvas.toDataURL(); //attempt to save base64 string to server using this var  
 			var windowContent = '<!DOCTYPE html>';
 			windowContent += '<html>'
@@ -607,7 +625,36 @@
 			printWin.document.close();
 			printWin.focus();
 			printWin.print();
-			printWin.close();
+			printWin.close(); */
+			
+			var myChart7 = document.getElementById("myChart7");
+			var myChart4 = document.getElementById("myChart4");
+			var myChart9 = document.getElementById("myChart9");
+			var myChart10 = document.getElementById("myChart10");
+			var img7 = myChart7.toDataURL();
+			var img4 = myChart4.toDataURL();
+			var img9 = myChart9.toDataURL();
+			var img10 = myChart10.toDataURL();
+
+			var html  = '<html><head><title></title></head>';
+				html += '<body style="width: 100%; padding: 0; margin: 0;"';
+				html += ' onload="window.focus(); window.print(); window.close()">';
+				html += '<div style="border:4px solid #000;text-align:center;padding:10px;font-size:40px;font-weight:100">Reports and Summary</div>';
+				html += '<h1 style="margin:5% 0">Monthly Number of Applicants (2018)</h1>';
+				html += '<img src="' + img7 + '" width="100%" height="200px" />';
+				html += '<h1 style="margin:5% 0">Applicant Status</h1>';
+				html += '<img src="' + img4 + '" width="100%" />';
+				html += '<h1 style="margin:5% 0">Applicant Source</h1>';
+				html += '<img src="' + img9 + '" width="100%" height="380px" />';
+				html += '<h1 style="margin:5% 0">Applicant Locations</h1>';
+				html += '<img src="' + img10 + '" width="100%" height="400px" />';
+				html += '</body></html>';
+				
+			var printWindow = window.open('', 'to_print', '');
+
+			printWindow.document.open();
+			printWindow.document.write(html);
+			printWindow.document.close();
 			
 		}
 
@@ -1282,7 +1329,7 @@
 		var myChart9 = new Chart(ctx9, {
 			type: 'bar',
 			data: {
-				labels: ['Jobstreet', 'Linked In', 'Facebook', 'From a Friend','Website','Others'],
+				labels: ['Jobstreet', 'Linked In', 'Facebook', 'Referral','AndersonGroup Site','Application','Jobfair','Indeed'],
 				datasets: [
 					{
 						data: allSource,
@@ -1334,7 +1381,60 @@
 		});
 
             
-		
+		var ctx10 = $('#myChart10');
+		var myChart10 = new Chart(ctx10, {
+			type: 'bar',
+			data: {
+				labels: ['Metro Manila (NCR)','Ilocos Region','Cagayan Valley','Central Luzon','CALABARZON','MIMAROPA','Bicol Region','Western Visayas','Central Visayas','Eastern Visayas','Zamboanga Peninsula','Northern Mindanao','Davao Region','SOCCSKSARGEN','CARAGA','ARMM','Cordillera Administrative Region'],
+				datasets: [
+					{
+						data: allLocation,
+						label:'Applicant Locations',
+						backgroundColor: 'rgba(54, 162, 235, 2)',
+						borderColor: 'rgba(54, 162, 235, 1)',
+						borderWidth: 1
+
+					}
+				]
+			},
+			options: {legend:false,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				},"animation": {
+				  "duration": 1,
+				  "onComplete": function() {
+					var chartInstance = this.chart,
+					ctx = chartInstance.ctx;
+					ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+					ctx.textAlign = 'center';
+					ctx.textBaseline = 'bottom';
+					ctx.fillStyle = "black";
+					this.data.datasets.forEach(function(dataset, i) {
+					  var meta = chartInstance.controller.getDatasetMeta(i);
+					  meta.data.forEach(function(bar, index) {
+						var data = dataset.data[index];
+						ctx.fillText(data, bar._model.x, bar._model.y - 5);
+					  });
+					});
+				  }
+				}
+			},tooltips: {
+							callbacks: {
+										title: function(tooltipItems, data) {
+										  return '';
+										},
+										label: function(tooltipItem, data) {
+											  var datasetLabel = '';
+											  var label = data.labels[tooltipItem.index];
+											  return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+											}
+										}
+			},
+		});
 		
 		
 		
@@ -1544,6 +1644,24 @@
 			});
 		});	
 		$("#myChart9").click(function(e){
+			var activeBars = A.getElementAtEvent(e);
+			var imfrom;
+			var index = activeBars[0]['_chart'].config.data;
+			var idx = activeBars[0]['_index'];
+			imfrom = index.labels[idx];
+			$.ajax({
+				url: "query.php",
+				type: "POST",
+				data: {source:imfrom, reports: 1,year:$('#thisYear').text()},
+				success: function(data){
+						window.open('google.php');
+				},
+				error: function(data){
+					alert(data);
+				}
+			});
+		});
+		$("#myChart10").click(function(e){
 			var activeBars = A.getElementAtEvent(e);
 			var imfrom;
 			var index = activeBars[0]['_chart'].config.data;

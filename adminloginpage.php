@@ -14,12 +14,10 @@
       unset($_SESSION['indeedquery']);
       unset($_SESSION['loginerror']);
     }
-
   }
   
   if(isset($_SESSION['loginattempt']) ){ //
-	if($_SESSION['loginattempt'] != null){
-		
+	 if($_SESSION['loginattempt'] != null){
 		$temp = intval($_SESSION['loginattempt']);
 		 if($temp >= 5){	
 			$num = rand(100,999);//captcha code
@@ -29,59 +27,36 @@
 			$_SESSION['loginerror'] = "You have exceeded the login attempt limit!";
 			header('location: loginattempt.php');			
 		}
-		
-		
-		
-		//echo 'edward';
-		// $temp =0;
-		// if($_SESSION['loginattempt']  == '5')){
-			// $num = rand(100,999);//captcha code
-			// $str = 'ANDRS'.$num;
-			// $shuffled = str_shuffle($str);
-			// $_SESSION['code'] = $shuffled;
-			// $_SESSION['loginerror'] = "You have exceeded the login attempt limit!";
-			// header('location: loginattempt.php');	
-		 // }		
-	}
-
-    
-              
-  }
-  echo '<p style="padding-top:.9%">Current PHP version: ' . phpversion() . '</p>';
+	}         
+ }
+  // echo '<p style="padding-top:.9%">Current PHP version: ' . phpversion() . '</p>';
 ?>
 
-<html>
-   
+<html>  
    <head>
       <title>Login Page</title>
-      
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
       <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
       <link rel="stylesheet" type="text/css" href="css/ripples.css">
       <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-      
+      <link rel="stylesheet" type="text/css" href="custom_css/adminloginpage.css">
    </head>
-   
-   <body bgcolor = "#00008B">
-   <hr style="padding-bottom: 1%">
-      <div align = "center">
-         <div style = "width:300px; border: solid 1px #00008B; " align = "left">
-            <div style = "background-color:#00008B; color:white; padding:3px;"><b>Login</b></div>				
-            <div style = "margin:30px" id="logindiv">
-               <form action = "loginbtn.php" method = "post">
-                <div class="form-group label-floating">
-                  <label for="username" class="control-label">Username</label>
-                  <input id="username" type = "text" name = "username" id = "username" class = "form-control" required="" />
-                </div>
-                <div class="form-group label-floating">
-                  <label for="password" class="control-label">Password</label>
-                  <input id ="password" type = "password" name = "password" class = "form-control" required="" /><br/><br />
-                </div> 
-                  <button id='login_id' class="btn btn-raised btn-primary btn-sm" style="color:white; background-color:#00008B;" type="submit" name="action">Log In</button> 
-
-               </form>
-            </div>
+  
+  <body class="login-img3-body">
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-sm-12">
+          <center><img src="img/ag.png" class="img-res"></center>
+        </div>
+      </div>
+      <div class="login-block">
+        <h1 style="margin-bottom:5px;">Login</h1>
+          <form action="loginbtn.php" method="post">
+            <input id="username" type="text" name="username" required="" placeholder="Username" />
+            <input id="password" type="password" name="password" required="" placeholder="Password" />
+            <button id='login_id' type="submit" name="action">Log In</button>
+          </form>
+      </div>
                 <?php
                   
                   $date = date("Y-m-d h:i:sa");
