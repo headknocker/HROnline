@@ -19,6 +19,8 @@
 
 	<title>Application Form</title>
 
+	<meta charset="utf-8">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
@@ -1529,6 +1531,8 @@ error_reporting(0);
 
 										<option value="51,000.00 - 55,000.00" <?php if($salary == '51,000.00 - 55,000.00')echo'selected'?>>&#8369;51,000.00 - &#8369;55,000.00</option>
 
+										<option value="More than 55,000.00" <?php if($salary == 'More than 55,000.00 55,000.00')echo'selected'?>>More than 55,000.00 &#8369;55,000.00</option>
+
 									</select><span class="input-group-addon add-on"><span class="fa fa-arrow-down"></span>
 
 								</div>
@@ -1795,11 +1799,11 @@ error_reporting(0);
 
 											<option value="Linked In">Linked In</option>
 
-											<option value="Website">AndersonGroup Site</option>
+											<option value="AndersonGroup Site">AndersonGroup Site</option>
 
 											<option value="Facebook">Facebook</option>
 
-											<option value="From a Friend">Referral</option>
+											<option value="Referral">Referral</option>
 
 											<option value="Job street">Jobstreet</option>
 
@@ -2035,7 +2039,7 @@ error_reporting(0);
 
 									<option <?php if($blood=="O+")echo 'selected';?> value="O+">O+</option>
 
-									<option <?php if($blood=="BA")echo 'selected';?> value="BA">B+&#45;</option>
+									<<option <?php if($blood=="BA")echo 'selected';?> value="BA">B+</option>
 
 									<option <?php if($blood=="Om")echo 'selected';?> value="Om">O&#45;</option>
 

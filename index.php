@@ -40,7 +40,7 @@
 
 	<title>Application Form</title>
 
-
+	<meta charset="utf-8">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -223,22 +223,81 @@ $(document).ready(function(){
 		
 
 		<div class="modal-body">
-
-			<h6>Choose Candidate Type:</h6>
+            <hr>
+			<center><h6 id="Candidatetype">Choose Candidate Type:</h6></center>
 
 			<center>
 
-				<button type="button" id="btn_experienced" style="padding-bottom:2%;" class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
+				<button type="button" onclick="show()" id="btn_experienced" style="padding-bottom:2%;" class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
 
-				<button type="button" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
+				<button type="button" onclick="show()" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
 
-				<button type="button" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
+				<button type="button" onclick="show()" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
+             
+				<h4 id="Authorizationletter">Authorization Letter</h4><br>
+				<p id="letter">I have read the Privacy Policy and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
+				   organize,update or modify, retrieve, consult, use, consolidate, block, erase or destruct my personal data as part of my information.
+				   I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my personal data,
+				   and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the Philippines, 
+				   Data Privacy Act of 2012 and Regulation (EU) 2016/679, General Data Protection Regulation, whichever is applicable, 
+				   and its corresponding implementing rules and regulations.</p>
+				   
+				<button type="button" class="btn btn-primary pull-center" data-dismiss="modal" id="IUnderstand">I Understand</button>
+				  
+				 <style>
+				 #Authorizationletter
+				 {
+					 display: none;
+					 color: rgb(47, 84, 150);
+				 }
+				 #letter
+				 {
+					 display: none;
+				 }
+				 #IUnderstand
+				 {
+					  display: none;
+					  text-align: center;
 
-				
+				 }
+				 #okay_button
+				 {
+					 display: none;
+				 }
+				 #back_button
+				 {
+					 display: none;
+				 }
+				 </style>
+				 
+				 <script type="text/javascript">
+				 
+				 function show(){
+					 document.getElementById("letter").style.display ="block"; 
+					 document.getElementById("Authorizationletter").style.display ="block";
+					 document.getElementById("IUnderstand").style.display ="block";
+					 document.getElementById("OR").style.display ="none";
+					 document.getElementById("Reference").style.display ="none";
+					 document.getElementById("ref_code").style.display ="none";
+					 document.getElementById("okay_button").style.display ="none";
+				 }
+				 
+				 function hclick()
+				 {
+					document.getElementById("btn_experienced").style.display ="none";
+					document.getElementById("btn_freshgrad").style.display ="none";
+					document.getElementById("btn_intern").style.display ="none";
+					document.getElementById("Candidatetype").style.display ="none";
+					document.getElementById("OR").style.display ="none";
+					document.getElementById("okay_button").style.display ="block";
+					
 
-				
-
-				<div class="strike" style="margin-bottom:3%;">
+				 }
+				 
+				 
+				 </script>
+                
+				<div class="strike" style="margin-bottom:3%;" id="OR">
 
 					<span style="font-size:17px;"><b>OR</b></span>
 
@@ -250,12 +309,11 @@ $(document).ready(function(){
 
 			
 
-			<h6 title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6>
+			<center><h6 id="Reference" title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6></center>
 
 			<center>
 
-				<input type="text" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
-
+				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
 				<?php 
 
 				if(isset($_SESSION['refcode_not_found'])){
@@ -279,15 +337,12 @@ $(document).ready(function(){
 				}
 
 				?>
-
 			</center>
 
 		</div>
 
 		<div class="modal-footer">
-
-			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button">Okay</button>
-
+			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button" name="okay_button">Okay</button>
 		</div>
 
     </div>
@@ -577,6 +632,8 @@ $(document).ready(function(){
 
 										<option value="51,000.00 - 55,000.00">&#8369;51,000.00 - &#8369;55,000.00</option>
 
+										<option value="More than 55,000.00"> More than &#8369;55,000.00</option>
+
 									</select><span class="input-group-addon add-on"><span  class="fa fa-arrow-down"></span>
 
 								</div>
@@ -815,11 +872,11 @@ $(document).ready(function(){
 
 											<option value="Linked In">Linked In</option>
 
-											<option value="Website">AndersonGroup Site</option>
+											<option value="AndersonGroup Site">AndersonGroup Site</option>
 
 											<option value="Facebook">Facebook</option>
 
-											<option value="From a Friend">Referral</option>
+											<option value="Referral">Referral</option>
 
 											<option value="Job street">Jobstreet</option>
 
@@ -1021,13 +1078,17 @@ $(document).ready(function(){
 
 								<select class="select form-control" id="bloodtype" name="btype">
 
-									<option value="O+">O+</option><option value="BA">B+&#45;</option>
+									<option value="A+">A+</option>
+									<option value="Am">A&#45;</option>
 
-									<option value="Om">O&#45;</option><option value="Bm">B&#45;</option>
+									<option value="BA">B+</option>
+									<option value="Bm">B&#45;</option>
 
-									<option value="A+">A+</option><option value="AB+">AB+</option>
+									<option value="AB+">AB+</option>
+									<option value="ABm"> AB&#45;</option>
 
-									<option value="Am">A&#45;</option><option value="ABm"> AB&#45;</option>
+									<option value="O+">O+</option>
+									<option value="Om">O&#45;</option>
 
 								</select>
 
@@ -3547,6 +3608,25 @@ $(document).ready(function(){
         }); 
 
 	</script>	
+	
+	<script type="text/javascript">
+	
+		$("#btn_intern").click(function(){
+			$("button").removeClass("active");
+			$(this).addClass("active");
+			document.getElementById("app_stat").value = 'grad';
+			$('#employers_name1').attr('required', false);
+			$('#employers_address').attr('required', false);
+			$('#position-title').attr('required', false);
+			$('#reason').attr('required', false);
+			$('#monthlysalary').attr('required', false);
+			$("#employers_name1").blur();
+			$("#employers_address").blur();
+			$("#position-title").blur();
+			$("#reason").blur();
+		});
+	
+	</script>
 
 	<script type="text/javascript">
 
