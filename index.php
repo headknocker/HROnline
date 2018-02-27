@@ -41,99 +41,46 @@
 	<title>Application Form</title>
 
 	<meta charset="utf-8">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<meta property="og:title" content="Anderson Recruits">
-
 	<meta property="og:description" content="Application Form">
-
 	<meta property="og:image" content="http://andersongroup.ph/application/img/recruitslogo.jpg">
-
 	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>	
-
 	<link rel="shortcut icon" href="favicon.ico" />	
-
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
 	<link rel="stylesheet" type="text/css" href="css/jquery.dropdown.css">
-
 	<link rel="stylesheet" type="text/css" href="css/datepicker3.css">
-
 	<link rel="stylesheet" type="text/css" href="css/ripples.css">
-
 	<link rel="stylesheet" type="text/css" href="css/inputmask.css">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
 	<!-- Javascript file -->
-
 	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-
 	<script type="text/javascript" src="js/material.js"></script>
-
 	<script type="text/javascript" src="js/angular.js"></script>
-
 	<script type="text/javascript" src="js/app.js"></script>
-
 	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-
 	<script type="text/javascript" src="js/jquery.dropdown.js"></script>
-
 	<script type="text/javascript" src="js/inputmask.js"></script>
-
 	<script type="text/javascript" src="js/jquery.inputmask.js"></script>
-
 	<!-- link for style.css -->
 	<link rel="stylesheet" type="text/css" href="custom_css/index.css">
-	
-
-	
-
 	<!--THIS CODE HAS BEEN ADDED BY MARKETING TEAM TO TRACK CONVERSIONS OF THE APPLICATION FORM----DO NOT DELETE OR MODIFY-->
-
 	<!-- Facebook Pixel Code -->
-
     <script>
-
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
     fbq('init', '784252355009373'); // Insert your pixel ID here.
-
     fbq('track', 'PageView');
-
     </script>
-
-    <noscript><img height="1" width="1" style="display:none"
-
-    src="https://www.facebook.com/tr?id=784252355009373&ev=PageView&noscript=1"
-
-    /></noscript>
-
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=784252355009373&ev=PageView&noscript=1"></noscript>
     <!-- DO NOT MODIFY -->
-
     <!-- End Facebook Pixel Code -->
-
-   
-
-    
-
     <!--END OF THE FACEBOOK TRACKING CODE-->
-
-	
-
 	<script type="text/javascript">
 
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -199,29 +146,13 @@ $(document).ready(function(){
 <!-- OnPageLoad Modal -->
 
 <div id="myModal" class="modal fade" role="dialog">
-
 	<div class="modal-dialog">
-
 	<!-- Modal content-->
-
 		<div class="modal-content">
-
-
-
 			<a href="http://andersongroup.ph/">
-
 		<center> <img class="img-fluid logo" src="aa.png" style="width:80%;height:100%;"> </center>
 
 	</a>
-
-		<!--div class="modal-header">
-
-			<h5 class="modal-title" id="ARMS" style="color:black;"><b style="color:black;">A</b>nderson <b style="color:black;">R</b>ecruitment <b style="color:black;">M</b>anagement <b style="color:black;">S</b>ystem</h5>
-
-		</div-->
-
-		
-
 		<div class="modal-body">
             <hr>
 			<center><h6 id="Candidatetype">Choose Candidate Type:</h6></center>
@@ -235,15 +166,22 @@ $(document).ready(function(){
 				<button type="button" onclick="show()" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
              
 				<h4 id="Authorizationletter">Authorization Letter</h4><br>
-				<p id="letter">I have read the Privacy Policy and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
+				<p id="letter" style="text-align:justify;">&nbsp;&nbsp;&nbsp;I have read the <a href="http://andersongroup.ph/privacy-policy" target="_blank"> Privacy Policy </a> and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
 				   organize,update or modify, retrieve, consult, use, consolidate, block, erase or destruct my personal data as part of my information.
 				   I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my personal data,
 				   and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the Philippines, 
 				   Data Privacy Act of 2012 and Regulation (EU) 2016/679, General Data Protection Regulation, whichever is applicable, 
 				   and its corresponding implementing rules and regulations.</p>
-				   
-				<button type="button" class="btn btn-primary pull-center" data-dismiss="modal" id="IUnderstand">I Understand</button>
-				  
+				<div id="applicant_blk" style="display: none;">
+					<center>
+						<h5 style="margin-bottom: 5px;font-size: 15px;font-weight: bold;">Enter your Full Name:</h5>   
+						<input type="text"  onchange="press_name();" name="applicant_name" id="applicant_name" class="form-control" style="margin-top: 5px;">
+						
+					</center> 
+					<button type="button" class="btn btn-primary pull-center" data-dismiss="modal" id="submit"> Submit</button>
+				</div>
+				<button type="button"  onclick="agree_name();" class="btn btn-primary pull-center"  id="IUnderstand">I Understand</button>
+
 				 <style>
 				 #Authorizationletter
 				 {
@@ -258,7 +196,6 @@ $(document).ready(function(){
 				 {
 					  display: none;
 					  text-align: center;
-
 				 }
 				 #okay_button
 				 {
@@ -271,6 +208,17 @@ $(document).ready(function(){
 				 </style>
 				 
 				 <script type="text/javascript">
+
+				 function agree_name(){
+				 	document.getElementById("letter").style.display="none";
+				 	document.getElementById("applicant_blk").style.display="block";
+				 	document.getElementById("Authorizationletter").style.display ="none";
+				 	document.getElementById("btn_experienced").style.display ="none";
+					document.getElementById("btn_freshgrad").style.display ="none";
+					document.getElementById("btn_intern").style.display ="none";
+					document.getElementById("Candidatetype").style.display ="none";
+					document.getElementById("IUnderstand").style.display ="none";
+				 } 	
 				 
 				 function show(){
 					 document.getElementById("letter").style.display ="block"; 
@@ -290,52 +238,38 @@ $(document).ready(function(){
 					document.getElementById("Candidatetype").style.display ="none";
 					document.getElementById("OR").style.display ="none";
 					document.getElementById("okay_button").style.display ="block";
+					document.getElementById("blk").style.display="none";
+					document.getElementById("agree_name").style.display="none";
 					
 
 				 }
 				 
-				 
 				 </script>
-                
+
+				 <script type="text/javascript">
+				 	function press_name(){
+
+				 		 document.getElementById("nameofapplicant").value = document.getElementById("applicant_name").value;
+				 	}
+				 </script>
 				<div class="strike" style="margin-bottom:3%;" id="OR">
-
 					<span style="font-size:17px;"><b>OR</b></span>
-
 				</div>
-
-				
-
 			</center>
-
-			
-
 			<center><h6 id="Reference" title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6></center>
-
 			<center>
-
 				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
 				<?php 
-
 				if(isset($_SESSION['refcode_not_found'])){
-
 					if($_SESSION['refcode_not_found']=='yes'){
-
 						echo'<p style="color:red;margin-top:-3%;">Invalid Reference Code.</p>';
-
 						$_SESSION['refcode_not_found']='no';
-
 					}else if($_SESSION['refcode_not_found']=='submitted'){
-
 						echo'<p style="color:red;margin-top:-2%;font-size:13px;">Your application form has been viewed already.<br> Please wait for an email.</p>';
-
 						$_SESSION['refcode_not_found']='no';
-
 					}
-
 					unset($_SESSION['refcode_not_found']);
-
 				}
-
 				?>
 			</center>
 
@@ -360,41 +294,22 @@ $(document).ready(function(){
 
 
 <div class="modal fade" id="SaveQuitModal" role="dialog">
-
   <div class="modal-dialog popdialog">
-
     <div class="modal-content">
-
      <div class="modal-header">
-
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
-
 			<h5 class="modal-title">Save and Quit</h5>
-
 	</div>
-
       <div class="modal-body">
-
         <h3>Are you sure?<h3>
-
-		
-
 		<p style="font-size:11px;color:#ff6d00;padding-top:2%;" id="SaveandQuit"></p>
-
 		</div>
-
       <div class="modal-footer">
-
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times-circle" aria-hidden="true"></i> &nbsp; No</button>
-
         <button type="button" class="btn btn-primary" id="ref_yes"><i class="fa fa-check-circle" aria-hidden="true"></i> &nbsp; Yes</button>
-
       </div>
-
     </div>
-
   </div>
-
 </div>
 
 
@@ -422,22 +337,9 @@ $(document).ready(function(){
 		<div class="col-md-10">
 
 			<form action="serverside.php" name="myForm" autocomplete="off" novalidate id="myForm" ng-app="" method="post" enctype="multipart/form-data" data-toggle="validator">
-
-			
-
-			
-
 				<div class="card container" id="container1">
-
-				
-
 					<img class="img" src="lady liberty.png" style=" width: 85%;" >
-
 					<a class="btn btn-raised btn-sm btn-primary pull-right" title="Temporary save your unfinished form. Please Come back to comple the form." id="saveQuit" style="color:white;float:right;text-decoration:none;margin-top:3%;">Save and Quit</a>
-
-					
-
-					
 
 					<div class="row col-md-12">
 
@@ -448,6 +350,8 @@ $(document).ready(function(){
 							
 
 							<div class="form-group">
+								<input type="text"  id="nameofapplicant" name="nameofapplicant" class="form-control">
+								<!-- <input type="text" name="nameofapplicant" id="nameofapplicant" class="form-control"> -->
 
 							<br>
 
@@ -472,7 +376,7 @@ $(document).ready(function(){
 
 										include('connect.php');
 
-										$sql = "SELECT * FROM `tbl_position` ORDER BY position_name ASC";
+										$sql = "SELECT * FROM `tbl_position` WHERE status = '1' ORDER BY position_name ASC";
 
 										$result = $conn->query($sql);
 
@@ -763,9 +667,7 @@ $(document).ready(function(){
 							<div class="form-group label-floating">
 
 								<label for="placeofbirth" class="control-label">Select place of birth <label class="text-danger">*</label></label>
-
 								<input type="text" value="" name="bplace" id="placeofbirth" class="form-control" data-toggle="modal" data-target="#modalPB" onkeydown="return false;" style="color: transparent;text-shadow: 0 0 0 black;" autocomplete="off" required>
-
 								<div class="help-block with-errors" style="color: red"></div>
 
 								
@@ -781,32 +683,19 @@ $(document).ready(function(){
 								<select class="select form-control" name="citizen" id="citizen" >
 
 										      		<?php  
-
 						      							include('connect.php');
-
 						      							$sql = "SELECT * FROM `tbl_citizenship`";
-
 						      							$result = $conn->query($sql);
-
 						      							while($row = $result->fetch_assoc()){
-
-						      								if ($row['id'] == 137) {
-
+						      								if ($row['id'] == 68) {
 						      									echo "<option value='".$row['Citizenship']."' selected>".$row['Citizenship']."</option>";
-
 						      								}
-
 						      								else{
-
 						      									echo "<option value='".$row['Citizenship']."'>".$row['Citizenship']."</option>";		
-
 						      								}
-
 						      							}
-
 						      						?>
-
-										      	</select>
+								</select>
 
 								<div class="help-block with-errors" style="color: red"></div>
 
@@ -911,120 +800,62 @@ $(document).ready(function(){
 				</div> <!-- End of container 1 -->
 
 
-
-				<div id="modalPB" class="modal fade" role="dialog" >
-
-								  <div class="modal-dialog">
-
-								    <div class="modal-content">
-
-								      <div class="modal-header">
-
-								      	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-
-								        <h3 class="modal-title"><center>Select your birthplace</center></h3>
-
-								      </div>
-
-								      <div class="modal-body">
-
-								      <div class="form-group">
-
-								      	<div class="">
-
-								      		<label>
-
-								      			<input type="checkbox" name="outsidecountry" onclick="if(this.checked){showCountry()} else {hideCountry()}"> If birthplace is outside of the Philippines
-
-								      		</label>
-
-								      	</div>
-
-								      </div>
-
-								      <div id="country">
-
-									      <select class="select form-control" name="Country_name" id="countryid" onchange="countryfunction(this)">
-
-									      		<?php  
-
-					      							include('connect.php');
-
-					      							$sql = "SELECT * FROM `tbl_country`";
-
-					      							$result = $conn->query($sql);
-
-					      							while($row = $result->fetch_assoc()){
-
-					      							echo "<option value='".$row['Country_name']."'>".$row['Country_name']."</option>";
-
-
-
-					      							}
-
-					      						?>
-
-									      	</select>
-
-								      	</div>
-
-								      	<div id="phil">
-
-									      	<div id="region">
-
-											<b>Region</b>
-
-										      	<select class="select form-control" name="Region_name" id="regionid" onchange="regionfunction(this)">
-
-										      		<?php  
-
-						      							include('connect.php');
-
-						      							$sql = "SELECT * FROM `tbl_region`";
-
-						      							$result = $conn->query($sql);
-
-						      							while($row = $result->fetch_assoc()){
-
-						      							echo "<b>Region</b><option value='".$row['id']."_".$row['Region_name']."'>".$row['Region_name']."</option>";
-
-						      							}
-
-						      						?>
-
-										      	</select>
-
-										    </div>  	
-
-										    <div id="province">
-
-										    	
-
-										    </div>
-
-											<div id="cities" style="padding-top: 15px">
-
-												
-
-											</div>
-
-										</div>
-
-									      </div>
-
-								      <div class="modal-footer">
-
-								      <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-
-								        
-
-								      </div>
-
-								    </div>
-
-								  </div>
-
-				</div>
+					<!-- modal1 -->
+			<div id="modalPB" class="modal fade" role="dialog" >
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h4 class="modal-title"><center>Select your birthplace</center></h4>
+			      </div>
+			      <div class="modal-body">
+			      <div class="form-group">
+			      	<div class="">
+			      		<label>
+			      			<input type="checkbox" name="outsidecountry" onclick="if(this.checked){showCountry()} else {hideCountry()}"> If Birthplace is outside the Philippines
+			      		</label>
+			      	</div>
+			      </div>
+			      <div id="country" style="display:none;">
+			      	<span style="font-weight: bold;">Country:</span>
+				      <select class="select form-control" name="Country_name" id="countryid" onchange="countryfunction(this)">
+				      		<?php  
+      							include('connect.php');
+      							$sql = "SELECT * FROM `tbl_country`";
+      							$result = $conn->query($sql);
+      							while($row = $result->fetch_assoc()){
+      							echo "<option value='".$row['Country_name']."'>".$row['Country_name']."</option>";
+      							}
+      						?>
+				      	</select>
+			      	</div>
+			      	<div id="phil">
+				      	<div id="region">
+				      		<span style="font-weight: bold;">Region:</span>
+					      	<select class="select form-control" name="Region_name" id="regionid" onchange="regionfunction(this)">
+					      		<?php  
+	      							include('connect.php');
+	      							$sql = "SELECT * FROM `tbl_region`";
+	      							$result = $conn->query($sql);
+	      							while($row = $result->fetch_assoc()){
+	      							echo "<option value='".$row['id']."_".$row['Region_name']."'>".$row['Region_name']."</option>";
+	      							}
+	      						?>
+					      	</select>
+					    </div>  	
+					    <div id="province" style="padding-top:5px;">
+					    </div>
+						<div id="cities" style="padding-top: 5px">
+						</div>
+					</div>
+				      </div>
+			      <div class="modal-footer">
+			      <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+	<!-- /modal1 -->
+			<!--  -->
 
 
 
@@ -1691,11 +1522,8 @@ $(document).ready(function(){
 							</div>
 
 							<div class="form-group label-floating">
-
 								<label class="control-label" for="fplace_birth">Place of Birth</label>
-
 								<input type="text" name="father_placebirth" id="fplace_birth" class="form-control" data-toggle="modal" data-target="#modalFPB"  readonly>
-
 							</div>
 
 						</div>
@@ -2458,29 +2286,6 @@ $(document).ready(function(){
 
 								</div>
 
-			                   <!--  <div class="col-md-6">
-
-			                    	<div class="form-group label-floating">
-
-			                    		<label class="control-label" for="pfrom"><i class="fa fa-calendar" ></i> From:</label>
-
-			                    		<input data-provide="datepicker"  name="elem_datefrom" id="pfrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
-
-			                    	</div>
-
-			                    </div>
-
-			                    <div class="col-md-6">
-
-			                    	<div class="form-group label-floating">
-
-			                    		<label class="control-label" for="pto"><i class="fa fa-calendar" ></i> To:</label>
-
-			                    		<input data-provide="datepicker" name="elem_dateto" id="pto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
-
-			                    	</div>
-
-			                    </div> -->
 
 	                    	</div>
 
@@ -2532,30 +2337,7 @@ $(document).ready(function(){
 
 
 
-		                    	<!-- <div class="col-md-6">
-
-		                    		<div class="form-group label-floating">
-
-		                    			<label class="control-label" for="sfrom"><i class="fa fa-calendar" ></i> From:</label>
-
-		                    			<input data-provide="datepicker" name="hs_datefrom" id="sfrom" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d">
-
-		                    		</div>
-
-		                    	</div>
-
-		                    	<div class="col-md-6">
-
-		                    		<div class="form-group label-floating">
-
-		                    			<label class="control-label" for="sto"><i class="fa fa-calendar" ></i> To:</label>
-
-		                    			<input data-provide="datepicker" name="hs_dateto" id="sto" class="form-control date" data-date-autoclose="true"  data-date-min-view-mode="1" data-date-format="M yyyy" data-date-end-date="-1d" readonly>
-
-		                    		</div>
-
-		                    	</div> -->
-
+		                    	
 		                    </div>
 
 	                    	<div class="col-md-4">
@@ -3190,49 +2972,7 @@ $(document).ready(function(){
 
 					      </div>
 
-					      <!--<div class="col-md-4">
-
-					      	<div class="form-group label-floating">
-
-						        <label class="control-label" style="padding-bottom:9%;" for="source">Application Source</label><label class="text-danger">*</label></label>
-
-						        <select id="source" name="sourcex" class="select form-control" onchange="showsource(this)">
-
-									<option value="-Select Here-">-Select Here-</option>
-
-						        	<option value="Linked In">Linked In</option>
-
-						        	<option value="Website">Website</option>
-
-						        	<option value="Facebook">Facebook</option>
-
-						        	<option value="From a Friend">From a Friend</option>
-
-						        	<option value="Job street">Jobstreet</option>
-
-						        	<option value="Others">Others</option>
-
-						        </select>
-
-								<span style="color: red;display:none;" id="source_validator">Select Application Source.</span>
-
-					      	</div>
-
-					      </div>
-
-						  <div class="col-md-4">
-
-							<div id="souceothers" class="form-group label-floating">
-
-						      	<label class="control-label" style="padding-bottom:9%;" for="sourcespec">Please specify</label>
-
-						      	<input type="text" id="sourcespec" class="form-control" name="sourcespec">
-
-						    </div>
-
-						  </div>-->
-
-						  
+					     
 
 						</div>
 
@@ -3398,7 +3138,7 @@ $(document).ready(function(){
 
 										<td> <input style="width:85%; margin-left: 5%;" type="text" id="srcs" readonly> 
 
-										<input style="width:43%; margin-left: 5%;" type="text" id="srcsspec" readonly> </td>
+									 </td>
 
 									</tr>
 
@@ -3922,60 +3662,32 @@ $(document).ready(function(){
 
 						//for manila click in selectTag
 
-						document.getElementById('cities').innerHTML = "<b>City/Municipality</b><select class='select form-control' onchange='ncrfunction(this)' name='cities' id='cityid'>"+data+"</select>";
-
+						document.getElementById('cities').innerHTML = "<b>City/Municipality:</b><select class='select form-control' onchange='ncrfunction(this)' name='cities' id='cityid'>"+data+"</select>";
 		     			document.getElementById('province').style.display='none';
-
 		     			document.getElementById('birthPlaceProvince').value='';
-
-						
-
-						
-
 					},
-
 					error: function(data){
-
 						alert(data);	
-
 					}
-
 				});
-
 			}
-
 			else{
-
 				$.ajax({
-
 					url: "address.php",
-
 					type: "POST",
 
 					data: {rid: rid, rname: rname, ajaxprovince: 1},
-
 					success: function(data){
-
 						//for province click in selectTag
-
 		     			document.getElementById('province').style.display='block';
-
-						document.getElementById('province').innerHTML = "<b>Province</b><select class='select form-control' onchange='provincefunction(this)' name='province' id='provinceid'>"+data+"</select>";
-
+						document.getElementById('province').innerHTML = "<b>Province:</b><select class='select form-control' onchange='provincefunction(this)' name='province' id='provinceid'>"+data+"</select>";
 		     			document.getElementById('cities').style.display='block';
-
 					},
-
 					error: function(data){
-
 						alert(data);	
-
 					}
-
 				});
-
 			}
-
 		}
 
 
