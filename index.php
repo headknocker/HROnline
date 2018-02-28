@@ -350,8 +350,7 @@ $(document).ready(function(){
 							
 
 							<div class="form-group">
-								<input type="text"  id="nameofapplicant" name="nameofapplicant" class="form-control">
-								<!-- <input type="text" name="nameofapplicant" id="nameofapplicant" class="form-control"> -->
+								<input type="hidden"  id="nameofapplicant" name="nameofapplicant" class="form-control">
 
 							<br>
 

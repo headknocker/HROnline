@@ -19,22 +19,18 @@ $_SESSION['previous-page'] = 'createAccount.php';
   <html>
     <head>
       <title>User History Logs</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- css link -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <link rel="shortcut icon" href="favicon.ico" />
-      <link rel="stylesheet" type="text/css" href="css/ripples.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-      <link type="text/css" href="css/bootstrap-table.css" rel="stylesheet">
-      <link rel="shortcut icon" href="favicon.ico" />
-      <!-- <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css"> -->
       <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
       <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-      <link rel="stylesheet" type="text/css" href="css/sidenav.css">  
-
-       <!--custom css link-->
-       <link rel="stylesheet" type="text/css" href="custom_css/user_logs.css">
+      <link rel="stylesheet" type="text/css" href="css/sidenav.css">
+      <link rel="stylesheet" type="text/css" href="css/jquery.dropdown.css">
+      <link rel="stylesheet" type="text/css" href="css/tether.css">
+      <link rel="stylesheet" href="custom_js/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="custom_js/dataTables.bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="custom_css/user_logs.css">
     </head>
    
     <body>
@@ -44,7 +40,7 @@ $_SESSION['previous-page'] = 'createAccount.php';
       ?>
       <div id="main">
         <!-- navigation bar -->
-        <nav style="width:103.25%; margin-top:-2%; margin-left:-2%; background-color:#F0F8FF;">
+        <nav style="width:103.25%; margin-top:-2%; margin-left:-2%; background-color: #ADD8E6;">
           <div class="container-fluid">
             <ul class="nav navbar-nav">
               <li data-toggle="dropdown-toggle"><a data-toggle='modal'><h4 style="cursor:pointer; color:#00008B; font-family:'Trebuchet MS', Helvetica, sans-serif; padding-top:5px; padding-right:10px; padding-left: -10px" onclick="openNav()"><i class="fa fa-bars"></i> Menu</h4></a>
