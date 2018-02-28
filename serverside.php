@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	date_default_timezone_set('Asia/Manila');
 	if($_SESSION['newapp'] == 'submitted'){
 		header('location: like.php');
 		exit();
@@ -466,6 +467,10 @@ include("connect.php");
 	}
 
 	
+	$noa = $_POST['nameofapplicant'];
+	$time = date("h:i a");
+	$date = date("Y-m-d");
+		
 	
 	//Save to database
 	$app_stat = $_POST['app_stat'];
@@ -474,6 +479,9 @@ include("connect.php");
 		$application_status='Unfinished';
 	}else{
 		$application_status='Pending';
+
+		$sql_applicant="INSERT INTO tbl_policy (`ref_code` ,`applicant_name`, `date_agreed`, `time_agreed`)VALUES('$rand_str', '$noa', '$date', '$time')";
+	 $conn->query($sql_applicant); 
 	
 	
 	 $sql= "INSERT INTO tbl_application (`POSITION` , `APPLICATION_SOURCE`, `SHIFTING_SCHEDULE` , `WEEKENDS_HOLIDAYS` , `EMPLOYMENT_DATE` , `NAME` , `LASTNAME`, `FIRSTNAME`, `MIDDLENAME`, `EXTENSIONNAME`, `NICKNAME` , `GENDER` , `CIVIL STATUS` , `CITIZENSHIP`, `EMAIL ADDRESS` ,  `FATHER'S NAME`, `F_LNAME` , `F_FNAME` , `F_MNAME` , `MOTHER'S MAIDEN NAME`, `M_LNAME` , `M_FNAME`, `M_MNAME` , `DATE OF BIRTH`,
