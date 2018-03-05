@@ -467,7 +467,7 @@ include("connect.php");
 	}
 
 	
-	$noa = $_POST['nameofapplicant'];
+	$myname = $lname." , ".$fname." ".$mname." ".$ename;
 	$time = date("h:i a");
 	$date = date("Y-m-d");
 		
@@ -480,7 +480,7 @@ include("connect.php");
 	}else{
 		$application_status='Pending';
 
-		$sql_applicant="INSERT INTO tbl_policy (`ref_code` ,`applicant_name`, `date_agreed`, `time_agreed`)VALUES('$rand_str', '$noa', '$date', '$time')";
+		$sql_applicant="INSERT INTO tbl_policy (`ref_code` ,`applicant_name`, `date_agreed`, `time_agreed`)VALUES('$rand_str', '$myname', '$date', '$time')";
 	 $conn->query($sql_applicant); 
 	
 	
