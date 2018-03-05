@@ -159,29 +159,27 @@ $(document).ready(function(){
 
 			<center>
 
-				<button type="button" onclick="show()" id="btn_experienced" style="padding-bottom:2%;" class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
+				<button  type="button" onclick="show();" id="btn_experienced" style="padding-bottom:2%;" class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
 
-				<button type="button" onclick="show()" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
+				<button  type="button" onclick="show();" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
 
-				<button type="button" onclick="show()" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
+				<button  type="button" onclick="show();" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
              
-				<h4 id="Authorizationletter">Authorization Letter</h4><br>
-				<p id="letter" style="text-align:justify;">&nbsp;&nbsp;&nbsp;I have read the <a href="http://andersongroup.ph/privacy-policy" target="_blank"> Privacy Policy </a> and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
+				
+				<form name="credentials" id="credentials">
+					<h4 id="Authorizationletter">Authorization Letter</h4><br>
+					<p id="letter" style="text-align:justify;">&nbsp;&nbsp;&nbsp;I have read the <a href="http://andersongroup.ph/privacy-policy" target="_blank" title="Click here to view company privacy policy" "> Privacy Policy </a> and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
 				   organize,update or modify, retrieve, consult, use, consolidate, block, erase or destruct my personal data as part of my information.
 				   I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my personal data,
 				   and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the Philippines, 
 				   Data Privacy Act of 2012 and Regulation (EU) 2016/679, General Data Protection Regulation, whichever is applicable, 
 				   and its corresponding implementing rules and regulations.</p>
-				<div id="applicant_blk" style="display: none;">
-					<center>
-						<h5 style="margin-bottom: 5px;font-size: 15px;font-weight: bold;">Enter your Full Name:</h5>   
-						<input type="text"  onchange="press_name();" name="applicant_name" id="applicant_name" class="form-control" style="margin-top: 5px;">
-						
-					</center> 
-					<button type="button" class="btn btn-primary pull-center" data-dismiss="modal" id="submit"> Submit</button>
-				</div>
-				<button type="button"  onclick="agree_name();" class="btn btn-primary pull-center"  id="IUnderstand">I Understand</button>
-
+					<div id="ckAgree" name="ckAgree" style="display: none;">
+						<label><input type="checkbox" name="chkAgree" id="chkAgree" onchange="document.getElementById('IUnderstand').disabled = !this.checked;" > I accept the Privacy Policy of Anderson Group Inc.</label>
+					</div>
+						<button type="button"  onclick="agree_name('e');" class="btn btn-primary pull-center"  id="IUnderstand" disabled="">I Agree</button>
+				</form>
+				
 				 <style>
 				 #Authorizationletter
 				 {
@@ -209,16 +207,6 @@ $(document).ready(function(){
 				 
 				 <script type="text/javascript">
 
-				 function agree_name(){
-				 	document.getElementById("letter").style.display="none";
-				 	document.getElementById("applicant_blk").style.display="block";
-				 	document.getElementById("Authorizationletter").style.display ="none";
-				 	document.getElementById("btn_experienced").style.display ="none";
-					document.getElementById("btn_freshgrad").style.display ="none";
-					document.getElementById("btn_intern").style.display ="none";
-					document.getElementById("Candidatetype").style.display ="none";
-					document.getElementById("IUnderstand").style.display ="none";
-				 } 	
 				 
 				 function show(){
 					 document.getElementById("letter").style.display ="block"; 
@@ -228,6 +216,12 @@ $(document).ready(function(){
 					 document.getElementById("Reference").style.display ="none";
 					 document.getElementById("ref_code").style.display ="none";
 					 document.getElementById("okay_button").style.display ="none";
+					 
+					 document.getElementById("btn_experienced").style.display ="none";
+					 document.getElementById("btn_freshgrad").style.display ="none";
+					 document.getElementById("btn_intern").style.display ="none";
+					 document.getElementById("Candidatetype").style.display ="none";
+					 document.getElementById("ckAgree").style.display="block";
 				 }
 				 
 				 function hclick()
@@ -240,18 +234,17 @@ $(document).ready(function(){
 					document.getElementById("okay_button").style.display ="block";
 					document.getElementById("blk").style.display="none";
 					document.getElementById("agree_name").style.display="none";
-					
+					document.getElementById("ckAgree").style.display="none";
+				 }
 
+				 function agree_name(e){
+
+				 	alert("Success! You have agreed to our privacy policy.");
+				 	$('#myModal').modal('hide');
 				 }
 				 
 				 </script>
 
-				 <script type="text/javascript">
-				 	function press_name(){
-
-				 		 document.getElementById("nameofapplicant").value = document.getElementById("applicant_name").value;
-				 	}
-				 </script>
 				<div class="strike" style="margin-bottom:3%;" id="OR">
 					<span style="font-size:17px;"><b>OR</b></span>
 				</div>
@@ -351,6 +344,7 @@ $(document).ready(function(){
 
 							<div class="form-group">
 								<input type="hidden"  id="nameofapplicant" name="nameofapplicant" class="form-control">
+								<!-- <input type="text" name="nameofapplicant" id="nameofapplicant" class="form-control"> -->
 
 							<br>
 
