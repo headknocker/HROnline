@@ -1,69 +1,33 @@
 <?php
 
 	include('auth.php');/*session_start()*/
-
 	$_SESSION['previous-page'] = 'google.php';
-
+	$id = isset($_GET['id']) ? $_GET['id']:'';
 ?>
-
-
-
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 	<title>Application List</title>
-
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="shortcut icon" href="favicon.ico" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1; charset=UTF-8">
-
-	<!--meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1;">
-
-    
-
-    
-
-	<!-- <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css"> -->
-
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
-
 	<link rel="stylesheet" type="text/css" href="css/dataTables.material.css">
-
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-clockpicker.css">
-
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-
 	<link rel="stylesheet" type="text/css" href="css/sidenav.css">
-
 	<link rel="stylesheet" type="text/css" href="css/datepicker3.css">
-
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-timepicker.min.css">
-
 	<link rel = "stylesheet" type = "text/css" href = "css/dataTables.tableTools.min.css">
-
 	<link rel = "stylesheet" type = "text/css" href = "css/dataTables.tableTools.css">
-
 	<link rel = "stylesheet" type = "text/css" href = "css/buttons.dataTables.min.css">
-
 	<link rel = "stylesheet" type = "text/css" href = "css/buttons.dataTables.css">
-
 	<link rel = "stylesheet" type = "text/css" href = "css/jquery.dataTables.min.css">
-
-
-
-
 	</head>
 
 <body style = 'background-color: white'>
-
  <?php  header('Content-Type: text/html; charset=ISO_8859-1'); ?>
-
 <style type="text/css">
 .showhidden{
 	pointer-events: none;
@@ -71,223 +35,73 @@
 .sb-search {
 
 	position: relative;
-
 	margin-top: 10px;
-
 	width: 0%;
-
 	min-width: 60px;
-
 	height: 60px;
-
 	float: right;
-
 	overflow: hidden;
-
-
-
 	-webkit-transition: width 0.3s;
-
 	-moz-transition: width 0.3s;
-
 	transition: width 0.3s;
-
-
-
 	-webkit-backface-visibility: hidden;
-
 }
 
 #myTable tr.selected {
-
-background-color: #83b4ef !important; //color when selected
-
+	background-color: #83b4ef !important; //color when selected
 }
-
-
-
-	.active {
-
-		background-color: white;
-
-	}
-
-	ul {
-
-	  list-style-type: none;
-
-	}
-
-		#bgImg {
-
-		
-
-		  position: absolute;
-
-		  top: 1%;
-
-		  left: 8%;
-
-		  right: 5%;
-
-		  z-index: 0;
-
-		  background-attachment: fixed;
-
-		  background-position: center;
-
-
-
- 
-
-	}
-
-	
-
+.active {
+	background-color: white;
+}
+ul {
+	list-style-type: none;
+}
+#bgImg {
+  	position: absolute;
+  	top: 1%;
+  	left: 8%;
+  	right: 5%;
+  	z-index: 0;
+  	background-attachment: fixed;
+  	background-position: center;
+}
 #ulPrint div a, #ulSave div a{
-
 	padding: 0;
-
-border: none;
-
-background: none;
-
-
-
+	border: none;
+	background: none;
 }
-
-	
-
-	#ulPrint div a span, #ulSave div span{
-
+#ulPrint div a span, #ulSave div span{
 	float: left;
-
-
-
 }
 
 </style>
-
 	<?php  
-
-	$id = isset($_GET['id']) ? $_GET['id'] : ' ';
-
-		echo '
-	<style>
-		h5 {
-			color:black;
-
-		}
-		h5:hover {
-			color:white;
-			
-		}
-		.navi:hover{
-			background-color: #00008B;
-			color: white;
-		}
-	</style>
-	
-	<div id="mySidenav" class="sidenav" style="background: url(pic4.jpg);">
-	
-	<img src="adg1.png" class="img-responsive" width="60%" style="margin-bottom: 10%; margin-left: 4em;">
-	<img src="adg.png" class="img-responsive"  width="100%" style=" padding: 5px; margin-top: 5px; margin-bottom: 20%;">
-	<a href="javascript:void(0)" class="closebtn" style="color:black;" onclick="closeNav()">&times;</a> ';
-	
-	/*
-	if($_SESSION['neco'] == 1)
-		  echo'
-			<a href="google.php" style="background-color: #262626"><h5>Application List</h5></a>
-			<a style="text-align: left;" href="reports.php"><h5>Reports</h5></a>';
-	}
-	else if($_SESSION['neco'] == 2){
-		echo'
-			<a href="google.php"><h5>Application List</h5></a>
-			<a style="text-align: left; background-color: #262626; href="reports.php"><h5>Reports</h5></a>';
-	}
-	else if($_SESSION["neco"] == 3){
-		echo'
-			<a href="google.php"><h5>Application List</h5></a>
-			<a style="text-align: left;" href="reports.php"><h5>Reports</h5></a>';
-	}
-	*/
-	echo' 
-	
-	<a class="navi" href="google.php?id='.$id.'"><h5>Application List</h5></a>
-	<a class="navi" style="text-align: left;" href="applicants.php?id='.$id.'"><h5>Applicants</h5></a>
-	<a class="navi" style="text-align: left;" href="reports.php?id='.$id.'"><h5>Reports</h5></a>
-	<a class="navi" style="text-align: left;" href="addNewPosition.php?id='.$id.'"><h5>Add Position</h5></a>
-	<a class="navi" style="text-align: left;" href="createAccount.php?id='.$id.'"><h5>Create User Accounts</h5></a>
-	<a class="navi" style="text-align: left;" href="user_logs.php?id='.$id.'"><h5>User History Logs</h5></a>
-	<a class="navi" style="text-align: left;" href="about.php?id='.$id.'"> About Us</a>';
-   if($_SESSION['id'] == 1){
-	  echo '
-	  
-	  <a class="navi" style="text-align: left;" href="adminloginpage.php"><h5>Log out</h5></a>
-		
-	  </div>';
-   }else{
-	   //if($_SESSION['neco'] == 3){
-		   echo '<a class="navi" id = "accountAnchor" style="text-align: left;" href="account.php?id='.$id.'"><h5>Account</h5></a>
-		   
-				<a class="navi" style="text-align: left;" href="adminloginpage.php"><h5>Log out</h5></a>
-				 </div> ';
-	//}
-	
-}
+		include('sidenavhtml.php');
 
 		if(!empty($_SESSION['queryerror'])){
-
 			//unset($_SESSION['query']);
-
 			echo"<div id = 'removeme' class='alert alert-dismissible alert-danger'>
-
 					<button type='button' class='close' data-dismiss='alert'>×</button>
-
 					<p style='text-align:center;'><i class = 'fa fa-warning'></i> ".$_SESSION['queryerror']."</p>
-
 					</div>";							
-
 		}
-
 		if(!empty($_SESSION['uploadnotice'])){
-
 			if(strpos($_SESSION['uploadnotice'], 'rows successfully uploaded') !== false){
-
 				$noticeclass = 'alert alert-dismissible alert-success';
-
 			}else{
-
 				$noticeclass = 'alert alert-dismissible alert-danger';
-
 			}
-
 			echo"<div id = 'removeme' class='".$noticeclass."'>
-
 					<button type='button' class='close' data-dismiss='alert'>×</button>
-
 					<p style='text-align:center;'><i class = 'fa fa-warning'></i> ".$_SESSION['uploadnotice']."</p>
-
 					</div>";
-
 		}
-
 	?>
-
 	<div id="main" >
-
-
-
 			    <div id='refreshthis'>
-
 					<?php
-
 						include('connect.php');
-
 						$sql = "select (select COUNT(*) from tbl_application where  (DATEDIFF(now(),DATE_FORMAT(`Timestamp`, '%Y-%m-%d'))<60 and `Status` = 'Pending') or `Status` in('No Show','Rejected','Fail','Failed','failed') or `Status` like '%Interview%' or `Status` like '%Hired%' ) 
-
-						
-
 						+ (select COUNT(*) FROM tbl_application where source='jobfair' AND (DATEDIFF(now(),DATE_FORMAT(`Timestamp`, '%Y-%m-%d'))<60 and `Status` = 'Pending') or `Status` in('No Show','Rejected','Fail','Failed','failed') or `Status` like '%Interview%' ) as 'total', (select (select SUM(CASE WHEN Status = 'Pending' and  DATEDIFF(now(),DATE_FORMAT(`Timestamp`, '%Y-%m-%d'))<60 THEN 1 ELSE 0 END) from tbl_application)) as 'Pending',
 
 						(select (select SUM(CASE WHEN Status = 'Initial Interview' THEN 1 ELSE 0 END) from tbl_application)) as 'Initial Interview',

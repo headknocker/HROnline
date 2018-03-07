@@ -10,16 +10,19 @@ unset($_SESSION['neco']);
 <html>
 <head>
 	<title>Accounts Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css"> -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
-	<link rel="stylesheet" type="text/css" href="css/dataTables.material.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-clockpicker.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="css/sidenav.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery.dropdown.css">
-	<link rel="stylesheet" type="text/css" href="css/tether.css">
+	
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="css/sidenav.css">
+      <link rel="stylesheet" type="text/css" href="css/jquery.dropdown.css">
+      <link rel="stylesheet" type="text/css" href="css/tether.css">
+      <link rel="stylesheet" href="custom_js/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="custom_js/dataTables.bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="custom_css/user_logs.css">
+
     <style type="text/css">
     a:hover{
 		color:white;
