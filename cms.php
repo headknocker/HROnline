@@ -157,6 +157,7 @@ $ref_code = $_GET['id'];
 	      		<div class="form-group" style="margin-top:0px">
 	      			<label style="color:black;">Enter application source:</label>
 	      			<input type="text" name="source_app" id="source_app" class="form-control">
+	      			<p id="err"></p>
 	      		</div>	
 	      	</form>
       </div>
@@ -181,7 +182,7 @@ $ref_code = $_GET['id'];
 	      <div class="container">
 	      	<form method="POST" action="" id="frmUpdate" name="frmUpdate" enctype="multipart/form-data" onSubmit="return source_edit();">
 	      		<div class="form-group" style="margin-top:0px">
-	      			<input type="text" name="idField" id="idField">
+	      			<input type="hidden" name="idField" id="idField">
 	      			<label style="color:black;">Enter new application source:</label>
 	      			<input type="text" name="source" id="source" class="form-control">
 	      		</div>	
@@ -285,10 +286,10 @@ $ref_code = $_GET['id'];
 		function pos_add(){
 			 event.preventDefault();
 				var position  = $('input#position_name').val();
-				var description = document.getElementById("pos_desc").value
+				var description = document.getElementById("pos_desc").value;
 				$.ajax({
 					type: "POST",
-					url: 'config/add_source.php',
+					url: 'config/add_position.php',
 					data:{position : position, description : description},
 					success:(function(data){
 						alert(data);
@@ -296,9 +297,8 @@ $ref_code = $_GET['id'];
 					})
 				});
 			};
-
 	// remove position
-		 function remove_position(e) {
+		function remove_position(e) {
             var id = $(e).attr('data-content');
             var del = confirm("Are you sure to remove this source application?");
             if (del == true) {
@@ -332,11 +332,10 @@ $ref_code = $_GET['id'];
                     $('input#pos_id').val(dt.position_id);  
                 })
             });
-            
             return true;
         } 
         // submit edited position
-         function pos_edit(e){
+        function pos_edit(e){
 			 event.preventDefault();
 
 			 	var id = $('input#pos_id').val();
@@ -353,15 +352,14 @@ $ref_code = $_GET['id'];
 					})
 				});
 			}
-
-
 	</script>
+	<!-- *********************************************** -->
 	<script type="text/javascript"> 
 	// add new application source
 		function source_add(){
 			 event.preventDefault();
-				var source  = $('input#source_app').val();
-				$.ajax({
+			 var source = document.getElementById("source_app").value;
+    			$.ajax({
 					type: "POST",
 					url: 'config/add_source.php',
 					data:{source : source},
