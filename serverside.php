@@ -480,9 +480,46 @@ include("connect.php");
 	}else{
 		$application_status='Pending';
 
-		$sql_applicant="INSERT INTO tbl_policy (`ref_code` ,`applicant_name`, `date_agreed`, `time_agreed`)VALUES('$rand_str', '$myname', '$date', '$time')";
-	 $conn->query($sql_applicant); 
-	
+
+$pob = $_POST['bplace'];
+$cur_add = $_POST['currentaddress'].",".$_POST['current_home_num'].",".$_POST['current_barangay'];
+$prov_add = $_POST['provinceaddress'].",".$_POST['provincial_home_num'].",".$_POST['provincial_barangay'];
+$mail = $_POST['email'];
+$skype_accnt = $_POST['skype_userid'];
+$fb_accnt = $_POST['facebook'];
+$twitter_acct = $_POST['twitter'];
+$contact_pers = $_POST['contact_name'];
+$contact_dets = $_POST['contact_details'];
+
+
+		$sql_personalinfo = "INSERT INTO tbl_application_info(reference_code, first_name, middle_name, last_name, extension_name, nickname, dob, pob, gender, civil_status, citizenship, current_address, provincial_address, date_registered, status ) VALUES('$rand_str','$fname', '$mname', '$lname', '$ename', '$nickname', '$bday123', '$pob', '$sex', '$cstatus', '$citizenship', '$cur_add','$prov_add',Now(),'1')";
+			$conn->query($sql_personalinfo);
+
+		$sql_contact_info = "INSERT INTO tbl_contact_info (reference_no, email_address, skype_id, facebook_acct, twitter_acct, home_tel, mobile_no, contact_person, contact_no) VALUES('$rand_str', '$mail','$skype_accnt','$fb_accnt','$twitter_acct','$home_telnum','$mobile_num','$contact_pers','$contact_dets')";
+		$conn->query($sql_contact_info);
+
+		$sql_work_info = "INSERT INTO tbl_work_info (`reference_code`, `inclusive_date1`, `company_name1`, `company_address1`, `contact_no1`, `position_title1`, `supervisor_name1`, `salary1`, `reason_leaving1`, `inclusive_date2`, `company_name2`, `company_address2`, `contact_no2`, `position_title2`, `supervisor_name2`, `salary2`, `reason_leaving2`, `inclusive_date3`, `company_name3`, `company_address3`, `contact_no3`, `position_title3`, `supervisor_name3`, `salary3`, `reason_leaving3`, `inclusive_date4`, `company_name4`, `company_address4`, `contact_no4`, `position_title4`, `supervisor_name4`, `salary4`, `reason_leaving4`, `inclusive_date5`, `company_name5`, `company_address5`, `contact_no5`, `position_title5`, `supervisor_name5`, `salary5`, `reason_leaving5`)VALUES('$rand_str','$ONE_DATES', '$one_company','$one_compadd','$one_contactnum', '$ONE_POSITION', '$ONE_SUPERVISOR', '$ONE_SALARY', '$ONE_REASON', '$TWO_DATES','$two_company','$two_compadd','$two_contactnum', '$TWO_POSITION', '$TWO_SUPERVISOR', '$TWO_SALARY', '$TWO_REASON', '$THREE_DATES', '$three_company','$three_compadd','$three_contactnum', '$THREE_POSITION', '$THREE_SUPERVISOR', '$THREE_SALARY', '$THREE_REASON', '$FOUR_DATES','$four_company','$four_compadd','$four_contactnum', '$FOUR_POSITION', '$FOUR_SUPERVISOR', '$FOUR_SALARY', '$FOUR_REASON','$FIVE_DATES','$five_company','$five_compadd','$five_contactnum', '$FIVE_POSITION', '$FIVE_SUPERVISOR', '$FIVE_SALARY', '$FIVE_REASON')";
+		$conn->query($sql_work_info);
+
+
+$sch1 = $_POST['elem_name'];
+$dtcover1 = $_POST['elem_datefrom']."-".$_POST['elem_dateto'];
+$awards1 = $_POST['elem_scholarship'];
+$sch2 = $_POST['hs_name'];
+$dtcover2 = $_POST['hs_datefrom']."-".$_POST['hs_dateto'];
+$awards2 = $_POST['hs_scholarship'];
+$sch3 = $_POST['col_name'];
+$dtcover3 = $_POST['col_datefrom']."-".$_POST['col_dateto'];
+$degree = $_POST['col_degree'];
+$awards3 = $_POST['col_scholarship'];
+
+		$sql_education_info = "INSERT INTO tbl_education_info (`reference_no`, `primary_school`, `date_cover1`, `awards1`, `secondary_school`, `date_cover2`, `awards2`, `tertiary_school`, `date_cover3`, `degree_course`, `awards3`)VALUES('$rand_str','$sch1','$dtcover1','$awards1','$sch2','$dtcover2','$awards2','$sch3','$dtcover3','$degree','$awards3')";
+		$conn->query($sql_education_info);
+
+
+
+	 // $sql_insert="INSERT INTO tbl_applicantinfo (`reference_code` ,`firstname`,`middlename`,`lastname`,`status`, `date_registered`)VALUES('$rand_str','$fname','$mname','$lname','1',Now());";
+	 // $conn->query($sql_insert);
 	
 	 $sql= "INSERT INTO tbl_application (`POSITION` , `APPLICATION_SOURCE`, `SHIFTING_SCHEDULE` , `WEEKENDS_HOLIDAYS` , `EMPLOYMENT_DATE` , `NAME` , `LASTNAME`, `FIRSTNAME`, `MIDDLENAME`, `EXTENSIONNAME`, `NICKNAME` , `GENDER` , `CIVIL STATUS` , `CITIZENSHIP`, `EMAIL ADDRESS` ,  `FATHER'S NAME`, `F_LNAME` , `F_FNAME` , `F_MNAME` , `MOTHER'S MAIDEN NAME`, `M_LNAME` , `M_FNAME`, `M_MNAME` , `DATE OF BIRTH`,
 
