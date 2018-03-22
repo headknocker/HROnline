@@ -1,24 +1,13 @@
 <?php
 	//ALLOWED
 	include 'connect.php';
-		$position = $_POST['position'];
-		$description = $_POST['description'];
+		$source = $_POST['source'];
 
-
-		$sqlSelect = "SELECT * FROM tbl_position WHERE position_name = '".$position."'";
-		$result = $conn->query($sqlSelect);
-		$row = $result->fetch_assoc();
-		if ($_POST['position']==$row['position_name']) {
-			echo "Position already exist";
-		}
-		else{
-		$sql = "INSERT INTO tbl_position (position_name, position_desc, status) VALUES ('".$position."','".$description."','1')"; 
-		$res = $conn->query($sql); 
-		if ($res==true){
-			echo "New Position Added";
-			} 
-		else { 
-			echo "Failed to Add new Position";
-			}
+		$sqlInsert = "INSERT INTO tbl_sourceapplication (`source_name`, `flag`)VAlUES ('".$source."','0')";
+		$res = $conn->query($sqlInsert);
+		if ($res == true) {
+			echo "New application source added!";
+		}else{
+			echo "Something went wrong!";
 		}
 ?>
