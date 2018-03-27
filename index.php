@@ -750,17 +750,19 @@ $(document).ready(function(){
 
 										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)">
 
-											<option value="-Select Here-">-Select Here-</option>
-
-											<option value="Linked In">Linked In</option>
-
-											<option value="AndersonGroup Site">AndersonGroup Site</option>
-
-											<option value="Facebook">Facebook</option>
-
-											<option value="Referral">Referral</option>
-
-											<option value="Job street">Jobstreet</option>
+											<?php  
+				      							include('connect.php');
+				      							$sql = "SELECT * FROM `tbl_sourceapplication` WHERE flag = '0'";
+				      							$result = $conn->query($sql);
+				      							while($row = $result->fetch_assoc()){
+				      								if ($row['application_num'] == 1) {
+				      									echo "<option value='".$row['source_name']."' selected>".$row['source_name']."</option>";
+				      								}
+				      								else{
+				      									echo "<option value='".$row['source_name']."'>".$row['source_name']."</option>";		
+				      								}
+				      							}
+				      						?>
 
 										</select>
 
@@ -837,7 +839,7 @@ $(document).ready(function(){
 					    </div>  	
 					    <div id="province" style="padding-top:5px;">
 					    </div>
-						<div id="cities" style="padding-top: 5px">
+						<div id="cities" style="padding-top: 10px">
 						</div>
 					</div>
 				      </div>
@@ -2555,7 +2557,7 @@ $(document).ready(function(){
 
 	                    		<div class="form-group label-floating">
 
-	                    			<label class="control-label" for="dateg"><i class="fa fa-calendar" ></i> Date Grandted</label>
+	                    			<label class="control-label" for="dateg"><i class="fa fa-calendar" ></i> Date Granted</label>
 
 		                    			<input data-provide="datepicker" id="dateg" class="form-control date" name="dategranted" data-date-autoclose="true"  data-date-format="MM dd, yyyy" data-date-end-date="-1d" readonly>
 
@@ -3300,9 +3302,6 @@ $(document).ready(function(){
 	
 
 <!--End of Formbody -->
-
-
-
 	<script type="text/javascript" src="formvalidator.js"></script>
 
 	<script type="text/javascript" src="js/validator.js"></script>
@@ -4964,6 +4963,7 @@ $(document).ready(function(){
 
 
 	</script>
+	
 
 </body>
 

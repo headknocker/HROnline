@@ -59,10 +59,10 @@
           </form>
       </div>
                 <?php
-                  
-                  $date = date("Y-m-d h:i:sa");
-                  $slqInsertUser = "INSERT INTO tbl_userlogs (username, loggedInDate) VALUES ($username, $date)";
+                
+                  $slqInsertUser = "INSERT INTO tbl_userlogs (username, loggedInDate) VALUES ($username, CURRENT_TIMESTAMP())";
                  $result1 = $conn->query($slqInsertUser);
+                 
                   if(!empty($_SESSION['loginerror'])){
                     echo"<div id='loginerror' class='alert alert-dismissible alert-danger'>
                       <button type='button' class='close' data-dismiss='alert'>×</button>
@@ -70,9 +70,7 @@
                       </div>";
 					  
                   }
-                 
-                   
-				  
+
                 ?>
   <!-- scripts -->
   <script type="text/javascript" src="js/jquery-3.1.1.js"></script>

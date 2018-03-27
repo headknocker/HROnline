@@ -1,14 +1,14 @@
 <?php
 	require_once('auth.php');
 	require_once('connect.php');
-	$query = "SELECT ID, NAME, POSITION, `EMAIL ADDRESS` FROM tbl_application WHERE NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
-	$result = $conn->query($query);
-	$count = $result->num_rows;
-	if($count <= 1) {
-		$label = "applicant";
-	} else {
-		$label = "applicants";
-	}
+	// $query = "SELECT ID, NAME, POSITION, `EMAIL ADDRESS`, EMPLOYMENT_DATE, APPLICATION_SOURCE, `COL_Name of School` FROM tbl_application WHERE NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
+	// $result = $conn->query($query);
+	// $count = $result->num_rows;
+	// if($count <= 1) {
+	// 	$label = "applicant";
+	// } else {
+	// 	$label = "applicants";
+	// }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -36,7 +36,7 @@
 				</div>
 			</nav>
 		</div>
-		<div class="container">
+		<div class="">
 			<form id="search-form"> 
 				<input type="text" id="search" placeholder="Search" required />
 				<div id="search-icon"></div>
@@ -44,24 +44,56 @@
 			<div class="table-responsive">
 				<div id="result"></div>
 				<div id="initial-table">
-					<table id="applicants" class="table table-condensed table-hover">
+					<table id="applicants" class="table table-bordered table-hover table-responsive">
+
 						<thead>
+						<col width="200">
+						<col width="30">
 							<tr>
 								<th>Name</th>
-								<th>Position</th>
-								<th>Email</th>
+								<th>Position Applied</th>
+								<th>Employment Date</th>
+								<th>Application Source</th>
+								<th>Education Status</th>
+								<th>School</th>
+								<th>Course</th>
+
+
 							</tr>
 						</thead>
 						<tbody id="result">
 							<?php
-								while($row = $result->fetch_assoc()) {
-									echo '<tr class="applicant-data" data-toggle="modal" data-target="#applicant-info" data-id="'.$row['ID'].'">';
-									echo '<td>'.$row['NAME'].'</td>';
-									echo '<td>'.$row['POSITION'].'</td>';
-									echo '<td>'.$row['EMAIL ADDRESS'].'</td>';
-									echo '</tr>';
-								}
-							?>
+                        		include('connect.php');
+                        			$sql="SELECT ID, NAME, POSITION, `EMAIL ADDRESS`, EMPLOYMENT_DATE, APPLICATION_SOURCE, `COL_Name of School`, `GRAD_Degree Course`, COL_Graduated FROM tbl_application WHERE NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
+                          				$result = $conn->query($sql);
+                          					if($result->num_rows > 0){
+                          						 $count = $result->num_rows;
+													if($count <= 1) {
+														$label = "applicant";
+													} else {
+														$label = "applicants";
+													}
+                              					while($row = $result->fetch_assoc()) {
+                       		?>
+                       		<tr class="applicant-data" data-toggle="modal" data-target="#applicant-info" data-id="<?php echo $row['ID']; ?>">
+                       			<td><?php echo $row['NAME']; ?></td>
+                       			<td><?php echo $row['POSITION']; ?></td>
+                       			<td><?php echo $row['EMPLOYMENT_DATE']; ?></td>
+                       			<td><?php echo $row['APPLICATION_SOURCE']; ?></td>
+                       			<td><?php if ($row['COL_Graduated']=="YES") { echo "Graduated"; } 
+                       			else if ($row['COL_Graduated']=="NO") 
+                       			{
+                       				echo "Undergraduate";
+                       			}
+                       			?></td>
+                       			<td><?php echo $row['COL_Name of School']; ?></td>
+                       			<td><?php echo $row['GRAD_Degree Course']; ?></td>
+                       		</tr>
+                       		 <?php
+                            }
+                            }
+                            $conn->close();
+                            ?>
 						</tbody>
 					</table>
 					<center>
@@ -138,7 +170,7 @@
 		     	else {
 		           	$.ajax({
 		               type: "POST",
-		               url: "http://localhost/HROnline/search.php",
+		               url: "search.php",
 		               data: {
 		                   search: name
 		               },
@@ -149,7 +181,7 @@
 		            });
 				    $.ajax({
 		               type: "POST",
-		               url: "http://localhost/HROnline/jsonsearch.php",
+		               url: "jsonsearch.php",
 		               data: {
 		                   jsonsearch: name
 		               },
@@ -164,7 +196,7 @@
 			var applid = $(this).attr("data-id");
            	$.ajax({
                type: "POST",
-               url: "http://localhost/HROnline/applicant-data.php",
+               url: "applicant-data.php",
                data: {
                    aid: applid
                },
