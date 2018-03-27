@@ -3,7 +3,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$database = "db_hr_online_aug13";
+	$database = "check";
 
 
 
