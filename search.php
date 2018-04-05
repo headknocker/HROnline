@@ -4,7 +4,7 @@
 	if(isset($_POST['search'])) {
 		$name = $_POST['search'];
 		$string = '%'.$name.'%';
-		$query = "SELECT ID, NAME, POSITION, `EMAIL ADDRESS` FROM tbl_application WHERE (NAME LIKE '$string' OR POSITION LIKE '$string' OR `EMAIL ADDRESS` LIKE '$string') AND NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
+		$query = "SELECT ID, NAME, POSITION, `EMAIL ADDRESS` EMPLOYMENT_DATE, APPLICATION_SOURCE, `COL_Name of School`, `GRAD_Degree Course`, COL_Graduated FROM tbl_application WHERE (NAME LIKE '$string' OR POSITION LIKE '$string' OR `EMAIL ADDRESS` LIKE '$string' OR 'EMPLOYMENT_DATE' LIKE '$string' OR APPLICATION_SOURCE LIKE '$string' OR `COL_Name of School` LIKE '$string' OR `GRAD_Degree Course` LIKE '$string' OR COL_Graduated LIKE '$string') AND NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
 		$result = $conn->query($query);
 		$count = $result->num_rows;
 		if($count <= 1) {
@@ -16,8 +16,12 @@
 		echo '<thead>';
 		echo '<tr>';
 		echo '<th>Name</th>';
-		echo '<th>Position</th>';
-		echo '<th>Email</th>';
+		echo '<th>Position Applied</th>';
+		echo '<th>Employment Date</th>';
+		echo '<th>Application Source</th>';
+		echo '<th>Education Status</th>';
+		echo '<th>School</th>';
+		echo '<th>Course</th>';
 		echo '</tr>';
 		echo '</thead>';
 		echo '<tbody>';
@@ -25,7 +29,14 @@
 			echo '<tr class="applicant-data" data-toggle="modal" data-target="#applicant-info" data-id="'.$row['ID'].'">';
 			echo '<td>'.$row['NAME'].'</td>';
 			echo '<td>'.$row['POSITION'].'</td>';
-			echo '<td>'.$row['EMAIL ADDRESS'].'</td>';
+			echo '<td>'.$row['EMPLOYMENT_DATE'].'</td>';
+			echo '<td>'.$row['APPLICATION_SOURCE'].'</td>';
+			if ($row['COL_Graduated']=="YES") 
+                      		{ echo "<td> Graduated </td> "; } 
+            else if ($row['COL_Graduated']=="NO") 
+                       		{ echo "<td> Undergraduate </td>"; }
+			echo '<td>'.$row['COL_Name of School'].'</td>';
+			echo '<td>'.$row['GRAD_Degree Course'].'</td>';
 			echo '</tr>';
 		}
 		echo '</tbody>';
@@ -40,7 +51,7 @@
 		var applid = $(this).attr("data-id");
            	$.ajax({
                type: "POST",
-               url: "http://localhost/HROnline/applicant-data.php",
+               url: "applicant-data.php",
                data: {
                    aid: applid
                },
