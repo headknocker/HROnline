@@ -1,14 +1,6 @@
 <?php
 	require_once('auth.php');
 	require_once('connect.php');
-	// $query = "SELECT ID, NAME, POSITION, `EMAIL ADDRESS`, EMPLOYMENT_DATE, APPLICATION_SOURCE, `COL_Name of School` FROM tbl_application WHERE NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
-	// $result = $conn->query($query);
-	// $count = $result->num_rows;
-	// if($count <= 1) {
-	// 	$label = "applicant";
-	// } else {
-	// 	$label = "applicants";
-	// }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -44,8 +36,24 @@
 			<div class="table-responsive">
 				<div id="result"></div>
 				<div id="initial-table">
+					
+					<center>
+						<h4> TOTAL:
+						<?php
+							include('connect.php');
+							$sql="SELECT * FROM tbl_application WHERE NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
+                         	$result = $conn->query($sql);
+          						if($result->num_rows > 0){
+          							$count = $result->num_rows;
+										if($count <= 1) {$label = "applicant";} 
+										else {$label = "applicants";}
+							echo $count.' '.$label; 
+					 		}
+                            $conn->close();
+                            ?>
+						</h4>
+					</center>
 					<table id="applicants" class="table table-bordered table-hover table-responsive">
-
 						<thead>
 						<col width="200">
 						<col width="30">
@@ -80,11 +88,10 @@
                        			<td><?php echo $row['POSITION']; ?></td>
                        			<td><?php echo $row['EMPLOYMENT_DATE']; ?></td>
                        			<td><?php echo $row['APPLICATION_SOURCE']; ?></td>
-                       			<td><?php if ($row['COL_Graduated']=="YES") { echo "Graduated"; } 
+                       			<td><?php if ($row['COL_Graduated']=="YES") 
+                       			{ echo "Graduated"; } 
                        			else if ($row['COL_Graduated']=="NO") 
-                       			{
-                       				echo "Undergraduate";
-                       			}
+                       			{ echo "Undergraduate"; }
                        			?></td>
                        			<td><?php echo $row['COL_Name of School']; ?></td>
                        			<td><?php echo $row['GRAD_Degree Course']; ?></td>

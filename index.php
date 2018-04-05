@@ -336,12 +336,7 @@ $(document).ready(function(){
 
 					<div class="row col-md-12">
 
-						
-
 						<div class="col-md-6">
-
-							
-
 							<div class="form-group">
 								<input type="hidden"  id="nameofapplicant" name="nameofapplicant" class="form-control">
 								<!-- <input type="text" name="nameofapplicant" id="nameofapplicant" class="form-control"> -->
@@ -378,30 +373,15 @@ $(document).ready(function(){
 										echo "<option value='".$row['position_name']."'>".$row['position_name']."</option>";
 
 										}
-
-										
-
 										echo"</select></div>";
 
-										
-
-										
-
 										echo'<div id="positionErrorMessage" style="display:none;color:red;">Select your position here.</div>';
-
-										
 
 		      							}
 
 		      						?>
 
-									
-
-										
-
 									<div>
-
-									
 
 									</div>
 
@@ -565,7 +545,7 @@ $(document).ready(function(){
 
 								<label for="lname" class="control-label">Last Name <label class="text-danger">*</label></label>
 
-								<input class="form-control" type="text" minlength="2" name="lname" id="lname" required>
+								<input class="form-control" type="text" minlength="2" name="lname" id="lname" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 								<div class="help-block with-errors" style="color: red"></div>
 
@@ -575,7 +555,7 @@ $(document).ready(function(){
 
 								<label for="fname" class="control-label">First Name <label class="text-danger">*</label></label>
 
-								<input name="fname" id="fname" class="form-control"  minlength="2" required  >
+								<input name="fname" id="fname" class="form-control" minlength="2" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 								<div class="help-block with-errors" style="color: red"></div>
 
@@ -583,9 +563,9 @@ $(document).ready(function(){
 
 							<div class="form-group label-floating">
 
-								<label for="mname" class="control-label">Middle Name</label>
+								<label for="mname" class="control-label" >Middle Name</label>
 
-								<input type="text" name="mname" ng-model="mname" id="mname" class="form-control">
+								<input type="text" name="mname" ng-model="mname" id="mname" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);'>
 
 								
 
@@ -595,7 +575,7 @@ $(document).ready(function(){
 
 								<label for="ename" class="control-label">Name Extension</label>
 
-								<input type="text" name="ename" id="ename" class="form-control">
+								<input type="text" name="ename" id="ename" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 							</div>
 
@@ -637,7 +617,7 @@ $(document).ready(function(){
 
 								<label for="nickname" class="control-label">Nick Name</label>
 
-								<input type="text" name="nickname123" id="nickname" class="form-control">
+								<input type="text" name="nickname123" id="nickname" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 							</div>
 
@@ -748,7 +728,7 @@ $(document).ready(function(){
 
 										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
 
-										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)">
+										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)" >
 
 											<?php  
 				      							include('connect.php');
@@ -930,7 +910,7 @@ $(document).ready(function(){
 
 							<div class="form-group label-floating">
 
-								<label for="pounds" class="control-label">Pounds (lbs:)</label>
+								<label for="pounds" class="control-label">Pounds (lbs:) (1kg = 2.20 lbs)</label>
 
 								<input type="text" name="weight" id="weight" class="form-control" id="pounds">
 
@@ -938,7 +918,7 @@ $(document).ready(function(){
 
 							<div class="form-group label-floating">
 
-								<label for="religion" class="control-label">Religion</label>
+								<label for="religion" class="control-label" onkeypress='return disableNumeric(event);' onkeyup='(event);' >Religion</label>
 
 								<input type="text" name="religion123" class="form-control" id="religion">
 
@@ -1176,7 +1156,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno2">Mobile No.<small>(Optional)</small></label>
 
-									<input value="09" data-inputmask="'mask': '9999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2"  >
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2"  >
 
 								</div>
 
@@ -1188,7 +1168,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno3">Mobile No.<small>(Optional)</small></label>
 
-									<input value="09" data-inputmask="'mask': '9999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" >
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" >
 
 								</div>
 
@@ -1200,7 +1180,7 @@ $(document).ready(function(){
 
 									<label style="font-size: 11px;" class="control-label text-sm" for="contactperson">Contact Person in case of emergency</label><label class="text-danger">*</label>
 
-									<input class="form-control" type="text" name="contact_name" id="contactperson" minlength="2" ng-model="contact_name" required>
+									<input class="form-control" type="text" name="contact_name" id="contactperson" minlength="2" ng-model="contact_name" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -1214,9 +1194,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="contactpersonno" style="font-size: 11px">{{contact_name}}'s Contact Details</label><label class="text-danger">*</label>
 
-								
-
-										<input class="form-control" type="number" name="contact_details" id="contactpersonno" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" required>
+										<input class="form-control" data-inputmask="'mask': '(+999) 999-999-9999'" type="text" name="contact_details" id="contactpersonno" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" required>
 
 										<div class="help-block with-errors" style="color: red"></div>
 
@@ -1325,9 +1303,7 @@ $(document).ready(function(){
 								      </div>
 
 								      <div class="modal-body">
-
-								     
-
+								      	
 								      	<div id="phil">
 
 									      	<div id="region">
@@ -1402,7 +1378,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="slname">Spouse's Last Name</label>
 
-					      		<input id="slname" type="text" name="spouse_lastname" class="form-control" >
+					      		<input id="slname" type="text" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 							</div>
 
@@ -1410,7 +1386,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="sfname">Spouse's First Name</label>
 
-					      		<input id="sfname" type="text" name="spouse_firstname" class="form-control" >
+					      		<input id="sfname" type="text" name="spouse_firstname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1418,7 +1394,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="smname">Spouse's Middle Name</label>
 
-					      		<input id="smname" type="text" name="spouse_midname" class="form-control" >
+					      		<input id="smname" type="text" name="spouse_midname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1430,7 +1406,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="occupation">Spouse's Occupation</label>
 
-								<input type="text" name="spouse_occ" id="occupation" class="form-control">
+								<input type="text" name="spouse_occ" id="occupation" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1438,7 +1414,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="employer-name">Company Name</label>
 
-								<input type="text" name="spouse_empname" id="employer-name" class="form-control">
+								<input type="text" name="spouse_empname" id="employer-name" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1458,7 +1434,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="slname">Spouse's Last Name</label>
 
-					      		<input id="slname" type="text" name="widowed_lname" class="form-control" >
+					      		<input id="slname" type="text" name="widowed_lname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1466,7 +1442,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="sfname">Spouse's First Name</label>
 
-					      		<input id="sfname" type="text" name="widowed_fname" class="form-control" >
+					      		<input id="sfname" type="text" name="widowed_fname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1474,7 +1450,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="smname">Spouse's Middle Name</label>
 
-					      		<input id="smname" type="text" name="widowed_midname" class="form-control" >
+					      		<input id="smname" type="text" name="widowed_midname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1496,7 +1472,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="flname">Father's Last name</label>
 
-								<input type="text" name="flname" id="flname" class="form-control">
+								<input type="text" name="flname" id="flname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1504,7 +1480,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="ffname">Father's First Name</label>
 
-								<input type="text" name="ffname" id="ffname" class="form-control">
+								<input type="text" name="ffname" id="ffname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1512,7 +1488,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="fmname">Father's Middle Name</label>
 
-								<input type="text" name="fmname" id="fmname" class="form-control">
+								<input type="text" name="fmname" id="fmname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1531,7 +1507,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="mlname">Mother's Maiden name</label>
 
-								<input type="text" name="mother_lname" id="mlname" class="form-control">
+								<input type="text" name="mother_lname" id="mlname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1539,7 +1515,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="mfname">Mother's First Name</label>
 
-								<input type="text" name="mother_fname" id="mfname" class="form-control">
+								<input type="text" name="mother_fname" id="mfname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1547,7 +1523,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="mmname">Mother's Middle Name</label>
 
-								<input type="text" name="mother_midname" id="mmname" class="form-control">
+								<input type="text" name="mother_midname" id="mmname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1603,7 +1579,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sibling" >Enter sibling name</label>
 
-                                <input type="text" name="sibling1" id="sibling" class="form-control">
+                                <input type="text" name="sibling1" id="sibling" class="form-control" onkeypress='return disableNumeric(event);'>
 
                               </div>
 
@@ -1635,7 +1611,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sibling" >Enter sibling name</label>
 
-                                <input type="text" name="sibling2" id="sibling" class="form-control">
+                                <input type="text" name="sibling2" id="sibling" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1669,7 +1645,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sibling" >Enter sibling name</label>
 
-                                <input type="text" name="sibling3" id="sibling" class="form-control">
+                                <input type="text" name="sibling3" id="sibling" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1741,7 +1717,7 @@ $(document).ready(function(){
 
 	                                <label class="control-label" for="child" >Enter child name</label>
 
-	                                <input type="text" name="child_name1" id="child" class="form-control">
+	                                <input type="text" name="child_name1" id="child" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                              </div>
 
@@ -1779,7 +1755,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="child" >Enter child name</label>
 
-                                <input type="text" name="child_name2" id="child" class="form-control">
+                                <input type="text" name="child_name2" id="child" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1819,7 +1795,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="child" >Enter child name</label>
 
-                                <input type="text" name="child_name3" id="child" class="form-control">
+                                <input type="text" name="child_name3" id="child" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1847,8 +1823,6 @@ $(document).ready(function(){
 
                     </div>
 
-
-
 					<!-- buttons -->
 
 					<button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container2').style.display='block';document.getElementById('container3').style.display='none';">PREVIOUS</button>
@@ -1859,64 +1833,39 @@ $(document).ready(function(){
 
 
 
+				<!-- START OF FATHER'S BIRTH PLACE MODAL -->
 				<div id="modalFPB" class="modal fade" role="dialog" >
-
 					<div class="modal-dialog">
-
 						<div class="modal-content">
-
 							<div class="modal-header">
-
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-
+								<!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> -->
 								<h3 class="modal-title"><center>Select your father birth place</center></h3>
-
 							</div>
-
 							<div class="modal-body">
-
 								<div class="form-group">
-
 									<div class="">
-
 								      	<label>
-
 								      		<input type="checkbox" name="" onclick="if(this.checked){fshowCountry()} else {fhideCountry()}"> If birthplace is outside of the Philippines
-
 								      	</label>
-
 								    </div>
-
 								</div>
 
-								<div id="fcountry">
-
-									<select class="select form-control" name="fCountry_name" id="fcountryid" onchange="fcountryfunction(this)">
-
+								<div id="fcountry" style="display:none;" >
+									<span style="font-weight: bold;">Country:</span>
+									<select class="form-control" name="fCountry_name" id="fcountryid" onchange="fcountryfunction(this)">
 									    <?php  
-
 					      					include('connect.php');
-
 					      					$sql = "SELECT * FROM `tbl_country`";
-
 					      					$result = $conn->query($sql);
-
 					      					while($row = $result->fetch_assoc()){
-
 					      					echo "<option value='".$row['Country_name']."'>".$row['Country_name']."</option>";
-
 						      				}
-
 						      			?>
-
 									</select>
-
 								</div>
-
 								<div id="fphil">
-
-									<div id="fregion">
-
+									<div id="fregion" >
+									<span style="font-weight: bold;">Region:</span>
 										<select class="select form-control" name="fRegion_name" id="fregionid" onchange="fregionfunction(this)">
 
 										    <?php  
@@ -1932,77 +1881,48 @@ $(document).ready(function(){
 						      					echo "<b>Region</b><option value='".$row['id']."_".$row['Region_name']."'>".$row['Region_name']."</option>";
 
 						      					}
-
 						      				?>
-
 										</select>
+									</div>  
 
-									</div>  	
-
-									<div id="fprovince">
-
-										    	
-
+									<div id="fprovince" style="padding-top: 15px">
 									</div>
 
 									<div id="fcities" style="padding-top: 15px">
-
-												
-
 									</div>
 
 								</div>
-
 							</div>
-
 							<div class="modal-footer">
-
 								<button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>        
-
 							</div>
-
 						</div>
-
 					</div>
-
 				</div>
+				<!-- END OF FATHER'S BIRTH PLACE MODAL -->
 
 
 
 
-
+				<!-- START OF MOTHER'S BIRTH PLACE MODAL -->
 				<div id="modalMPB" class="modal fade" role="dialog" >
-
 					<div class="modal-dialog">
-
 						<div class="modal-content">
-
 							<div class="modal-header">
-
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-
+								<!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button> -->
 								<h3 class="modal-title"><center>Select your mother birth place</center></h3>
-
 							</div>
-
 							<div class="modal-body">
-
 								<div class="form-group">
-
-									<div class="">
-
-								      	<label>
-
+									<div class="" >
+									<label>
 								      		<input type="checkbox" name="" onclick="if(this.checked){mshowCountry()} else {mhideCountry()}"> If birthplace is outside of the Philippines
-
 								      	</label>
-
 								    </div>
-
 								</div>
 
-								<div id="mcountry">
-
+								<div id="mcountry" style="display:none;">
+									<span style="font-weight: bold;">Country:</span>
 									<select class="select form-control" name="mCountry_name" id="mcountryid" onchange="mcountryfunction(this)">
 
 									    <?php  
@@ -2027,16 +1947,12 @@ $(document).ready(function(){
 
 								<div id="mphil">
 
-									<div id="mregion">
-
+									<div id="mregion" >
+										<span style="font-weight: bold;">Region:</span>
 										<select class="select form-control" name="mRegion_name" id="mregionid" onchange="mregionfunction(this)">
-
 										    <?php  
-
 						      					include('connect.php');
-
 						      					$sql = "SELECT * FROM `tbl_region`";
-
 						      					$result = $conn->query($sql);
 
 						      					while($row = $result->fetch_assoc()){
@@ -2051,22 +1967,13 @@ $(document).ready(function(){
 
 									</div>  	
 
-									<div id="mprovince">
-
-										    	
-
+									<div id="mprovince" style="padding-top: 15px"">
 									</div>
 
-									<div id="mcities" style="padding-top: 15px">
-
-												
-
+									<div id="mcities" style="padding-top: 15px"">			
 									</div>
-
 								</div>
-
 							</div>
-
 							<div class="modal-footer">
 
 								<button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>        
@@ -2078,8 +1985,7 @@ $(document).ready(function(){
 					</div>
 
 				</div>
-
-
+				<!-- END OF MOTHER'S BIRTH PLACE MODAL -->
 
                 <div class="card container" id = "container4">
 
@@ -2093,7 +1999,7 @@ $(document).ready(function(){
 
                     <hr>
 
-                            <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_work">Add Work Experience</button>
+                    <button type="button" class="btn btn-raised btn-sm btn-info add_field_button_work">Add Work Experience</button>
 
                     <div class="input_fields_wrap_work">
 
@@ -2189,7 +2095,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="position-title">Position Title</label>
 
-                              <input class="form-control" type="text" name="position" id="position-title">
+                              <input class="form-control" type="text" name="position" id="position-title" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							  <div class="help-block with-errors" style="color: red"></div>
 
@@ -2203,7 +2109,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
 
-                              <input class="form-control" type="text" name="supervisor" id="name-supervisor">
+                              <input class="form-control" type="text" name="supervisor" id="name-supervisor" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                             </div>
 
@@ -2229,7 +2135,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="reason">Reason of leaving</label>
 
-                              <input class="form-control" type="text" name="reason" id="reason">
+                              <input class="form-control" type="text" name="reason" id="reason" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							  <div class="help-block with-errors" style="color: red"></div>
 
@@ -2261,7 +2167,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="school">Name of School</label>
 
-	                    			<input type="text" name="elem_name" class="form-control" id="school">
+	                    			<input type="text" name="elem_name" class="form-control" id="school" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2308,7 +2214,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="school">Name of School</label>
 
-	                    			<input type="" name="hs_name" class="form-control" id="school">
+	                    			<input type="" name="hs_name" class="form-control" id="school" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2367,7 +2273,7 @@ $(document).ready(function(){
 
 		                    			<label class="control-label" for="school">Name of School</label>
 
-		                    			<input type="" name="col_name" id="col_name" class="form-control" id="school">
+		                    			<input type="" name="col_name" id="col_name" class="form-control" id="school" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 		                    		</div>
 
@@ -2394,12 +2300,7 @@ $(document).ready(function(){
 
 
 			                    </div>
-
-								
-
-								
-
-								<div class=" col-md-3" id="col_to" style="display:none;">
+			                    	<div class=" col-md-3" id="col_to" style="display:none;">
 
 		                    		<label class="control-label" for="col_datefrom2"><i class="fa fa-calendar" ></i> From:</label>
 
@@ -2425,7 +2326,7 @@ $(document).ready(function(){
 
 			                    			<label class="control-label" for="degree" style="font-size: small;">Degree Course /Vocational</label>
 
-			                    			<input type="text" id="col_degree" class="form-control" name="col_degree">
+			                    			<input type="text" id="col_degree" class="form-control" name="col_degree" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 			                    		</div>
 
@@ -2461,7 +2362,7 @@ $(document).ready(function(){
 
 		                    			<label class="control-label" for="school">Name of School</label>
 
-		                    			<input type="" name="grad_name" class="form-control" id="grad_name">
+		                    			<input type="" name="grad_name" class="form-control" id="grad_name" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 		                    		</div>
 
@@ -2491,7 +2392,7 @@ $(document).ready(function(){
 
 			                    			<label class="control-label" for="degree" style="font-size: small;">Degree Course /Vocational</label>
 
-			                    			<input type="text" id="grad_degree" class="form-control" name="grad_degree">
+			                    			<input type="text" id="grad_degree" class="form-control" name="grad_degree" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 			                    		</div>
 
@@ -2535,7 +2436,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="license">License/Certification</label>
 
-	                    			<input type="text" class="form-control" name="license" id="license">
+	                    			<input type="text" class="form-control" name="license" id="license" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2547,7 +2448,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="rate">Rating</label>
 
-	                    			<input type="text" id="rate" class="form-control" name="rating">
+	                    			<input type="text" id="rate" class="form-control" name="rating" >
 
 	                    		</div>
 
@@ -2571,7 +2472,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="institution">Granting Institution</label>
 
-	                    			<input type="text" class="form-control" id="institution" name="institution">
+	                    			<input type="text" class="form-control" id="institution" name="institution" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2639,7 +2540,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="language">Language you know</label>
 
-									<input type="text" class="form-control" id="language" name=" language">
+									<input type="text" class="form-control" id="language" name=" language" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 								</div>
 
@@ -2729,7 +2630,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="skill">Special Skill/Hobbies</label>
 
-									<input type="text" class="form-control" id="skill" name="skill1">
+									<input type="text" class="form-control" id="skill" name="skil1" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 								</div>
 
@@ -2747,7 +2648,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="nacad">Non-Academic Distinction / Recognition</label>
 
-									<input type="text" class="form-control" id="nacad" name="recognition1">
+									<input type="text" class="form-control" id="nacad" name="recognition1" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 								</div>
 
@@ -2765,7 +2666,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="org">Membership in Association / Organization</label>
 
-									<input type="text" class="form-control" id="org" name="org1">
+									<input type="text" class="form-control" id="org" name="org1" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 								</div>
 
@@ -2793,7 +2694,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="rname">Name<label class="text-danger">*</label></label>
 
-									<input type="text" class="form-control" id="rname" name="ONE_REFNAME" minlength="2" required>
+									<input type="text" class="form-control" id="rname" name="ONE_REFNAME" minlength="2" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
 
            			 				<div class="help-block with-errors" style="color: red"></div>
 
@@ -2807,7 +2708,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="cname">Company Name<label class="text-danger">*</label></label>
 
-									<input type="text" class="form-control" id="company_name1" name="ONE_REFADDRESS" minlength="2" required>
+									<input type="text" class="form-control" id="company_name1" name="ONE_REFADDRESS" minlength="2" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
 
            			 				<div class="help-block with-errors" style="color: red"></div>
 
@@ -2839,7 +2740,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="rname">Name<label class="text-danger">*</label></label>
 
-									<input type="text" class="form-control" id="rname2" name="TWO_REFNAME" required>
+									<input type="text" class="form-control" id="rname2" name="TWO_REFNAME" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -2853,7 +2754,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="cname">Company Name<label class="text-danger">*</label></label>
 
-									<input type="text" class="form-control" id="cname2" name="TWO_REFADDRESS" required>
+									<input type="text" class="form-control" id="cname2" name="TWO_REFADDRESS" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -2885,7 +2786,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="rname">Name<label class="text-danger">*</label></label>
 
-									<input type="text" class="form-control" id="rname3" name="THREE_REFNAME" required>
+									<input type="text" class="form-control" id="rname3" name="THREE_REFNAME" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -2899,7 +2800,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="cname">Company Name<label class="text-danger">*</label></label>
 
-									<input type="text" class="form-control" id="cname3" name="THREE_REFADDRESS" required>
+									<input type="text" class="form-control" id="cname3" name="THREE_REFADDRESS" onkeypress='return disableNumeric(event)'; onkeyup='(event);' required>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -2966,8 +2867,6 @@ $(document).ready(function(){
 					      	</div>
 
 					      </div>
-
-					     
 
 						</div>
 
@@ -3045,122 +2944,79 @@ $(document).ready(function(){
 
 
 
-				<!--START-->
+				<!--START OF REVIEW INFORMATION MODAL-->
 
 				<div class="container">
-
 					<div id="confirmModal" role="dialog" class="modal fade">
-
 						<div class="modal-dialog">
-
 						  <div class="modal-content">
-
 							<div class="modal-header">
-
 							  <button type="button" data-dismiss="modal" class="close">&times;</button>
-
-							  <h4 class="modal-title"><b>I N F O R M A T I O N&nbsp;&nbsp;&nbsp;C O N F I R M A T I O N</b></h4>
-
+							  <h4 class="modal-title" align="center"><b>C O N F I R M A T I O N</b></h4>
 							</div>
 
-							<div class="modal-body">
-
+							<div class="modal-body" align="center">
 								Please check these information if they are correct. <br>
-
 								Go back if you need to change anything. <br><br>
-
+							</div>
+							<div class="modal-body">
 								 <table style="margin-left:5%">
-
                                     <tr>
-
                                         <th>NAME</th>
-
-                                        <td> <input style="width:85%; margin-left: 5%;" type="text" id="name" readonly></td>
-
+                                        <td> <input style="width:145%; margin-left: 5%;" type="text" id="name" readonly></td>
                                     </tr>
 
                                     <tr>
-
 								        <th> ADDRESS </th>
-
-                                        <td> <input style="width:85%; margin-left: 5%;" type="text" id="address" readonly> </td>
-
+                                        <td> <input style="width:145%; margin-left: 5%;" type="text" id="address" readonly> </td>
 									</tr>
 
 									<tr>
-
 										<th> BIRTHDAY </th>
-
-										<td> <input style="width:85%; margin-left: 5%;" type="text" id="birthday" readonly></td>
-
+										<td> <input style="width:145%; margin-left: 5%;" type="text" id="birthday" readonly></td>
 									</tr>
 
 									<tr>
-
                                         <th> CONTACT NUMBER </th>
-
-										<td> <input style="width:85%; margin-left: 5%;" type="text" id="contact" readonly></td>
-
+										<td> <input style="width:145%; margin-left: 5%;" type="text" id="contact" readonly></td>
 									</tr>
 
 								    <tr>
-
 									   <th> E-MAIL </th>
-
-									   <td> <input style="width:85%; margin-left: 5%;" type="text" id="useremail" readonly> </td>
-
+									   <td> <input style="width:145%; margin-left: 5%;" type="text" id="useremail" readonly> </td>
 								    </tr>
 
 								    <tr>
-
                                         <th> APPLIED POSITION </th>
-
-									   <td> <input style="width:85%; margin-left: 5%;" type="text" id="position" readonly> </td>
-
+									   <td> <input style="width:145%; margin-left: 5%;" type="text" id="position" readonly> </td>
 									</tr>
 
 									<tr>
-
 										<th> EMPLOYMENT DATE </th>
-
-										<td> <input style="width:85%; margin-left: 5%;" type="text" id="employdate" readonly> </td>
-
+										<td> <input style="width:145%; margin-left: 5%;" type="text" id="employdate" readonly> </td>
 									</tr>
 
 									<tr>
-
 										<th> APPLICATION SOURCE </th>
-
-										<td> <input style="width:85%; margin-left: 5%;" type="text" id="srcs" readonly> 
-
+										<td> <input style="width:145%; margin-left: 5%;" type="text" id="srcs" readonly> 
 									 </td>
-
 									</tr>
-
                                 </table>
-
 							</div>
 
 							<div class="modal-footer">
-
 								<button type="button" id="agreement" class="btn btn-raised btn-info btn-md" data-toggle="modal" data-dismiss="modal" data-target="#modald">Confirm</button>
-
 								<button type="button" data-dismiss="modal" class="btn btn-default">Back</button>
-
 							</div>
-
 						  </div>
-
 						</div>
-
 					</div>
-
 				</div>
 
-				<!--END-->
+				<!--END OF REVIEW INFORMATION MODAL-->
 
 				
-
+				<!-- START OF TERMS AND AGREEMENT MODAL -->
                 <div id="modald" class="modal fade" role="dialog" >
 
 				  <div class="modal-dialog">
@@ -3224,6 +3080,7 @@ $(document).ready(function(){
 				  </div>
 
 				</div>
+				 <!-- END OF TERMS AND AGREEMENT MODAL -->
 
 				
 
@@ -3287,7 +3144,7 @@ $(document).ready(function(){
 
 				<div class="panel-footer" id="footer">
 
-						<p>Private and Confidential. Anderson Group BPO Inc. © 2017 <br></p>
+						<p>Private and Confidential. Anderson Group BPO Inc. © 2018 <br></p>
 
 				</div>
 
@@ -4524,11 +4381,11 @@ $(document).ready(function(){
 
 			document.getElementById('fphil').style.display = "none";
 
-			document.getElementById('fatherCity').value = "";
+			// document.getElementById('fatherCity').value = "";
 
-			document.getElementById('fatherRegion').value = "";
+			// document.getElementById('fatherRegion').value = "";
 
-			document.getElementById('fatherProvince').value = "";
+			// document.getElementById('fatherProvince').value = "";
 
 		};
 
@@ -4583,16 +4440,36 @@ $(document).ready(function(){
 				document.getElementById('souceothers').style.display = "none";
 
 			}
-
 		}
 
+			// START OF DISABLE NUMERIC AND SPECIAL CHARACTER IN OTHER FIELDS
+
+			function disableNumeric(e) {
+				  var keyCode = (e.keyCode ? e.keyCode : e.which);
+				  var ingnore_key_codes = [8,32,106,107,109,110,186,187,188,198,190,191,219,220,221,222];
+				  var valid = (e.which >= 48 && e.which <= 57) || (e.which >= 65 && e.which <= 90) || (e.which >= 97 && e.which <= 122) || (e.which >= 164 && e.which <= 165);
+
+				  if (keyCode > 47 && keyCode < 58) {
+				    e.preventDefault();
+				  }else if ($.inArray(e.keyCode, ingnore_key_codes) >= 0){
+					e.preventDefault();
+				  }else if (!valid) {
+					e.preventDefault();
+				}
+			}
+
+			$(document).ready(function() {
+			  $('#text_field').keypress(function(e) {
+			    preventNumberInput(e);
+			  });
+			});
+
+			// END OF DISABLE NUMERIC AND SPECIAL CHARACTER IN OTHER FIELDS
 
 
 		      $(document).ready(function() {
 
 		        $(".select").dropdown({"optionClass": "withripple"});
-
-
 
 		      });
 
