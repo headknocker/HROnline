@@ -1,20 +1,22 @@
 <?php
-  session_save_path('tmp');
-  session_start();
-  include ('connect.php');
-  $username = "";
- if(!empty($_SESSION['previous-page'])){
-    if($_SESSION['previous-page'] == 'google.php'  || $_SESSION['previous-page'] == 'jobposition.php' || $_SESSION['previous-page'] == 'account.php' || $_SESSION['previous-page'] == 'reports.php'){
-      unset($_SESSION['admin']);
-	  unset($_SESSION['currentYear']);
-      unset($_SESSION['email_message']);
-      unset($_SESSION['email_subject']);
-      unset($_SESSION['jobfairquery']);
-      unset($_SESSION['googlequery']);
-      unset($_SESSION['indeedquery']);
-      unset($_SESSION['loginerror']);
+
+    session_save_path('tmp');
+    session_start();
+    include ('connect.php');
+    $username = "";
+
+  if(!empty($_SESSION['previous-page'])){
+      if($_SESSION['previous-page'] == 'google.php'  || $_SESSION['previous-page'] == 'jobposition.php' || $_SESSION['previous-page'] == 'account.php' || $_SESSION['previous-page'] == 'reports.php'){
+        unset($_SESSION['admin']);
+      unset($_SESSION['currentYear']);
+        unset($_SESSION['email_message']);
+        unset($_SESSION['email_subject']);
+        unset($_SESSION['jobfairquery']);
+        unset($_SESSION['googlequery']);
+        unset($_SESSION['indeedquery']);
+        unset($_SESSION['loginerror']);
+      }
     }
-  }
   
   if(isset($_SESSION['loginattempt']) ){ //
 	 if($_SESSION['loginattempt'] != null){
@@ -52,11 +54,14 @@
       </div>
       <div class="login-block">
         <h1 style="margin-bottom:5px;">Login</h1>
+
           <form action="loginbtn.php" method="post">
-            <input id="username" type="text" name="username" required="" placeholder="Username" />
-            <input id="password" type="password" name="password" required="" placeholder="Password" />
+            <input id="username" type="text" name="username" required="" placeholder="Enter username" />
+            <input id="password" type="password" name="password" required="" placeholder="Enter password" />
+            <p class="text-center"> <a href="adminResetPasswordEmail.php"> Forgot Password? </a> </p>
             <button id='login_id' type="submit" name="action">Log In</button>
           </form>
+
       </div>
                 <?php
                 
