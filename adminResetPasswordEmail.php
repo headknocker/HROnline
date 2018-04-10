@@ -1,15 +1,32 @@
 <?php 
 
     require 'connect.php';
+    require 'validation_form.php';
 
     //variable declaration
     $admin_email = '';
-
+    $admin_id = '';
+    
     if(isset($_POST['btnResetPassword'])){
-        $admin_email = $_POST['txtAdminEmail'];
+        
+        inputValidation($admin_email = $_POST['txtAdminEmail']);
+
+        $sql = "SELECT id, email FROM tbl_admin WHERE email = '{$admin_email}'";
+
+        $result = $conn->query($sql);
+
+        if($result->num_rows === 1){
+            
+        }else{
+            echo '<script type="text/javascript">';
+            echo 'alert("Email do not exist!")';
+            echo '</script>';
+        }
+
     }
 
-    
+
+            
 
 
 ?>
@@ -44,13 +61,13 @@
 
         <div class="col-md-6">
 
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
                 <div class="form-group">
                     <label for="email"> Reset Email</label>
                     <input type="email" class="form-control" id="admin_email" placeholder="Enter email" name="txtAdminEmail">
                 </div>
                 
-                <button type="submit" class="btn btn-default" name="btnResetPassword">Submit</button>
+                <button type="submit" class="btn btn-primary" name="btnResetPassword">Reset Code</button>
         </form>
 
         </div>

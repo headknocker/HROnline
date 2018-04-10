@@ -4446,7 +4446,7 @@ $(document).ready(function(){
 
 			function disableNumeric(e) {
 				  var keyCode = (e.keyCode ? e.keyCode : e.which);
-				  var ingnore_key_codes = [8,32,106,107,186,187,188,198,190,191,219,220,221,222];
+				  var ingnore_key_codes = [186,187,188,198,190,191,219,220,221,222];
 				  var valid = (e.which >= 48 && e.which <= 57) || (e.which >= 65 && e.which <= 90) || (e.which >= 97 && e.which <= 122) || (e.which >= 164 && e.which <= 165);
 
 				  if (keyCode > 47 && keyCode < 58) {
