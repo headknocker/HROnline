@@ -3,22 +3,22 @@
 	echo '
 	<style>
 		h5 {
-			color:black;
+			color:white;
 		}
 		h5:hover {
 			color:white;
 			
 		}
 		.navi:hover{
-			background-color: #00008B;
-			color: white;
+			background-color: #30d2e8;
+			color: black;
 		}
 		.boxed{
-			border: 1px solid green ;
+			border: 1px solid white ;
 		}
 	</style>
 	
-	<div id="mySidenav" class="sidenav" style="background-color:#2F4F4F">
+	<div id="mySidenav" class="sidenav" style="background-color:#45619D">
 	<img src="adg1.png"  width="60%" style="margin-bottom: 10%; margin-left: 4em;">
 	<a href="javascript:void(0)" class="closebtn" style="color:black;" onclick="closeNav()">&times;</a> ';
 	

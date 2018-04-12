@@ -1,6 +1,7 @@
 
 <?php
 include('auth.php');
+
 $_SESSION['previous-page'] = 'createAccount.php';
 
 
@@ -27,6 +28,7 @@ $_SESSION['previous-page'] = 'createAccount.php';
       <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/ripples.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
@@ -41,15 +43,12 @@ $_SESSION['previous-page'] = 'createAccount.php';
    </head>
    
    <body>
-   <?php
-	
 
-	$id = $_GET['id'];
-		include 'sidenavhtml.php';
-	
+		<?php
+			$id = $_GET['id'];
+			include 'sidenavhtml.php';
+		?> 
 
-
-	?>
 	<div id="main">
 	<nav style="width:103.25%;  margin-left:-2%; background-color:transparent">
 			 <div class="container-fluid">
@@ -59,10 +58,10 @@ $_SESSION['previous-page'] = 'createAccount.php';
             </div>
 
 
-   <hr style="padding-bottom: 1%">
+		   <hr style="padding-bottom: 1%">
 
-  <div class="row">
-  <div class="col-md-4"></div>
+		  <div class="row">
+		  <div class="col-md-4"></div>
 
 
                     <div class="col-md-4">
@@ -77,7 +76,7 @@ $_SESSION['previous-page'] = 'createAccount.php';
 
 
                                <div class="form-group">
-						      <label class="col-md-2 control-label" for ="usertx"><b>Username:</b></label>
+						      <label class="col-md-2 control-label" for="usertx"><b>Username:</b></label>
 						      <div class="col-md-1"></div>
 						      <div class="col-md-8">
 									<input type="text" class="form-control" name="ustx"  required><br>
@@ -85,62 +84,76 @@ $_SESSION['previous-page'] = 'createAccount.php';
 								</div>
 								</div>
 								
-
-
 							<div class="form-group">
 						     <label class="col-md-2 control-label" for ="passtx"><b>Password:</b></label>
 						      <div class="col-md-1"></div>
 						      <div class="col-md-8">
 
-
-									<input type="password" class="form-control" id="password" name="passtx" data-toggle="popover" title="Password Strength" required>
+									<input type="password" class="form-control" id="password" name="passtx" data-toggle="popover" title="Password Strength" required><br>
 								</div>
 								</div>
 
 
-
-
-								<div class="form-group">
-						     <label class="col-md-2 control-label" for ="desctx"><br><br><br><b>Role:</b></label>
+						      <div class="form-group">
+						     <label class="col-md-2 control-label" for ="emailtx"><b>Email Address:</b></label>
 						      <div class="col-md-1"></div>
 						      <div class="col-md-8">
-						      <br><br>
-										<select name="cusSelectbox" id="cusSelectbox">
-											<option value="Select">Select</option>
-											<option value="Admin">Admin</option>
-											<option value="User">User</option>
-											
-										</select>
-										<?php
+						      	<input type="text" class="form-control" name="emailtx"  required>
+									<span class="col-sm-offset-2 col-sm-12 error"><?php echo $usererrormsg; echo $whitespaceerror;?></span>
+								</div>
+								</div>
+
+
+						<div class="container">
+						     <label class="col-md-5 control-label" for ="desctx"><br><br><b>Select Role:</b></label>
+						      <div class="col-md-4">
+						      <div class="col-md-3">
+						      <br>
+						      
+								<select class="btn btn-primary dropdown-toggle" title="Select one" data-style="btn-primary" name="cusSelectbox">
+									<option>Admin</option>
+									<option>User</option>
+								</select>
+
+									<script>
+										$(document).ready(function(){
+										    $(".dropdown-toggle").dropdown();
+										});
+										</script>
+									</div>
+
+				<?php
 
 				include 'connect.php';
 
-				if (isset ($_POST['ustx']) && isset($_POST
-				['passtx'])){
+				if (isset ($_POST['ustx']) && isset($_POST['passtx'])){
 					$username = $_POST['ustx'];
 					//$password = $_POST['passtx'];
 					$role = $_POST['cusSelectbox'];
 					$pas = (md5(mysqli_real_escape_string($conn, $_POST["passtx"])));
-					$query = "INSERT INTO `tbl_admin` (username, password,role) VALUES ('$username','$pas','$role')";
-					$result = mysqli_query($conn, $query);
-					if($result){
-					   $errormsg = "Account Successfully Created!";
+					$email = $_POST['emailtx'];
+					$check = "SELECT * FROM tbl_admin WHERE username = '$username'";
+					$checkexist = mysqli_query($conn, $check);
+
+					if (mysqli_num_rows($checkexist) > 0) {
+						$errormsg = "Username already exist!";
+					}else{
+						$insertquery = "INSERT INTO `tbl_admin` (username,password,email,role) VALUES ('$username','$pas','$email','$role')";
+						$executeinsert  = mysqli_query($conn, $insertquery);
+						$errormsg = "Account registered successfully.";
 					}
-					else{
-						$errormsg = "Unsuccessful!";
-						
-					}
+
 					echo '<script type="text/javascript">alert("'.$errormsg.'");
 									</script>';
 				}
 
 				?>
-									    <br><br>
-								</div>
 
 
-								
-								<button type="submit" id="butt" class="btn btn-sm btn-raised pull-right btn-primary">Create Account</button>
+					
+				</div>
+
+								<button type="submit" style="margin:auto; display:block;" id="butt" class="btn btn-sm btn-raised btn-primary">Create Account</button>
 								 <p><span style="color:red;"><?php ;?></span></p>
 								   <div class="col-md-1"></div>
 						      <div class="col-md-8"></div>
@@ -153,11 +166,6 @@ $_SESSION['previous-page'] = 'createAccount.php';
 						</div>
 						</nav>
 						
-						
-						
-			
-				
-		
 	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="js/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>	
@@ -185,87 +193,87 @@ $_SESSION['previous-page'] = 'createAccount.php';
 		    document.getElementById("mySidenav").style.width = "0";
 		    document.getElementById("main").style.marginLeft= "0";
 		}
-</script>
+		</script>
 
- <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/material.js"></script>
+		 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		  <script type="text/javascript" src="js/bootstrap.js"></script>
+		  <script type="text/javascript" src="js/material.js"></script>
 
   
 	  <script type="text/javascript">
-    $.material.init();
-    $(document).ready(function() {
-     //$('select').material_select();
-    });
-     $(function () {
+		    $.material.init();
+		    $(document).ready(function() {
+		     //$('select').material_select();
+		    });
+		     $(function () {
 
-	var defaultselectbox = $('#cusSelectbox');
-	var numOfOptions = $('#cusSelectbox').children('option').length;
+			var defaultselectbox = $('#cusSelectbox');
+			var numOfOptions = $('#cusSelectbox').children('option').length;
 
-	// hide select tag
-	defaultselectbox.addClass('s-hidden');
+			// hide select tag
+			defaultselectbox.addClass('s-hidden');
 
-	// wrapping default selectbox into custom select block
-	defaultselectbox.wrap('<div class="cusSelBlock"></div>');
+			// wrapping default selectbox into custom select block
+			defaultselectbox.wrap('<div class="cusSelBlock"></div>');
 
-	// creating custom select div
-	defaultselectbox.after('<div class="selectLabel"></div>');
+			// creating custom select div
+			defaultselectbox.after('<div class="selectLabel"></div>');
 
-	// getting default select box selected value
-	$('.selectLabel').text(defaultselectbox.children('option').eq(0).text());
+			// getting default select box selected value
+			$('.selectLabel').text(defaultselectbox.children('option').eq(0).text());
 
-	// appending options to custom un-ordered list tag
-	var cusList = $('<ul/>', { 'class': 'options'} ).insertAfter($('.selectLabel'));
+			// appending options to custom un-ordered list tag
+			var cusList = $('<ul/>', { 'class': 'options'} ).insertAfter($('.selectLabel'));
 
-	// generating custom list items
-	for(var i=0; i< numOfOptions; i++) {
-		$('<li/>', {
-		text: defaultselectbox.children('option').eq(i).text(),
-		rel: defaultselectbox.children('option').eq(i).val()
-		}).appendTo(cusList);
-	}
+			// generating custom list items
+			for(var i=0; i< numOfOptions; i++) {
+				$('<li/>', {
+				text: defaultselectbox.children('option').eq(i).text(),
+				rel: defaultselectbox.children('option').eq(i).val()
+				}).appendTo(cusList);
+			}
 
-	// open-list and close-list items functions
-	function openList() {
-		for(var i=0; i< numOfOptions; i++) {
-			$('.options').children('li').eq(i).attr('tabindex', i).css(
-				'transform', 'translateY('+(i*100+100)+'%)').css(
-				'transition-delay', i*30+'ms');
-		}
-	}
+			// open-list and close-list items functions
+			function openList() {
+				for(var i=0; i< numOfOptions; i++) {
+					$('.options').children('li').eq(i).attr('tabindex', i).css(
+						'transform', 'translateY('+(i*100+100)+'%)').css(
+						'transition-delay', i*30+'ms');
+				}
+			}
 
-	function closeList() {
-		for(var i=0; i< numOfOptions; i++) {
-			$('.options').children('li').eq(i).css(
-				'transform', 'translateY('+i*0+'px)').css('transition-delay', i*0+'ms');
-		}
-		$('.options').children('li').eq(1).css('transform', 'translateY('+2+'px)');
-		$('.options').children('li').eq(2).css('transform', 'translateY('+4+'px)');
-	}
+			function closeList() {
+				for(var i=0; i< numOfOptions; i++) {
+					$('.options').children('li').eq(i).css(
+						'transform', 'translateY('+i*0+'px)').css('transition-delay', i*0+'ms');
+				}
+				$('.options').children('li').eq(1).css('transform', 'translateY('+2+'px)');
+				$('.options').children('li').eq(2).css('transform', 'translateY('+4+'px)');
+			}
 
-	// click event functions
-	$('.selectLabel').click(function () {
-		$(this).toggleClass('active');
-		if( $(this).hasClass('active') ) {
-			openList();
-			focusItems();
-		}
-		else {
-			closeList();
-		}
-	});
+			// click event functions
+			$('.selectLabel').click(function () {
+				$(this).toggleClass('active');
+				if( $(this).hasClass('active') ) {
+					openList();
+					focusItems();
+				}
+				else {
+					closeList();
+				}
+			});
 
-	$(".options li").on('keypress click', function(e) {
-		e.preventDefault();
-		$('.options li').siblings().removeClass();
-		closeList();
-		$('.selectLabel').removeClass('active');
-		$('.selectLabel').text($(this).text());
-		defaultselectbox.val($(this).text());
-		$('.selected-item p span').text($('.selectLabel').text());
-	});
-	
-});
+			$(".options li").on('keypress click', function(e) {
+				e.preventDefault();
+				$('.options li').siblings().removeClass();
+				closeList();
+				$('.selectLabel').removeClass('active');
+				$('.selectLabel').text($(this).text());
+				defaultselectbox.val($(this).text());
+				$('.selected-item p span').text($('.selectLabel').text());
+			});
+			
+		});
 
 function focusItems() {
 
