@@ -58,8 +58,8 @@
           <form action="loginbtn.php" method="post">
             <input id="username" type="text" name="username" required="" placeholder="Enter username" />
             <input id="password" type="password" name="password" required="" placeholder="Enter password" />
-            <p class="text-center"> <a href="adminResetPasswordEmail.php"> Forgot Password? </a> </p>
-            <button id='login_id' type="submit" name="action">Log In</button>
+            <button id='login_id'  type="submit" name="action">Log In</button>
+            <p class="text-center" style="text-align: center"> <a aria-expanded="false" data-longtext="Forgot Password" href="adminResetPasswordEmail.php" role="button" class="a-5-mbi">Forgot Password?</a></p>
           </form>
 
       </div>
