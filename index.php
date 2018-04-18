@@ -1,7 +1,4 @@
 <?php
-
-
-
 	session_start();
 
 	if(isset($_SESSION['refcode_not_found'])){
