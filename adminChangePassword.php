@@ -1,14 +1,30 @@
 <?php 
 
     require 'connect.php';
+    require 'validation_form.php';
 
     //variable declaration
     $new_password = '';
     $confirm_password = '';
 
+
     if(isset($_POST['btnChangePassword'])){
-        
+        //retrieving form data
+        inputValidation($new_password = $_POST['txtNewPassword']);
+        inputValidation($confirm_password = $_POST['txtConfirmPassword']);
+
+        //retrieving code from database
+        // $sql = "SELECT reset_code_timestamp, reset_code, reset_code_id FROM tbl_reset_code WHERE "
+
+        if($new_password === $confirm_password){
+
+        }else{
+
+        }
+
+
     }
+
 
 ?>
 
@@ -26,6 +42,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     
+    <!--custom css -->
+    <link rel="stylesheet" href="custom_css/password_reset.css">
     <title> Change Password </title>
 </head>
 <body>
@@ -40,18 +58,24 @@
         </div>
 
         <div class="col-md-6">
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
                 <div class="form-group">
                     <label for="admin_new_password"> New Password </label>
-                    <input type="text" class="form-control" placeholder="New Password" id="admin_new_password" name="txtNewPassword" required>
+                    <input type="password" class="form-control" placeholder="New Password" id="admin_new_password" name="txtNewPassword" required>
                 </div>
 
                 <div class="form-group">
                     <label for="admin_confirm_password"> Confirm Password </label>
-                    <input type="text" class="form-control" id="admin_confirm_password" placeholder="Confirm Password" name="txtConfirmPassword" required>
+                    <input type="password" class="form-control" id="admin_confirm_password" placeholder="Confirm Password" name="txtConfirmPassword" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="input_reset_code"> 6 Digit Code </label>
+                    <input type="number" class="form-control" id="input_reset_code" placeholder="Enter 6 digit code" name="txtResetCode" required>
                 </div>
                 
                 <button type="submit" class="btn btn-default" name="btnChangePassword">Reset</button>
+
             </form>
         </div>
 

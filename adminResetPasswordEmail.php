@@ -6,31 +6,54 @@
     //variable declaration
     $admin_email = '';
     $admin_id = '';
+    $random_code = 0;
     
     if(isset($_POST['btnResetPassword'])){
         
         inputValidation($admin_email = $_POST['txtAdminEmail']);
 
         $sql = "SELECT id, email FROM tbl_admin WHERE email = '{$admin_email}'";
-
         $result = $conn->query($sql);
 
-        if($result->num_rows === 1){
-            
+        if($result->num_rows === 1){            
+            //Generate a random code 6 digit
+            $random_code = mt_rand(600000, 900000);
+
+            //retrieve id of the admin
+            $row = $result->fetch_assoc();
+            $admin_id = $row['id'];
+
+            //save to database 
+            $sql = "INSERT INTO `tbl_reset_code` (reset_code_id, id, reset_code_timestamp, reset_code, admin_email) VALUES(NULL, '{$admin_id}', CURRENT_TIMESTAMP, '{$random_code}', '{$admin_email}')";
+            $result = $conn->query($sql);
+
+            //send to email 6 digit code
+            $to = $admin_email;
+            $subject = "PASSWORD RESET CODE";
+            $reset_code = $random_code;
+            $headers = "From: Anderson Group BPO";
+            mail($to,$subject,$reset_code,$headers);
+
+            //retrieve the latest timestamp of specific user
+            $sql = "SELECT MAX(reset_code_timestamp) FROM tbl_reset_code WHERE admin_email ='{$admin_email}'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+
+            echo $row;
+
+            //redirect to change password
+            // header("Location: http://localhost/HROnline/adminChangePassword.php?id=$admin_id"); 
+
         }else{
             echo '<script type="text/javascript">';
             echo 'alert("Email do not exist!")';
             echo '</script>';
-        }
+        }  
+    }       
 
-    }
-
-
-            
-
+    $conn->close();
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +68,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     
-    <title> Email Reset Link </title>
+    <title> Reset Code </title>
 </head>
 <body>
 
@@ -63,11 +86,11 @@
 
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
                 <div class="form-group">
-                    <label for="email"> Reset Email</label>
-                    <input type="email" class="form-control" id="admin_email" placeholder="Enter email" name="txtAdminEmail">
+                    <label for="email"> Email </label>
+                    <input type="email" class="form-control" id="admin_email" placeholder="Enter email" name="txtAdminEmail" required>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" name="btnResetPassword">Reset Code</button>
+                <button type="submit" class="btn btn-primary" name="btnResetPassword"> Submit </button>
         </form>
 
         </div>
