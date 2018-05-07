@@ -111,11 +111,11 @@ $( "#fnext" ).on( "click", function() {
 			$("#source").blur();
 		}
 		
-		if(source=="-Select Here-"){
+		if(source=="Select Source"){
 			$("#source").blur();
 			$("#source").focus();
 			document.getElementById("source").style.borderColor = "red";
-			document.getElementById("source_validator").style.display="block";	
+			document.getElementById("sourcevalidator").style.display="block";	
 		}
 		
 		if(apply_position=="Others"){
@@ -144,11 +144,11 @@ $( "#fnext" ).on( "click", function() {
 				}else if(placeofbirth==""){
 					fnext_required();
 					$("#placeofbirth").focus();
-				}else if(source=="-Select Here-"){
+				}else if(source=="Select Source"){
 					$("#source").blur();
 					$("#source").focus();
 					document.getElementById("source").style.borderColor = "red";
-					document.getElementById("source_validator").style.display="block";	
+					document.getElementById("sourcevalidator").style.display="block";	
 				}else{
 					document.getElementById("container1").style.display="none";
 					document.getElementById("container2").style.display="block";
@@ -174,11 +174,11 @@ $( "#fnext" ).on( "click", function() {
 			}else if(placeofbirth==""){
 				fnext_required();
 				$("#placeofbirth").focus();
-			}else if(source=="-Select Here-"){
+			}else if(source=="Select Source"){
 				$("#source").blur();
 				$("#source").focus();
 				document.getElementById("source").style.borderColor = "red";
-				document.getElementById("source_validator").style.display="block";	
+				document.getElementById("sourcevalidator").style.display="block";	
 			}else{
 				document.getElementById("container1").style.display="none";
 				document.getElementById("container2").style.display="block";
@@ -360,10 +360,10 @@ $( "#lnext" ).on( "click", function() {
 	}else if(eadd3==''){
 		lnext_required();
 		$("#eadd3").focus();
-	}else if(source=='-Select Here-'){
+	}else if(source=='Select Source'){
 		lnext_required();
 		document.getElementById("source").style.borderColor = "red";
-		document.getElementById("source_validator").style.display="block";
+		document.getElementById("sourcevalidator").style.display="block";
 	}
 	else{
 		document.getElementById('container6').style.display='block';
@@ -424,9 +424,9 @@ $( "#frnext" ).on( "click", function() {
 });
 $( "#source" ).on( "change", function() {
 	var source2 = document.getElementById("source").value;
-	document.getElementById("source_validator").style.display = 'none';
-	if(source2=='-Select Here-'){
-		document.getElementById("source_validator").style.display = 'block';
+	document.getElementById("sourcevalidator").style.display = 'none';
+	if(source2=='Select Source'){
+		document.getElementById("sourcevalidator").style.display = 'block';
 	}
 });
 
@@ -499,7 +499,7 @@ $( "#saveQuit" ).on( "click", function() {
 			}else if(placeofbirth==""){
 				required_field();
 				$("#placeofbirth").focus();
-			}else if(source=="-Select Here-"){
+			}else if(source=="Select Source"){
 				required_field();
 				$("#source").focus();
 			}else{
@@ -532,7 +532,7 @@ $( "#saveQuit" ).on( "click", function() {
 		}else if(placeofbirth==""){
 			required_field();
 			$("#placeofbirth").focus();
-		}else if(source=="-Select Here-"){
+		}else if(source=="Select Source"){
 			required_field();
 			$("#source").focus();
 		}else{

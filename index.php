@@ -732,7 +732,7 @@ $(document).ready(function(){
 				      							$sql = "SELECT * FROM `tbl_sourceapplication` WHERE flag = '0'";
 				      							$result = $conn->query($sql);
 				      							while($row = $result->fetch_assoc()){
-				      								if ($row['application_num'] == 1) {
+				      								if ($row['application_num'] == 10) {
 				      									echo "<option value='".$row['source_name']."' selected>".$row['source_name']."</option>";
 				      								}
 				      								else{
@@ -743,7 +743,7 @@ $(document).ready(function(){
 
 										</select>
 
-										<span style="color: red;display:none;" id="source_validator">Select Application Source.</span>
+										<span style="color: red;display:none;" id="sourcevalidator">Select Application Source.</span>
 
 									</div>
 									
