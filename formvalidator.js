@@ -591,6 +591,7 @@ $( "#ref_yes" ).on( "click", function() {
 		}
 	});
 });
+
 $("#mobile_number").on('keydown', function(e) {
 			var moblieNumber_value = this.value;
 			var res = moblieNumber_value.substring(6, 7);

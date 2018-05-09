@@ -232,7 +232,7 @@ $(document).ready(function(){
 					document.getElementById("Candidatetype").style.display ="none";
 					document.getElementById("OR").style.display ="none";
 					document.getElementById("okay_button").style.display ="block";
-					document.getElementById("okay_button").disabled = true;
+					// document.getElementById("okay_button").style.display ="block";
 					document.getElementById("blk").style.display="none";
 					document.getElementById("agree_name").style.display="none";
 					document.getElementById("ckAgree").style.display="none";
@@ -267,9 +267,6 @@ $(document).ready(function(){
 			<center>
 				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
 				<?php 
-
-				// $refcode = isnull($_GET['ref_code']);
-
 				if(isset($_SESSION['refcode_not_found'])){
 					if($_SESSION['refcode_not_found']=='yes'){
 						echo'<p style="color:red;margin-top:-3%;">Invalid Reference Code.</p>';
@@ -278,9 +275,8 @@ $(document).ready(function(){
 						echo'<p style="color:red;margin-top:-2%;font-size:13px;">Your application form has been viewed already.<br> Please wait for an email.</p>';
 						$_SESSION['refcode_not_found']='no';
 					}
-					set($_SESSION['refcode_not_found']);
+					unset($_SESSION['refcode_not_found']);
 				}
-			
 				?>
 			</center>
 
@@ -744,7 +740,7 @@ $(document).ready(function(){
 								
 									<div class="form-group label-floating">
 
-										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
+									<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
 
 										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)" >
 
@@ -3332,7 +3328,7 @@ $(document).ready(function(){
 
 			var con_num =  $('#mobile_number').val();
 
-			var con_num2 =  $('#mobile_number2').val();
+			// var con_num2 =  $('#mobile_number2').val();
 
 			var e_mail =  $('#email').val();
 
@@ -3354,7 +3350,7 @@ $(document).ready(function(){
 
             document.getElementById("contact").value = con_num;
 
-            document.getElementById("contact2").value = con_num2;
+            // document.getElementById("contact2").value = con_num2;
 
             document.getElementById("useremail").value = e_mail;
 
@@ -3367,8 +3363,6 @@ $(document).ready(function(){
             document.getElementById("srcsspec").value = sourcespec;
 
         });
-
-	<!--END-->
 
 		// Validate email if exist.
 		$.material.init();
@@ -3392,21 +3386,21 @@ $(document).ready(function(){
 				  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 				  return re.test(email);
 				}
-				function validate() {
-				  var $result = $("#result");
-				  var email = $("#email").val();
-				  $result.text("");
+				// function validate() {
+				//   var $result = $("#result");
+				//   var email = $("#email").val();
+				//   $result.text("");
 
-				  if (validateEmail(email)) {
-				    $result.text(email + " is valid :)");
-				    $result.css("color", "green");
-				  } else {
-				    $result.text(email + " is not valid :(");
-				    $result.css("color", "red");
-				  }
-				  return false;
-				}
-				$("#validate").bind("click", validate);
+				//   if (validateEmail(email)) {
+				//     $result.text(email + " is valid :)");
+				//     $result.css("color", "green");
+				//   } else {
+				//     $result.text(email + " is not valid :(");
+				//     $result.css("color", "red");
+				//   }
+				//   return false;
+				// }
+				// $("#validate").bind("click", validate);
 
 
 
@@ -4485,13 +4479,6 @@ $(document).ready(function(){
 					    preventNumberInput(evt);
 					  });
 					});
-
-
-
-				function inputLimitNames(input) {
-				    if (input.value < 0) input.value = 0;
-				    if (input.value > 50) input.value = 50;
-				  }
 
 
 		      $(document).ready(function() {
