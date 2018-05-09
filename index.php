@@ -1054,7 +1054,7 @@ $(document).ready(function(){
 										<label class="control-label" for="email">E-Mail Address<label class="text-danger">*</label></label>
 
 										<input onfocusout="emailfunction2();" type="email" name="email" class="form-control" id="email" required>
-
+										<span style="color: red;display:none;" id="email_validator">Invalid Email Address.</span>
 										<div id='emailhelp' class="help-block with-errors" style="color: red"></div>
 
 									</div>
@@ -2058,7 +2058,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="employers_name1">Company Name</label>
+                              <label class="control-label" for="employers_name1">Company Name<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="company_name" id="employers_name1">
 
@@ -2084,7 +2084,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="employers_address">Company's address</label>
+                              <label class="control-label" for="employers_address">Company's address<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="compadd" id="employers_address">
 
@@ -2102,7 +2102,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="position-title">Position Title</label>
+                              <label class="control-label" for="position-title">Position Title<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="position" id="position-title" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
@@ -2128,7 +2128,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="monthly-salary">Monthly salary</label>
+                              <label class="control-label" for="monthly-salary">Monthly salary<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="number" name="salary" id="monthlysalary" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
@@ -2142,7 +2142,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="reason">Reason of leaving</label>
+                              <label class="control-label" for="reason">Reason of leaving<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="reason" id="reason" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 

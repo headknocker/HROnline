@@ -220,6 +220,11 @@ $( "#snext" ).on( "click", function() {
 	var conperson = document.getElementById("contactperson").value;
 	var cperson_contact = document.getElementById("contactpersonno").value;
 	var email = document.getElementById("email").value;
+
+	var emailIndex = email.indexOf("@");
+	var emailLength = email.length;
+	var emailValidation = email.substring(emailIndex,emailLength);
+
 	var moblieNumber_value = document.getElementById("mobile_number").value;
 	
 	var moblieNumber_value2 = document.getElementById("celno2").value;
@@ -265,6 +270,10 @@ $( "#snext" ).on( "click", function() {
 	}else if(email==""){
 		snext_required();
 		$("#email").focus();
+	}else if (emailValidation != "@gmail.com" && emailValidation != "@yahoo.com"){
+		snext_required();
+		document.getElementById("email_validator").style.display="block";
+		$("#email").focus();
 	}else if(mobilenum.length!=18){
 		snext_required();
 		$("#mobile_number").focus();
@@ -305,6 +314,7 @@ $( "#snext" ).on( "click", function() {
 	}else if(htmlContent=='Email already taken!'){
 		$('#email').focus();
 	}else{ 
+		document.getElementById("email_validator").style.display="none";		
 		document.getElementById("container2").style.display="none";
 		document.getElementById("container3").style.display="block";
 	}
