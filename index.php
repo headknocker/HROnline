@@ -732,7 +732,7 @@ $(document).ready(function(){
 				      							$sql = "SELECT * FROM `tbl_sourceapplication` WHERE flag = '0'";
 				      							$result = $conn->query($sql);
 				      							while($row = $result->fetch_assoc()){
-				      								if ($row['application_num'] == 1) {
+				      								if ($row['application_num'] == 10) {
 				      									echo "<option value='".$row['source_name']."' selected>".$row['source_name']."</option>";
 				      								}
 				      								else{
@@ -743,7 +743,7 @@ $(document).ready(function(){
 
 										</select>
 
-										<span style="color: red;display:none;" id="source_validator">Select Application Source.</span>
+										<span style="color: red;display:none;" id="sourcevalidator">Select Application Source.</span>
 
 									</div>
 									
@@ -1054,7 +1054,7 @@ $(document).ready(function(){
 										<label class="control-label" for="email">E-Mail Address<label class="text-danger">*</label></label>
 
 										<input onfocusout="emailfunction2();" type="email" name="email" class="form-control" id="email" required>
-
+										<span style="color: red;display:none;" id="email_validator">Invalid Email Address.</span>
 										<div id='emailhelp' class="help-block with-errors" style="color: red"></div>
 
 									</div>
@@ -1153,8 +1153,14 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno2">Mobile No.<small>(Optional)</small></label>
 
-									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2"  >
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2" required>
 
+								
+									<span style="color: red;display:none;" id="number_validator2">Invalid Contact Number.</span>
+
+									<div class="help-block with-errors" style="color: red"></div>
+
+								
 								</div>
 
 							</div>
@@ -1165,12 +1171,18 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno3">Mobile No.<small>(Optional)</small></label>
 
-									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" >
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" required>
+
+
+									<span style="color: red;display:none;" id="number_validator3">Invalid Contact Number.</span>
+
+									<div class="help-block with-errors" style="color: red"></div>
+
 
 								</div>
 
 							</div>
-
+							
 							<div class="col-md-6">
 
 								<div class="form-group label-floating">
@@ -2046,7 +2058,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="employers_name1">Company Name</label>
+                              <label class="control-label" for="employers_name1">Company Name<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="company_name" id="employers_name1">
 
@@ -2072,7 +2084,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="employers_address">Company's address</label>
+                              <label class="control-label" for="employers_address">Company's address<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="compadd" id="employers_address">
 
@@ -2090,7 +2102,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="position-title">Position Title</label>
+                              <label class="control-label" for="position-title">Position Title<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="position" id="position-title" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
@@ -2114,14 +2126,40 @@ $(document).ready(function(){
 
                           <div class="col-md-2">
 
-                            <div class="form-group label-floating">
+                            <div class="form-group label-floating" id = "previous_salarygroup">
 
-                              <label class="control-label" for="monthly-salary">Monthly salary</label>
+                              <label for="monthly-salary">Monthly salary<label class="text-danger">*</label></label> 
 
-                              <input class="form-control" type="number" name="salary" id="monthlysalary" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+									<div class="input-group" id="previous_salary">
 
-							  <div class="help-block with-errors" style="color: red;"></div>
+									<select id="monthlysalary" class="form-control" name="salary">
 
+										<option value="0" selected>0</option>
+
+										<option value="10,000.00 - 15,000.00">&#8369;10,000.00 - &#8369;15,000.00</option>
+
+										<option value="16,000.00 - 20,000.00">&#8369;16,000.00 - &#8369;20,000.00</option>
+
+										<option value="21,000.00 - 25,000.00">&#8369;21,000.00 - &#8369;25,000.00</option>
+
+										<option value="26,000.00 - 30,000.00">&#8369;26,000.00 - &#8369;30,000.00</option>
+
+										<option value="31,000.00 - 35,000.00">&#8369;31,000.00 - &#8369;35,000.00</option>
+
+										<option value="36,000.00 - 40,000.00">&#8369;36,000.00 - &#8369;40,000.00</option>
+
+										<option value="41,000.00 - 50,000.00">&#8369;41,000.00 - &#8369;50,000.00</option>
+
+										<option value="51,000.00 - 55,000.00">&#8369;51,000.00 - &#8369;55,000.00</option>
+
+										<option value="More than 55,000.00"> More than &#8369;55,000.00</option>
+
+									</select>
+
+								</div>
+									<div class="help-block with-errors" style="color: red;">
+							    	<span style="color: red;display:none;" id="salary_validator">Select Salary Here.</span>
+								</div>			  		 
                             </div>
 
                           </div>
@@ -2130,7 +2168,7 @@ $(document).ready(function(){
 
                             <div class="form-group label-floating">
 
-                              <label class="control-label" for="reason">Reason of leaving</label>
+                              <label class="control-label" for="reason">Reason of leaving<label class="text-danger">*</label></label>
 
                               <input class="form-control" type="text" name="reason" id="reason" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
@@ -4687,7 +4725,7 @@ $(document).ready(function(){
 
             $(document).ready(function() { 
 
-                var max_fields = 3; 
+                var max_fields = 10; 
 
                 var wrapper = $(".input_fields_wrap_skill"); //Fields wrapper
 
@@ -4729,7 +4767,7 @@ $(document).ready(function(){
 
             $(document).ready(function() { 
 
-                var max_fields = 3; 
+                var max_fields = 10; 
 
                 var wrapper = $(".input_fields_wrap_nacad"); //Fields wrapper
 
@@ -4769,7 +4807,7 @@ $(document).ready(function(){
 
             $(document).ready(function() { 
 
-                var max_fields = 3; 
+                var max_fields = 10; 
 
                 var wrapper = $(".input_fields_wrap_org"); //Fields wrapper
 
