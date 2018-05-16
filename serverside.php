@@ -190,6 +190,15 @@ include("connect.php");
 					 $ONE_SALARY =  $ONE_SALARY;} 
 				}
 			catch (Exception $e) { }
+	$ONE_CONTACTNUM = mysqli_real_escape_string($conn,$_POST['contactnum']);
+			try { 
+				if (empty($ONE_CONTACTNUM)) {
+					 $ONE_CONTACTNUM= " "; 
+				} 
+				else { 
+					 $ONE_CONTACTNUM =  $ONE_CONTACTNUM;} 
+				}
+			catch (Exception $e) { }
 	$ONE_REASON = mysqli_real_escape_string($conn,$_POST['reason']);
 			try { 
 				if (empty($ONE_REASON)) { 
@@ -258,7 +267,15 @@ include("connect.php");
 	 		if (!empty($_POST['reason2'])) { 
 	 			$TWO_REASON = mysqli_real_escape_string($conn,$_POST['reason2']); 
 	 		}
-
+	$TWO_CONTACTNUM = mysqli_real_escape_string($conn,$_POST['contactnum']);
+			try { 
+				if (empty($TWO_CONTACTNUM)) {
+					 $TWO_CONTACTNUM= " "; 
+				} 
+				else { 
+					 $TWO_CONTACTNUM =  $TWO_CONTACTNUM;} 
+				}
+			catch (Exception $e) { }
 
 	$three_datefrom = "";
 			if (!empty($_POST['datefrom3'])) { 
@@ -312,7 +329,15 @@ include("connect.php");
 			if (!empty($_POST['reason3'])) { 
 				$THREE_REASON = mysqli_real_escape_string($conn,$_POST['reason3']); 
 			}
-
+	$THREE_CONTACTNUM = mysqli_real_escape_string($conn,$_POST['contactnum']);
+			try { 
+				if (empty($THREE_CONTACTNUM)) {
+					 $THREE_CONTACTNUM= " "; 
+				} 
+				else { 
+					 $THREE_CONTACTNUM =  $THREE_CONTACTNUM;} 
+				}
+			catch (Exception $e) { }
 
 	//WORK EXPERIENCE4
 	$four_datefrom = "";
@@ -371,6 +396,15 @@ include("connect.php");
 			if (!empty($_POST['reason4'])) { 
 				$FOUR_REASON = mysqli_real_escape_string($conn,$_POST['reason4']); 
 			}
+	$FOUR_CONTACTNUM = mysqli_real_escape_string($conn,$_POST['contactnum']);
+			try { 
+				if (empty($FOUR_CONTACTNUM)) {
+					 $FOUR_CONTACTNUM= " "; 
+				} 
+				else { 
+					 $FOUR_CONTACTNUM =  $FOUR_CONTACTNUM;} 
+				}
+			catch (Exception $e) { }
 
 	//WORK EXPERIENCE 5
 	$five_datefrom = ""; 
@@ -425,6 +459,15 @@ include("connect.php");
 			if (!empty($_POST['reason5'])) {	
 				 $FIVE_REASON = mysqli_real_escape_string($conn,$_POST['reason5']); 
 			}
+	$FIVE_CONTACTNUM = mysqli_real_escape_string($conn,$_POST['contactnum']);
+			try { 
+				if (empty($FIVE_CONTACTNUM)) {
+					 $FIVE_CONTACTNUM= " "; 
+				} 
+				else { 
+					 $FIVE_CONTACTNUM =  $FIVE_CONTACTNUM;} 
+				}
+			catch (Exception $e) { }
 
 
 	$CERTIFY=mysqli_real_escape_string($conn,$_POST['submit']); 
@@ -523,14 +566,14 @@ $awards3 = $_POST['col_scholarship'];
 	
 	 $sql= "INSERT INTO tbl_application (`POSITION` , `APPLICATION_SOURCE`, `SHIFTING_SCHEDULE` , `WEEKENDS_HOLIDAYS` , `EMPLOYMENT_DATE` , `NAME` , `LASTNAME`, `FIRSTNAME`, `MIDDLENAME`, `EXTENSIONNAME`, `NICKNAME` , `GENDER` , `CIVIL STATUS` , `CITIZENSHIP`, `EMAIL ADDRESS` ,  `FATHER'S NAME`, `F_LNAME` , `F_FNAME` , `F_MNAME` , `MOTHER'S MAIDEN NAME`, `M_LNAME` , `M_FNAME`, `M_MNAME` , `DATE OF BIRTH`,
 
-		 `1. Inclusive Dates`, `1.1 Employer's Name, Address and Phone`, `1.2 Position Title`, `1.3 Name_Position and Contact No. of Immediate Supervisor`, `1.4 Monthly Salary`, `1.5 Reason for Leaving`, 
-		 `2. Inclusive Dates`, `2.1 Employer's Name, Address and Phone`, `2.2 Position Title`, `2.3 Name_Position and Contact No. of Immediate Supervisor`, `2.4 Monthly Salary`, `2.5 Reason for Leaving`, 
-		 `3. Inclusive Dates`, `3.1 Employer's Name, Address and Phone`, `3.2 Position Title`, `3.3 Name_Position and Contact No. of Immediate Supervisor`, `3.4 Monthly Salary`, `3.5 Reason for Leaving`, 
-		 `4. Inclusive Dates`, `4.1 Employer's Name, Address and Phone`, `4.2 Position Title`, `4.3 Name_Position and Contact No. of Immediate Supervisor`, `4.4 Monthly Salary`, `4.5 Reason for Leaving`, 
-		 `5. Inclusive Dates`, `5.1 Employer's Name, Address and Phone`, `5.2 Position Title`, `5.3 Name_Position and Contact No. of Immediate Supervisor`, `5.4 Monthly Salary`, `5.5 Reason for Leaving`, `CERTIFY`,
+		 `1. Inclusive Dates`, `1.1 Employer's Name, Address and Phone`, `1.2 Position Title`, `1.3 Name_Position and Contact No. of Immediate Supervisor`, `1.4 Monthly Salary`, `1.6 Emp_phone`, `1.5 Reason for Leaving`, 
+		 `2. Inclusive Dates`, `2.1 Employer's Name, Address and Phone`, `2.2 Position Title`, `2.3 Name_Position and Contact No. of Immediate Supervisor`, `2.4 Monthly Salary`, `2.5 Reason for Leaving`, `2.6 Emp_phone`,
+		 `3. Inclusive Dates`, `3.1 Employer's Name, Address and Phone`, `3.2 Position Title`, `3.3 Name_Position and Contact No. of Immediate Supervisor`, `3.4 Monthly Salary`, `3.5 Reason for Leaving`, `3.6 Emp_phone`,
+		 `4. Inclusive Dates`, `4.1 Employer's Name, Address and Phone`, `4.2 Position Title`, `4.3 Name_Position and Contact No. of Immediate Supervisor`, `4.4 Monthly Salary`, `4.5 Reason for Leaving`, `4.6 Emp_phone`,
+		 `5. Inclusive Dates`, `5.1 Employer's Name, Address and Phone`, `5.2 Position Title`, `5.3 Name_Position and Contact No. of Immediate Supervisor`, `5.4 Monthly Salary`, `5.5 Reason for Leaving`, `5.6 Emp_phone`, `CERTIFY`,
 		 `SALARY`, `HEIGHT`, `WEIGHT`, `BLOODTYPE`, `SKYPE_USERID`, `CONTACT NAME`, `CONTACT DETAILS`, `MOBILE_NUMBER`, `SPOUSE'S OCCUPATION`, `HOME_TELNUM`,`REFERENCE_NO`,`APPLICANT_STATUS`,`HAVE_CHILD`,`Status`,`source`) VALUES
 
-		 ('$position', '$application_source', '$sched' , '$holidays' , '$empdate' , '$name' , '$lname', '$fname', '$mname', '$ename', '$nickname', '$sex', '$cstatus', '$citizenship', '$EMAIL', '$father_name' ,'$flname', '$ffname', '$fmidname' , '$mother_name', '$mlname' , '$mfname' , '$mmname' , '$bday123','$ONE_DATES', '$ONE_EMPNAME', '$ONE_POSITION', '$ONE_SUPERVISOR', '$ONE_SALARY', '$ONE_REASON', '$TWO_DATES', '$TWO_EMPNAME', '$TWO_POSITION', '$TWO_SUPERVISOR', '$TWO_SALARY', '$TWO_REASON', '$THREE_DATES', '$THREE_EMPNAME', '$THREE_POSITION', '$THREE_SUPERVISOR', '$THREE_SALARY', '$THREE_REASON', '$FOUR_DATES', '$FOUR_EMPNAME', '$FOUR_POSITION', '$FOUR_SUPERVISOR', '$FOUR_SALARY', '$FOUR_REASON', '$FIVE_DATES', '$FIVE_EMPNAME', '$FIVE_POSITION', '$FIVE_SUPERVISOR', '$FIVE_SALARY', '$FIVE_REASON ', '$CERTIFY', '$salary_expectation', '$height', '$WEIGHT', '$BLOODTYPE','$SKYPE_USERID', '$CONTACT_NAME', '$CONTACT_DETAILS', '$mobile_num', '$Spouse_occupation', '$home_telnum','$rand_str','$app_stat','$c_s_result','$application_status','application')";
+		 ('$position', '$application_source', '$sched' , '$holidays' , '$empdate' , '$name' , '$lname', '$fname', '$mname', '$ename', '$nickname', '$sex', '$cstatus', '$citizenship', '$EMAIL', '$father_name' ,'$flname', '$ffname', '$fmidname' , '$mother_name', '$mlname' , '$mfname' , '$mmname' , '$bday123','$ONE_DATES', '$ONE_EMPNAME', '$ONE_POSITION', '$ONE_SUPERVISOR', '$ONE_SALARY', '$ONE_CONTACTNUM', '$ONE_REASON', '$TWO_DATES', '$TWO_EMPNAME', '$TWO_POSITION', '$TWO_SUPERVISOR', '$TWO_SALARY', '$TWO_REASON', '$TWO_CONTACTNUM',  '$THREE_DATES', '$THREE_EMPNAME', '$THREE_POSITION', '$THREE_SUPERVISOR', '$THREE_SALARY', '$THREE_REASON', '$THREE_CONTACTNUM', '$FOUR_DATES', '$FOUR_EMPNAME', '$FOUR_POSITION', '$FOUR_SUPERVISOR', '$FOUR_SALARY', '$FOUR_REASON', '$FOUR_CONTACTNUM', '$FIVE_DATES', '$FIVE_EMPNAME', '$FIVE_POSITION', '$FIVE_SUPERVISOR', '$FIVE_SALARY', '$FIVE_REASON ', '$FIVE_CONTACTNUM', '$CERTIFY', '$salary_expectation', '$height', '$WEIGHT', '$BLOODTYPE','$SKYPE_USERID', '$CONTACT_NAME', '$CONTACT_DETAILS', '$mobile_num', '$Spouse_occupation', '$home_telnum','$rand_str','$app_stat','$c_s_result','$application_status','application')";
 
 }
 
@@ -864,10 +907,18 @@ $awards3 = $_POST['col_scholarship'];
 			    else {
 			    		 $ELEM_Scholarship = "";
 			}
+	$ELEM_DateTo = "";
+			if (!empty($_POST['elem_dateto'])) { 
+				$ELEM_DateTo = $_POST['elem_dateto'];
+			} 
+				else {
+				 $ELEM_DateTo = "";
+			}
 
 			if(!empty($_POST['elem_name'])){
 				$ELEM_Name= mysqli_real_escape_string($conn,$_POST['elem_name']);
 				$sql201 = "UPDATE tbl_application SET `ELEM_Name of School` = '$ELEM_Name', 
+													`ELEM_Year Graduated` = '$ELEM_DateTo',
 													`ELEM_Inclusive Dates of Attendance` = '$ELEM_Year', 
 													`ELEM_Scholarship/ Academic Honors Received` = '$ELEM_Scholarship' 
 												 WHERE `ID` = '$last_id'";
@@ -890,10 +941,18 @@ $awards3 = $_POST['col_scholarship'];
 			    else {
 			    		 $HS_Scholarship = "";
 			}
+	$HS_DateTo = "";
+				if (!empty($_POST['hs_dateto'])) { 
+					$HS_DateTo = $_POST['hs_dateto'];
+				} 
+					else {
+					$HS_DateTo = "";
+				}
 
 			if(!empty($_POST['hs_name'])){
 				$HS_Name= mysqli_real_escape_string($conn,$_POST['hs_name']);
 				$sql202 = "UPDATE tbl_application SET `HS_Name of School` = '$HS_Name', 
+													`HS_Year Graduated` = '$HS_DateTo',
 													`HS_Inclusive Dates of Attendance` = '$HS_Year', 
 													`HS_Scholarship/ Academic Honors Received` = '$HS_Scholarship' 
 												  WHERE `ID` = '$last_id'";
@@ -914,7 +973,10 @@ $awards3 = $_POST['col_scholarship'];
 	    $col_dateto = "";
 	    if(!empty($_POST['col_dateto'])) {
 	    	$col_dateto = $_POST['col_dateto'];
-	    } 
+		} 
+		else {
+			$col_dateto = "";
+		}
 
 	$COL_Scholarship = "";
 		if (!empty($_POST['col_scholarship'])) { 
@@ -935,6 +997,7 @@ $awards3 = $_POST['col_scholarship'];
 			}
 			$sql203 = "UPDATE tbl_application SET `COL_Name of School` = '$COL_Name', 
 												`COL_Degree Course` = '$COL_Degree', 
+												`COL_Year Graduated` = '$col_dateto',
 												`COL_Inclusive Dates of Attendance` = '$COL_YearGrad', 
 												`COL_Scholarship/ Academic Honors Received` = '$COL_Scholarship', 
 												`COL_Graduated` = '$College_graduate' 
@@ -981,6 +1044,13 @@ $awards3 = $_POST['col_scholarship'];
 	    else {
 	    		 $GRAD_Graduated = "NO";
 	}
+	$GRAD_DateTo = "";
+	if (!empty($_POST['grad_dateto'])) { 
+		$GRAD_DateTo = $_POST['grad_dateto'];
+	} 
+		else {
+		$GRAD_DateTo = "";
+	}
 
 		if(!empty($_POST['grad_name'])){
 		$GRAD_Name= mysqli_real_escape_string($conn,$_POST['grad_name']);
@@ -988,7 +1058,8 @@ $awards3 = $_POST['col_scholarship'];
 											 `GRAD_Degree Course` = '$GRAD_Degree', 
 											 `GRAD_Inclusive Dates of Attendance` = '$GRAD_Year', 
 											 `GRAD_Scholarship` = '$GRAD_Scholarship', 
-											 `GRAD_Graduated?` = 'GRAD_Graduated' 
+											 `GRAD_Graduated?` = 'GRAD_Graduated',
+											 `GRAD_Year Graduated` = '$GRAD_DateTo'
 											 WHERE `ID` = '$last_id'";
 		$result = $conn->query($sql203);
 	}
@@ -1145,7 +1216,7 @@ $awards3 = $_POST['col_scholarship'];
 			$sql30 = "UPDATE tbl_application SET `PROF_License3` = '$PROF_License3', 
 												 `PROF_Rating3` = '$PROF_Rating3', 
 			  									 `PROF_DateGranted3` = '$PROF_DateGranted3', 
-			  									 `PROF_Institution3` = '$PROF_Institsution3', 
+			  									 `PROF_Institution3` = '$PROF_Institution3', 
 												 `PROF_Licensennum3` = '$PROF_Licensennum3', 
 												 `PROF_DateReleased3` = '$PROF_DateReleased3' 
 												 WHERE `ID` = '$last_id'";
