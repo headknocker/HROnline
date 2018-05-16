@@ -248,7 +248,7 @@ $(document).ready(function(){
 			</center>
 			<center><h6 id="Reference" title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6></center>
 			<center>
-				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
+				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code">
 				<?php 
 				if(isset($_SESSION['refcode_not_found'])){
 					if($_SESSION['refcode_not_found']=='yes'){
@@ -266,7 +266,7 @@ $(document).ready(function(){
 		</div>
 
 		<div class="modal-footer">
-			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button" name="okay_button">Okay</button>
+			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button" name="okay_button"disabled> Okay </button>
 		</div>
 
     </div>
@@ -536,13 +536,11 @@ $(document).ready(function(){
 
 						<div class="col-md-6">
 
-						
-
 							<div id="error_lname" class="form-group label-floating" >
 
 								<label for="lname" class="control-label">Last Name <label class="text-danger">*</label></label>
 
-								<input class="form-control" type="text" minlength="2" maxlength="50" name="lname" id="lname" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
+								<input class="form-control" type="text" minlength="2" maxlength="30" name="lname" id="lname" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 								<div class="help-block with-errors" style="color: red"></div>
 
@@ -552,7 +550,7 @@ $(document).ready(function(){
 
 								<label for="fname" class="control-label">First Name <label class="text-danger">*</label></label>
 
-								<input name="fname" id="fname" class="form-control" minlength="2" maxlength="50" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
+								<input name="fname" id="fname" class="form-control" minlength="2" maxlength="30" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 								<div class="help-block with-errors" style="color: red"></div>
 
@@ -562,7 +560,7 @@ $(document).ready(function(){
 
 								<label for="mname" class="control-label" >Middle Name</label>
 
-								<input type="text" name="mname" ng-model="mname" id="mname" minlength="2" maxlength="50" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);'>
+								<input type="text" name="mname" ng-model="mname" id="mname" minlength="2" maxlength="30" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);'>
 								
 							</div>
 
@@ -706,7 +704,7 @@ $(document).ready(function(){
 
 					      				<label class="control-label" for="wewe">Civil Status<label class="text-danger">*</label></label>
 
-					      				<input type="text" name="cstatusspec" class="form-control" id="wewe" >
+					      				<input type="text" name="cstatusspec" class="form-control" id="wewe" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 			      					</div>
 

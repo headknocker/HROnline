@@ -609,6 +609,7 @@ $( "#okay_button" ).on( "click", function() {
 	
 	if(modal_reference_code !='' ){
 		window.location.replace("updateresume.php?ref_code=" + modal_reference_code);
+	
 	}
 });
 
@@ -686,5 +687,18 @@ $("#employer_celno").on('keydown', function(e) {
 		
 	}else if(employer_mobileNumStr=='9'){
 		document.getElementById("employerNumber_validator").style.display="none";
+	}
+});
+
+$("#ref_code").on('keypress', function(e) {
+	var modal_reference_code = document.getElementById('ref_code').value;
+	// document.getElementById("okay_button").disabled = false;
+
+	if(modal_reference_code.length==9){
+		document.getElementById("okay_button").disabled = false;
+
+	}else
+	{
+		document.getElementById("okay_button").disabled = true;
 	}
 });
