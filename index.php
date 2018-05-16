@@ -672,6 +672,8 @@ $(document).ready(function(){
 
 				      					<select id="cstatus" class="select form-control" name="cstatus" onchange="showspec(this)">
 
+				      						<option value="Select Option">Select Option</option>
+
 				      						<option value="Single">Single</option>
 
 				      						<option value="Married">Married</option>
@@ -872,6 +874,8 @@ $(document).ready(function(){
 
 								<select class="select form-control" id="bloodtype" name="btype">
 
+									<option value="">Select Option</option>
+
 									<option value="A+">A+</option>
 									<option value="Am">A&#45;</option>
 
@@ -879,7 +883,7 @@ $(document).ready(function(){
 									<option value="Bm">B&#45;</option>
 
 									<option value="AB+">AB+</option>
-									<option value="ABm"> AB&#45;</option>
+									<option value="ABm">AB&#45;</option>
 
 									<option value="O+">O+</option>
 									<option value="Om">O&#45;</option>
@@ -2026,8 +2030,11 @@ $(document).ready(function(){
 
                               <label class="control-label" for="employers_contact_number">Contact number</label>
 
-                              <input class="form-control" type="number" name="contactnum" id="employers_contact_number" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+                              <input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="contact_num" class="form-control" id="contact_number" required >
 
+										<span style="color: red;display:none;" id="number_validator">Invalid Contact Number.</span>
+
+										<div class="help-block with-errors" style="color: red"></div>
                             </div>
 
                           </div>
