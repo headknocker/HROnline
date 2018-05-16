@@ -2026,7 +2026,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="employers_contact_number">Contact number</label>
 
-                              <input class="form-control" type="number" name="contactnum" maxlength="11" id="employers_contact_number">
+                              <input class="form-control" type="number" name="contactnum" id="employers_contact_number" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
                             </div>
 
@@ -3194,7 +3194,7 @@ $(document).ready(function(){
 			$('#employers_name1').attr('required', false);
 			$('#employers_address').attr('required', false);
 			$('#position-title').attr('required', false);
-			$('#reason').attr('required', false)
+			$('#reason').attr('required', false);
 			$('#monthlysalary').attr('required', false);
 			$("#employers_name1").blur();
 			$("#employers_address").blur();
