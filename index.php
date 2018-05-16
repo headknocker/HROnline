@@ -172,13 +172,9 @@ $(document).ready(function(){
 				   Data Privacy Act of 2012 and Regulation (EU) 2016/679, General Data Protection Regulation, whichever is applicable, 
 				   and its corresponding implementing rules and regulations.</p>
 					<div id="ckAgree" name="ckAgree" style="display: none;">
-						<label>
-							<input type="checkbox" name="chkAgree" id="chkAgree" onchange="agreecheckbox()
-							// document.getElementById('IUnderstand').disabled = !this.checked;
-							" > I accept the Privacy Policy of Anderson Group Inc.</label>
+						<label><input type="checkbox" name="chkAgree" id="chkAgree" onchange="document.getElementById('IUnderstand').disabled = !this.checked;" > I accept the Privacy Policy of Anderson Group Inc.</label>
 					</div>
-						<button type="button"  onclick="agree_name('e');
-						" class="btn btn-primary pull-center"  id="IUnderstand" disabled="">I Agree</button>
+						<button type="button"  onclick="agree_name('e');" class="btn btn-primary pull-center"  id="IUnderstand" disabled="">I Agree</button>
 				</form>
 				
 				 <style>
@@ -208,6 +204,7 @@ $(document).ready(function(){
 				 
 				 <script type="text/javascript">
 
+				 
 				 function show(){
 					 document.getElementById("letter").style.display ="block"; 
 					 document.getElementById("Authorizationletter").style.display ="block";
@@ -216,6 +213,7 @@ $(document).ready(function(){
 					 document.getElementById("Reference").style.display ="none";
 					 document.getElementById("ref_code").style.display ="none";
 					 document.getElementById("okay_button").style.display ="none";
+					 
 					 document.getElementById("btn_experienced").style.display ="none";
 					 document.getElementById("btn_freshgrad").style.display ="none";
 					 document.getElementById("btn_intern").style.display ="none";
@@ -225,37 +223,22 @@ $(document).ready(function(){
 				 
 				 function hclick()
 				 {
-				 	var okay_button_state = document.getElementById("")
 					document.getElementById("btn_experienced").style.display ="none";
 					document.getElementById("btn_freshgrad").style.display ="none";
 					document.getElementById("btn_intern").style.display ="none";
 					document.getElementById("Candidatetype").style.display ="none";
 					document.getElementById("OR").style.display ="none";
 					document.getElementById("okay_button").style.display ="block";
-					// document.getElementById("okay_button").style.display ="block";
 					document.getElementById("blk").style.display="none";
 					document.getElementById("agree_name").style.display="none";
 					document.getElementById("ckAgree").style.display="none";
 				 }
 
 				 function agree_name(e){
+
 				 	alert("Success! You have agreed to our privacy policy.");
 				 	$('#myModal').modal('hide');
 				 }
-
-				 function agreecheckbox(){
-				 	var checkboxstate = document.getElementById("chkAgree");
-				 	if (checkboxstate.checked==true){
-				 		document.getElementById('IUnderstand').disabled = false;
-					}else{
-						document.getElementById('IUnderstand').disabled = true;
-					}
-				 }
-
-				 function checkTextField(field) {
-				  document.getElementById("ref_code").innerText =
-				    (field.value === "") ? "Field is empty." : "Field is filled.";
-				}
 				 
 				 </script>
 
@@ -265,7 +248,7 @@ $(document).ready(function(){
 			</center>
 			<center><h6 id="Reference" title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6></center>
 			<center>
-				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
+				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code">
 				<?php 
 				if(isset($_SESSION['refcode_not_found'])){
 					if($_SESSION['refcode_not_found']=='yes'){
@@ -283,7 +266,7 @@ $(document).ready(function(){
 		</div>
 
 		<div class="modal-footer">
-			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button" name="okay_button">Okay</button>
+			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button" name="okay_button"disabled> Okay </button>
 		</div>
 
     </div>
@@ -327,7 +310,7 @@ $(document).ready(function(){
 
 	<br>
 
-	<a href="#">
+	<a href="http://andersongroup.ph/">
 
 		<center> <img class="img-fluid logo" src="aa.png" style="width:50%;height:100%;"> </center>
 
@@ -553,13 +536,11 @@ $(document).ready(function(){
 
 						<div class="col-md-6">
 
-						
-
 							<div id="error_lname" class="form-group label-floating" >
 
 								<label for="lname" class="control-label">Last Name <label class="text-danger">*</label></label>
 
-								<input class="form-control" type="text" minlength="2" maxlength="50" name="lname" id="lname" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
+								<input class="form-control" type="text" minlength="2" maxlength="30" name="lname" id="lname" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 								<div class="help-block with-errors" style="color: red"></div>
 
@@ -569,7 +550,7 @@ $(document).ready(function(){
 
 								<label for="fname" class="control-label">First Name <label class="text-danger">*</label></label>
 
-								<input name="fname" id="fname" class="form-control" minlength="2" maxlength="50" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
+								<input name="fname" id="fname" class="form-control" minlength="2" maxlength="30" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 								<div class="help-block with-errors" style="color: red"></div>
 
@@ -579,22 +560,19 @@ $(document).ready(function(){
 
 								<label for="mname" class="control-label" >Middle Name</label>
 
-								<input type="text" name="mname" ng-model="mname" id="mname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);'>
-
+								<input type="text" name="mname" ng-model="mname" id="mname" minlength="2" maxlength="30" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);'>
 								
-
 							</div>
 
 							<div class="form-group label-floating">
 
 								<label for="ename" class="control-label">Name Extension</label>
 
-								<input type="text" name="ename" id="ename" class="form-control" maxlength="4" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
+								<input type="text" name="ename" id="ename" maxlength="4" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 							</div>
 
   
-
 
 
 							<div class="form-group">
@@ -631,7 +609,7 @@ $(document).ready(function(){
 
 								<label for="nickname" class="control-label">Nick Name</label>
 
-								<input type="text" name="nickname123" id="nickname" class="form-control" maxlength="50" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
+								<input type="text" name="nickname123" id="nickname" minlength="2" maxlength="50" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 							</div>
 
@@ -656,19 +634,15 @@ $(document).ready(function(){
 								<label for="placeofbirth" class="control-label">Select place of birth <label class="text-danger">*</label></label>
 								<input type="text" value="" name="bplace" id="placeofbirth" class="form-control" data-toggle="modal" data-target="#modalPB" onkeydown="return false;" style="color: transparent;text-shadow: 0 0 0 black;" autocomplete="on" required>
 								<div class="help-block with-errors" style="color: red"></div>
-
-								
-
+						
 							</div>
 
 								
-
 							<div class="form-group label-floating">
 
 								<label for="citizen" class="control-label" >Citizenship <label class="text-danger">*</label></label>
 
 								<select class="select form-control" name="citizen" id="citizen" >
-
 										      		<?php  
 						      							include('connect.php');
 						      							$sql = "SELECT * FROM `tbl_citizenship`";
@@ -730,7 +704,7 @@ $(document).ready(function(){
 
 					      				<label class="control-label" for="wewe">Civil Status<label class="text-danger">*</label></label>
 
-					      				<input type="text" name="cstatusspec" class="form-control" id="wewe" >
+					      				<input type="text" name="cstatusspec" class="form-control" id="wewe" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 			      					</div>
 
@@ -740,7 +714,7 @@ $(document).ready(function(){
 								
 									<div class="form-group label-floating">
 
-									<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
+										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
 
 										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)" >
 
@@ -884,7 +858,7 @@ $(document).ready(function(){
 
 										<label for="inches" class="control-label">Inches (in.)</label>
 
-										<input type="number" name="inch" class="form-control" id="inches" min="0" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" >
+										<input type="number" name="inch" class="form-control" id="inches" min="0" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
 									</div>
 
@@ -970,7 +944,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="current_home_num">Home No. and Street<label class="text-danger">*</label></label>
 
-									<input type="text" name="current_home_num" class="form-control" maxlength="100" id="current_home_num" required onkeypress='return disableNumericOthers(event);' onkeyup='(event);'>
+									<input type="text" name="current_home_num" class="form-control" maxlength="100" id="current_home_num" maxlength="100" id="current_home_num" required onkeypress='return disableNumericOthers(event);' onkeyup='(event);'>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -986,7 +960,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="current_barangay">Barangay<label class="text-danger">*</label></label>
 
-									<input type="text" name="current_barangay" class="form-control" maxlength="100" id="current_barangay" required onkeypress='return disableNumericOthers(event);' onkeyup='(event);'>
+									<input type="text" name="current_barangay" class="form-control" maxlength="100" id="current_barangay" maxlength="100" id="current_barangay" required onkeypress='return disableNumericOthers(event);' onkeyup='(event);'>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -1024,10 +998,7 @@ $(document).ready(function(){
 
 										<label class="control-label" for="provincial_home_num">Home No. and Street</label>
 
-										<input ype="text" name="provincial_home_num" class="form-control" id="provincial_home_num" maxlength="100" onkeypress='return disableNumericOthers(event);' onkeyup='(event);'>
-
-										
-
+										<input ype="text" name="provincial_home_num" class="form-control" id="provincial_home_num" maxlength="100" onkeypress='return disableNumericOthers(event);' onkeyup='(event);'>									
 									</div>
 
 								</div>
@@ -1051,7 +1022,6 @@ $(document).ready(function(){
 					</div>
 
 
-
 					<!-- contact -->
 
 					<div class="row col-md-12">
@@ -1070,6 +1040,8 @@ $(document).ready(function(){
 
 										<label class="control-label" for="email">E-Mail Address<label class="text-danger">*</label></label>
 
+										<input onfocusout="emailfunction2();" type="email" name="email" class="form-control" id="email" required>
+										<span style="color: red;display:none;" id="email_validator">Invalid Email Address.</span>
 										<div id='emailhelp' class="help-block with-errors" style="color: red"></div>
 
 									</div>
@@ -1082,7 +1054,7 @@ $(document).ready(function(){
 
 										<label class="control-label" for="skype">Skype User Id</label>
 
-										<input type="text" name="skype_userid" class="form-control" maxlength="20" id="skype">
+										<input type="text" name="skype_userid" class="form-control" id="skype">
 
 									</div>
 
@@ -1094,7 +1066,7 @@ $(document).ready(function(){
 
 										<label class="control-label" for="facebook">Facebook account</label>
 
-										<input class="form-control" type="text" maxlength="20" id="fbact" name="facebook">
+										<input class="form-control" type="text" id="fbact" name="facebook">
 
 									</div>
 
@@ -1110,7 +1082,7 @@ $(document).ready(function(){
 
 											<span class="input-group-addon">@</span>
 
-											<input class="form-control" id="twact" maxlength="20" type="text" name="twitter">
+											<input class="form-control" id="twact" type="text" name="twitter">
 
 										</div>
 
@@ -1138,13 +1110,13 @@ $(document).ready(function(){
 
 							</div>
 
-							<!-- <script>
+							<script>
 
 								//document.getElementById("#celno").val("09");
 
 								var xxx = document.getElementById("#celno");
 
-							</script> -->
+							</script>
 
 							<div class="col-md-6">
 
@@ -1168,6 +1140,9 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno2">Mobile No.<small>(Optional)</small></label>
 
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2" required>
+
+								
 									<span style="color: red;display:none;" id="number_validator2">Invalid Contact Number.</span>
 
 									<div class="help-block with-errors" style="color: red"></div>
@@ -1191,9 +1166,6 @@ $(document).ready(function(){
 									<div class="help-block with-errors" style="color: red"></div>
 
 
-									<span style="color: red;display:none;" id="number_validator3">Invalid Contact Number.</span>
-									<div class="help-block with-errors" style="color: red"></div>
-
 								</div>
 
 							</div>
@@ -1204,7 +1176,7 @@ $(document).ready(function(){
 
 									<label style="font-size: 11px;" class="control-label text-sm" for="contactperson">Contact Person in case of emergency</label><label class="text-danger">*</label>
 
-									<input class="form-control" type="text" name="contact_name" id="contactperson" minlength="2" ng-model="contact_name" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
+									<input class="form-control" type="text" name="contact_name" id="contactperson" minlength="2" maxlength="50" ng-model="contact_name" onkeypress='return disableNumeric(event);' onkeyup='(event);' required>
 
 									<div class="help-block with-errors" style="color: red"></div>
 
@@ -1245,71 +1217,36 @@ $(document).ready(function(){
 
 
 				<div id="modalCA" class="modal fade" role="dialog" >
-
 								  <div class="modal-dialog">
-
 								    <div class="modal-content">
-
 								      <div class="modal-header">
-
 								      	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-
 								        <h3 class="modal-title"><center>Select your current address</center></h3>
-
 								      </div>
-
 								      <div class="modal-body">
-
-								     
-
 								      	<div id="phil">
-
 									      	<div id="region">
-
 											<b>Region</b>
-
 										      	<select class="select form-control" name="Region_name" id="cregionid" onchange="cregionfunction(this)">
-
 										      		<?php  
-
 						      							include('connect.php');
-
 						      							$sql = "SELECT * FROM `tbl_region`";
-
 						      							$result = $conn->query($sql);
-
 						      							while($row = $result->fetch_assoc()){
-
 						      							echo "<option value='".$row['id']."_".$row['Region_name']."'>".$row['Region_name']."</option>";
-
 						      							}
-
 						      						?>
-
 										      	</select>
-
 										    </div>  	
-
 										    <div id="cprovince"></div>
-
 											<div id="ccities" style="padding-top: 15px"></div>
-
 										</div>
-
 									      </div>
-
 								      <div class="modal-footer">
-
 								      <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-
-								        
-
-								      </div>
-
-								    </div>
-
-								  </div>
-
+									</div>
+								</div>
+							</div>
 				</div>
 
 				<div id="modalPA" class="modal fade" role="dialog" >
@@ -1402,7 +1339,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="slname">Spouse's Last Name</label>
 
-					      		<input id="slname" type="text" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
+					      		<input id="slname" type="text" name="spouse_lastname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event);' onkeyup='(event);' >
 
 							</div>
 
@@ -1410,7 +1347,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="sfname">Spouse's First Name</label>
 
-					      		<input id="sfname" type="text" name="spouse_firstname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+					      		<input id="sfname" type="text" name="spouse_firstname" maxlength="50" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1418,7 +1355,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="smname">Spouse's Middle Name</label>
 
-					      		<input id="smname" type="text" name="spouse_midname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+					      		<input id="smname" type="text" name="spouse_midname" maxlength="50" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1430,7 +1367,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="occupation">Spouse's Occupation</label>
 
-								<input type="text" name="spouse_occ" id="occupation" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="spouse_occ" id="occupation" class="form-control" name="spouse_lastname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1438,7 +1375,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="employer-name">Company Name</label>
 
-								<input type="text" name="spouse_empname" id="employer-name" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="spouse_empname" id="employer-name" class="form-control" name="spouse_lastname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1458,7 +1395,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="slname">Spouse's Last Name</label>
 
-					      		<input id="slname" type="text" name="widowed_lname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+					      		<input id="slname" type="text" name="widowed_lname" class="form-control" name="spouse_lastname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1466,7 +1403,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="sfname">Spouse's First Name</label>
 
-					      		<input id="sfname" type="text" name="widowed_fname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+					      		<input id="sfname" type="text" name="widowed_fname" class="form-control" name="spouse_lastname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1474,7 +1411,7 @@ $(document).ready(function(){
 
 					      		<label class="control-label" for="smname">Spouse's Middle Name</label>
 
-					      		<input id="smname" type="text" name="widowed_midname" class="form-control" name="spouse_lastname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+					      		<input id="smname" type="text" name="widowed_midname" class="form-control" name="spouse_lastname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1496,7 +1433,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="flname">Father's Last name</label>
 
-								<input type="text" name="flname" id="flname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="flname" id="flname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1504,7 +1441,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="ffname">Father's First Name</label>
 
-								<input type="text" name="ffname" id="ffname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="ffname" id="ffname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1512,7 +1449,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="fmname">Father's Middle Name</label>
 
-								<input type="text" name="fmname" id="fmname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="fmname" id="fmname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1531,7 +1468,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="mlname">Mother's Maiden name</label>
 
-								<input type="text" name="mother_lname" id="mlname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="mother_lname" id="mlname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1539,7 +1476,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="mfname">Mother's First Name</label>
 
-								<input type="text" name="mother_fname" id="mfname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="mother_fname" id="mfname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1547,7 +1484,7 @@ $(document).ready(function(){
 
 								<label class="control-label" for="mmname">Mother's Middle Name</label>
 
-								<input type="text" name="mother_midname" id="mmname" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+								<input type="text" name="mother_midname" id="mmname" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							</div>
 
@@ -1615,7 +1552,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sage">Age</label>
 
-                                <input id="sage" class="form-control" type="number" name="sibling_age1" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+                                <input id="sage" class="form-control" type="number" name="sibling_age1" min="0" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1635,7 +1572,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sibling" >Enter sibling name</label>
 
-                                <input type="text" name="sibling2" id="sibling" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+                                <input type="text" name="sibling2" id="sibling" class="form-control" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1647,7 +1584,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sage">Age</label>
 
-                                <input id="sage" class="form-control" type="number" name="sibling_age2" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+                                <input id="sage" class="form-control" type="number" name="sibling_age2" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1669,7 +1606,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sibling" >Enter sibling name</label>
 
-                                <input type="text" name="sibling3" id="sibling" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+                                <input type="text" name="sibling3" id="sibling" class="form-control" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1681,7 +1618,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sage">Age</label>
 
-                                <input id="sage" class="form-control" type="number" name="sibling_age3" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+                                <input id="sage" class="form-control" type="number" name="sibling_age3" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1725,7 +1662,7 @@ $(document).ready(function(){
 
 	                    </div>
 
-	                    <div class="row col-md-12">
+	                    <div class="row col-md-12" id="1chi">
 
 	                    	<div class="col-md-6">
 
@@ -1741,7 +1678,7 @@ $(document).ready(function(){
 
 	                                <label class="control-label" for="child" >Enter child name</label>
 
-	                                <input type="text" name="child_name1" id="child" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+	                                <input type="text" name="child_name1" id="child" maxlength="50" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                              </div>
 
@@ -1753,7 +1690,7 @@ $(document).ready(function(){
 
 	                                <label class="control-label" for="age">Age</label>
 
-	                                <input id="age" class="form-control" type="number" name="child_age1" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+	                                <input id="age" class="form-control" type="number" name="child_age1" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
 	                              </div>
 
@@ -1779,7 +1716,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="child" >Enter child name</label>
 
-                                <input type="text" name="child_name2" id="child" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+                                <input type="text" name="child_name2" id="child" class="form-control" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1791,7 +1728,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="age">Age</label>
 
-                                <input id="age" class="form-control" type="number" name="child_age2" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+                                <input id="age" class="form-control" type="number" name="child_age2" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1819,7 +1756,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="child" >Enter child name</label>
 
-                                <input type="text" name="child_name3" id="child" class="form-control" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+                                <input type="text" name="child_name3" id="child" class="form-control" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                               </div>
 
@@ -1831,7 +1768,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="age">Age</label>
 
-                                <input id="age" class="form-control" type="number" name="child_age3" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+                                <input id="age" class="form-control" type="number" name="child_age3" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -2075,7 +2012,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="employers_name1">Company Name<label class="text-danger">*</label></label>
 
-                              <input class="form-control" type="text" name="company_name" id="employers_name1">
+                              <input class="form-control" type="text" name="company_name" maxlength="20" id="employers_name1">
 
 							  <div class="help-block with-errors" style="color: red;"></div>
 
@@ -2089,7 +2026,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="employers_contact_number">Contact number</label>
 
-                              <input class="form-control" type="number" name="contactnum" id="employers_contact_number" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+                              <input class="form-control" type="number" name="contactnum" maxlength="11" id="employers_contact_number">
 
                             </div>
 
@@ -2101,7 +2038,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="employers_address">Company's address<label class="text-danger">*</label></label>
 
-                              <input class="form-control" type="text" name="compadd" id="employers_address">
+                              <input class="form-control" type="text" name="compadd" maxlength="50" id="employers_address">
 
 							  <div class="help-block with-errors" style="color: red;"></div>
 
@@ -2119,7 +2056,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="position-title">Position Title<label class="text-danger">*</label></label>
 
-                              <input class="form-control" type="text" name="position" id="position-title" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+                              <input class="form-control" type="text" name="position" maxlength="20" id="position-title" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							  <div class="help-block with-errors" style="color: red"></div>
 
@@ -2133,7 +2070,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="name-supervisor">Name of immediate supervisor</label>
 
-                              <input class="form-control" type="text" name="supervisor" id="name-supervisor" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+                              <input class="form-control" type="text" name="supervisor" maxlength="50" id="name-supervisor" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
                             </div>
 
@@ -2141,14 +2078,40 @@ $(document).ready(function(){
 
                           <div class="col-md-2">
 
-                            <div class="form-group label-floating">
+                            <div class="form-group label-floating" id = "previous_salarygroup">
 
-                              <label class="control-label" for="monthly-salary">Monthly salary<label class="text-danger">*</label></label>
+                              <label for="monthly-salary">Monthly salary<label class="text-danger">*</label></label> 
 
-                              <input class="form-control" type="number" name="salary" id="monthlysalary" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+									<div class="input-group" id="previous_salary">
 
-							  <div class="help-block with-errors" style="color: red;"></div>
+									<select id="monthlysalary" class="form-control" name="salary">
 
+										<option value="0" selected>0</option>
+
+										<option value="10,000.00 - 15,000.00">&#8369;10,000.00 - &#8369;15,000.00</option>
+
+										<option value="16,000.00 - 20,000.00">&#8369;16,000.00 - &#8369;20,000.00</option>
+
+										<option value="21,000.00 - 25,000.00">&#8369;21,000.00 - &#8369;25,000.00</option>
+
+										<option value="26,000.00 - 30,000.00">&#8369;26,000.00 - &#8369;30,000.00</option>
+
+										<option value="31,000.00 - 35,000.00">&#8369;31,000.00 - &#8369;35,000.00</option>
+
+										<option value="36,000.00 - 40,000.00">&#8369;36,000.00 - &#8369;40,000.00</option>
+
+										<option value="41,000.00 - 50,000.00">&#8369;41,000.00 - &#8369;50,000.00</option>
+
+										<option value="51,000.00 - 55,000.00">&#8369;51,000.00 - &#8369;55,000.00</option>
+
+										<option value="More than 55,000.00"> More than &#8369;55,000.00</option>
+
+									</select>
+
+								</div>
+									<div class="help-block with-errors" style="color: red;">
+							    	<span style="color: red;display:none;" id="salary_validator">Select Salary Here.</span>
+								</div>			  		 
                             </div>
 
                           </div>
@@ -2159,7 +2122,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="reason">Reason of leaving<label class="text-danger">*</label></label>
 
-                              <input class="form-control" type="text" name="reason" id="reason" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+                              <input class="form-control" type="text" name="reason" maxlength="100" id="reason" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 							  <div class="help-block with-errors" style="color: red"></div>
 
@@ -2191,7 +2154,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="school">Name of School</label>
 
-	                    			<input type="text" name="elem_name" class="form-control" id="school" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+	                    			<input type="text" name="elem_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2220,7 +2183,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
 
-	                    			<input type="text" class="form-control" id="scholarship" name="elem_scholarship">
+	                    			<input type="text" class="form-control" id="scholarship" maxlength="50" name="elem_scholarship">
 
 	                    		</div>
 
@@ -2238,7 +2201,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="school">Name of School</label>
 
-	                    			<input type="" name="hs_name" class="form-control" id="school" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+	                    			<input type="" name="hs_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2271,7 +2234,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
 
-	                    			<input type="text" class="form-control" id="scholarship" name="hs_scholarship">
+	                    			<input type="text" class="form-control" id="scholarship" name="hs_scholarship" maxlength="50">
 
 	                    		</div>
 
@@ -2297,7 +2260,7 @@ $(document).ready(function(){
 
 		                    			<label class="control-label" for="school">Name of School</label>
 
-		                    			<input type="" name="col_name" id="col_name" class="form-control" id="school" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+		                    			<input type="" name="col_name" id="col_name" class="form-control" id="school" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 		                    		</div>
 
@@ -2350,7 +2313,7 @@ $(document).ready(function(){
 
 			                    			<label class="control-label" for="degree" style="font-size: small;">Degree Course /Vocational</label>
 
-			                    			<input type="text" id="col_degree" class="form-control" name="col_degree" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+			                    			<input type="text" id="col_degree" class="form-control" name="col_degree" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 			                    		</div>
 
@@ -2362,7 +2325,7 @@ $(document).ready(function(){
 
 			                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
 
-			                    			<input type="text" class="form-control" id="col_scholarship" name="col_scholarship">
+			                    			<input type="text" class="form-control" id="col_scholarship" maxlength="50" name="col_scholarship">
 
 			                    		</div>
 
@@ -2386,7 +2349,7 @@ $(document).ready(function(){
 
 		                    			<label class="control-label" for="school">Name of School</label>
 
-		                    			<input type="" name="grad_name" class="form-control" id="grad_name" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+		                    			<input type="" name="grad_name" class="form-control" id="grad_name" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 		                    		</div>
 
@@ -2416,7 +2379,7 @@ $(document).ready(function(){
 
 			                    			<label class="control-label" for="degree" style="font-size: small;">Degree Course /Vocational</label>
 
-			                    			<input type="text" id="grad_degree" class="form-control" name="grad_degree" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+			                    			<input type="text" id="grad_degree" class="form-control" name="grad_degree" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 			                    		</div>
 
@@ -2428,7 +2391,7 @@ $(document).ready(function(){
 
 			                    			<label class="control-label" for="scholarship">Scholarship/Honors</label>
 
-			                    			<input type="text" class="form-control" id="grad_scholarship" name="grad_scholarship">
+			                    			<input type="text" class="form-control" id="grad_scholarship" maxlength="50" name="grad_scholarship">
 
 			                    		</div>
 
@@ -2460,7 +2423,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="license">License/Certification</label>
 
-	                    			<input type="text" class="form-control" name="license" id="license" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+	                    			<input type="text" class="form-control" name="license" id="license" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2472,7 +2435,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="rate">Rating</label>
 
-	                    			<input type="text" id="rate" class="form-control" name="rating" >
+	                    			<input type="text" id="rate" class="form-control" maxlength="50" name="rating" >
 
 	                    		</div>
 
@@ -2496,7 +2459,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="institution">Granting Institution</label>
 
-	                    			<input type="text" class="form-control" id="institution" name="institution" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+	                    			<input type="text" class="form-control" id="institution" name="institution" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
 
 	                    		</div>
 
@@ -2508,7 +2471,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="license-number">License Number</label>
 
-	                    			<input type="number" class="form-control" id="license-number" name="licensenum" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+	                    			<input type="number" class="form-control" id="license-number" name="licensenum" min="0" maxlength="20" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
 	                    		</div>
 
@@ -2564,33 +2527,58 @@ $(document).ready(function(){
 
 									<label class="control-label" for="language">Language you know</label>
 
-									<input type="text" class="form-control" id="language" name=" language" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+									<input type="text" class="form-control" id="language" name=" language" maxlength="50" onkeypress='return disableNumeric(event)'; onkeyup='(event);'>
+
 								</div>
+
 							</div>
+
 							<div class="col-md-12"></div>
+
 							<div class="col-md-1">
+
 								<div class="form-group">
+
 									<label> 
+
 										<input type="checkbox" name="speak" value="yes">Speak
+
 									</label>
+
 								</div>
+
 							</div>
 
 							<div class="col-md-1">
+
 								<div class="form-group">
+
 									<label>  
+
 										<input type="checkbox" name="write" value="yes">Write
+
 									</label>
+
 								</div>
+
 							</div>
+
 							<div class="col-md-1">
+
 								<div class="form-group">
+
 									<label>  
+
 										<input type="checkbox" name="read" value="yes">Read
+
 									</label>
+
 								</div>
+
 							</div>
+
 						</div>
+
 					</div>
 
 
@@ -3151,8 +3139,13 @@ $(document).ready(function(){
 
 	</div>
 
-<!--End of Formbody -->
+	
 
+		
+
+	
+
+<!--End of Formbody -->
 	<script type="text/javascript" src="formvalidator.js"></script>
 
 	<script type="text/javascript" src="js/validator.js"></script>
@@ -3201,7 +3194,7 @@ $(document).ready(function(){
 			$('#employers_name1').attr('required', false);
 			$('#employers_address').attr('required', false);
 			$('#position-title').attr('required', false);
-			$('#reason').attr('required', false);
+			$('#reason').attr('required', false)
 			$('#monthlysalary').attr('required', false);
 			$("#employers_name1").blur();
 			$("#employers_address").blur();
@@ -3331,8 +3324,6 @@ $(document).ready(function(){
 
 			var con_num =  $('#mobile_number').val();
 
-			// var con_num2 =  $('#mobile_number2').val();
-
 			var e_mail =  $('#email').val();
 
 			var applied =  $('#apply_position').val();
@@ -3353,8 +3344,6 @@ $(document).ready(function(){
 
             document.getElementById("contact").value = con_num;
 
-            // document.getElementById("contact2").value = con_num2;
-
             document.getElementById("useremail").value = e_mail;
 
             document.getElementById("position").value = applied;
@@ -3367,43 +3356,41 @@ $(document).ready(function(){
 
         });
 
-		// Validate email if exist.
+	<!--END-->
+
+		
+
 		$.material.init();
+
 		function emailfunction2(){
+
 			var emailvalue =  $('#email').val();
+
 			$.ajax({
+
 				url: "address.php",
+
 				type: "GET",
+
 				data: {email:emailvalue},
+
 				success: function(data){
+
+					
+
 					document.getElementById('emailhelp').innerHTML = data;
+
 				},
+
 				error: function(data){
+
 					alert(data);
+
 				}
+
 			});
+
 		}
-
-		// Validate email input using regular expression
-		function validateEmail(email) {
-				  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-				  return re.test(email);
-				}
-				// function validate() {
-				//   var $result = $("#result");
-				//   var email = $("#email").val();
-				//   $result.text("");
-
-				//   if (validateEmail(email)) {
-				//     $result.text(email + " is valid :)");
-				//     $result.css("color", "green");
-				//   } else {
-				//     $result.text(email + " is not valid :(");
-				//     $result.css("color", "red");
-				//   }
-				//   return false;
-				// }
-				// $("#validate").bind("click", validate);
 
 
 
@@ -3461,6 +3448,8 @@ $(document).ready(function(){
 
 			$( "#birthPlaceCountry" ).val( selectedCountry.options[selectedCountry.selectedIndex].text )
 
+
+
 			var country = $('#countryid').val();
 
 			$("#placeofbirth").val(country);
@@ -3480,6 +3469,8 @@ $(document).ready(function(){
 		function regionfunction(selectedRegion){
 
 			$( "#birthPlaceRegion" ).val( selectedRegion.options[selectedRegion.selectedIndex].text )
+
+
 
 			var regid = $('#regionid').val();
 
@@ -4438,22 +4429,29 @@ $(document).ready(function(){
 			}
 		}
 
-			// Function for disable numeric and special characters for names field
-			function disableNumeric(e) {
-			if(!((e.keyCode >= 65) && (e.keyCode <= 90) || (e.keyCode >= 97) && (e.keyCode <= 122) || (e.keyCode == 32))){
-		               e.returnValue = false;
-		               return;
-		            }
-		            e.returnValue = true;
-				}
+				// Function for disable numeric and special characters for names field
+				function disableNumeric(e) {
+				if(!((e.keyCode >= 65) && (e.keyCode <= 90) || (e.keyCode >= 97) && (e.keyCode <= 122) || (e.keyCode == 32))){
+			               e.returnValue = false;
+			               return;
+			            }
+			            e.returnValue = true;
+					}
 
-			$(document).ready(function() {
-			  $('#text_field').keypress(function(e) {
-			    preventNumberInput(e);
-			  });
-			});
+				$(document).ready(function() {
+				  $('#text_field').keypress(function(e) {
+				    preventNumberInput(e);
+				  });
+				});
 
-			// Function for disable numeric and special characters for other fields
+
+				$(document).ready(function() {
+				  $('#text_field').keypress(function(e) {
+				    preventNumberInput(e);
+				  });
+				});
+
+				// Function for disable numeric and special characters for other fields
 				function disableNumericOthers(ev) {
 				if(!((ev.keyCode >= 65) && (ev.keyCode <= 90) || (ev.keyCode >= 97) && (ev.keyCode <= 122) || (ev.keyCode >= 48) && (ev.keyCode <= 57) || (ev.keyCode == 32))){
 		               ev.returnValue = false;
@@ -4491,10 +4489,7 @@ $(document).ready(function(){
 		      });
 
 
-
 		      $().dropdown({autoinit: "select"});
-
-
 
             // function for adding fields child
 
@@ -4684,7 +4679,7 @@ $(document).ready(function(){
 
                         x++; //text box increment
 
-                        $(wrapper).append('<div class="row col-md-12"><div class="col-md-3"><div class="form-group label-floating"><label class="control-label" for="language">Language you know</label><input type="text" class="form-control" id="language" name="language' + x + '"></div></div><div class="col-md-12"></div><div class="col-md-1"><div class="form-group"><label><input type="checkbox" name="speak' + x + '" value= "yes">Speak</label></div></div><div class="col-md-1"><div class="form-group"><label> <input type="checkbox" name="write' + x + '" value="yes"> Write</label></div></div><div class="col-md-1"><div class="form-group"><label> <input type="checkbox" name="read' + x + '" value="yes"> Read</label></div></div><button type=button class="btn btn-sm btn-raised btn-danger remove_field" style="margin-top: 3%">Remove</button></div>'); //add input box
+                        $(wrapper).append('<div class="row col-md-12"><div class="col-md-3"><div class="form-group label-floating"><label class="control-label" for="language">Language you know</label><input type="text" class="form-control" id="language" name="language' + x + '"></div></div><div class="col-md-12"></div><div class="col-md-1"><div class="form-group"><label><input type="checkbox" name="speak' + x + '" value= "yes">Speak</label></div></div><div class="col-md-1"><div class="form-group"><label> <input type="checkbox" name="write' + x + '" value="yes">Write</label></div></div><div class="col-md-1"><div class="form-group"><label> <input type="checkbox" name="read' + x + '" value="yes">Read</label></div></div><button type=button class="btn btn-sm btn-raised btn-danger remove_field" style="margin-top: 3%">Remove</button></div>'); //add input box
 
                     }
 
