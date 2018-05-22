@@ -90,7 +90,7 @@ $("#question1").on('keydown', function(e) {
 				$(this).addClass("active");
 				document.getElementById("app_stat").value = 'exp';
     		});
-$( "#fnext" ).on( "click", function() {
+$( "#agreement" ).on( "click", function() {
 		var apply_position = document.getElementById("apply_position").value;
 		//var apply_position1 = document.getElementById("apply_position1").value;
 		var lastName = document.getElementById("lname").value;
@@ -100,6 +100,7 @@ $( "#fnext" ).on( "click", function() {
 		var placeofbirth = document.getElementById("placeofbirth").value;
 		var otherpos = document.getElementById("otherpositionDiv").value;
 		var source = document.getElementById("source").value;
+		var civilstatus = document.getElementById("cstatus").value;
 		
 		function fnext_required(){
 			$("#apply_position").blur();
@@ -109,6 +110,7 @@ $( "#fnext" ).on( "click", function() {
 			$("#bday123").blur();
 			$("#placeofbirth").blur();
 			$("#source").blur();
+			$("#cstatus").blur();
 		}
 		
 		if(source=="Select Source"){
@@ -116,6 +118,13 @@ $( "#fnext" ).on( "click", function() {
 			$("#source").focus();
 			document.getElementById("source").style.borderColor = "red";
 			document.getElementById("sourcevalidator").style.display="block";	
+		}
+
+		if (cstatus== "Select Civil Status"){
+			$("cstatus").blur();
+			$("cstatus").focus();
+			document.getElementById("cstatus").style.borderColor = "red";
+			document.getElementById("cstatusvalidator").style.display="block";
 		}
 		
 		if(apply_position=="Others"){
@@ -155,8 +164,9 @@ $( "#fnext" ).on( "click", function() {
 				}
 			}
 		}else{
-			if( apply_position =="Select Position"){
+			if(apply_position =="Select Position"){
 			fnext_required();
+			document.getElementById("apply_position").style.borderColor = "red";
 			document.getElementById("positionErrorMessage").style.display = 'block';
 				$("#apply_position").focus();
 			}else if( lastName ==""){
@@ -189,7 +199,7 @@ $( "#fnext" ).on( "click", function() {
 $("#apply_position").on('change',function(e){
 	$('#position_data').attr('value',$(this).val());
 });
-$( "#snext" ).on( "click", function() {
+$( "#agreement" ).on( "click", function() {
 
 	document.getElementById("positionErrorMessage").style.display = 'none';
 		var emailvalue =  $('#email').val();
@@ -320,7 +330,7 @@ $( "#snext" ).on( "click", function() {
 	}
 
 });
-$( "#lnext" ).on( "click", function() {
+$( "#agreement" ).on( "click", function() {
 	var rname1 = document.getElementById('rname').value;
 	var company_name1 = document.getElementById('company_name1').value;
 	var email1 = document.getElementById('email1').value;
@@ -381,7 +391,7 @@ $( "#lnext" ).on( "click", function() {
 	}
 
 });
-$( "#frnext" ).on( "click", function() {
+$( "#agreement" ).on( "click", function() {
 	var stat_ap = $('#app_stat').val();
 	if(stat_ap=='exp'){
 		$('#employers_name1').attr('required', true);
@@ -400,8 +410,8 @@ $( "#frnext" ).on( "click", function() {
 			$("#position-title").blur();
 			$("#monthlysalary").blur();
 			$("#reason").blur();
-			
 		}
+		
 		if(emp1==''){
 			frnext_required();
 			$("#employers_name1").focus();
@@ -466,7 +476,7 @@ $( "#saveQuit" ).on( "click", function() {
 	var email1 = document.getElementById("email").value;
 	var otherpos = document.getElementById("otherpositionDiv").value;
 	var source = document.getElementById("source").value;
-		
+	var civilstatus = document.getElementById("cstatus").value;
 		
 		
 	
@@ -484,10 +494,23 @@ $( "#saveQuit" ).on( "click", function() {
 		$("#bday123").blur();
 		$("#placeofbirth").blur();
 		$("#source").blur();
-		
-		
-		
+		$("#cstatus").blur();
 	}
+
+	if(source=="Select Source"){
+			$("#source").blur();
+			$("#source").focus();
+			document.getElementById("source").style.borderColor = "red";
+			document.getElementById("sourcevalidator").style.display="block";	
+		}
+
+		if (cstatus=="Select Civil Status"){
+			$("cstatus").blur();
+			$("cstatus").focus();
+			document.getElementById("cstatus").style.borderColor = "red";
+			document.getElementById("cstatusvalidator").style.display="block";
+		}
+
 	if(apply_position=="Others"){
 		if(otherpos==""){
 			required_field();
