@@ -737,7 +737,7 @@ $(document).ready(function(){
 										</select>
 
 										<span style="color: red;display:none;" id="sourcevalidator">Select Application Source.</span>
-
+										
 									</div>
 									
 								</div>
