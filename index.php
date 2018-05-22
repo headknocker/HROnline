@@ -148,15 +148,17 @@ $(document).ready(function(){
 		<center> <img class="img-fluid logo" src="aa.png" style="width:80%;height:100%;"> </center>
 
 	</a>
-		<div class="modal-body" id="qweqwe">
+
+		<div class="modal-body" id = "chooseCandidate">
+
             <hr>
 			<center><h6 id="Candidatetype">Choose Candidate Type:</h6></center>
 
 			<center>
 
-				<button  type="button" onclick="show();" id="btn_experienced" style="padding-bottom:2%;" class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
+				<button  type="button" onclick="show();" id="btn_experienced" style="padding-bottom:2%; float: left; margin-right: 18px; " class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
 
-				<button  type="button" onclick="show();" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
+				<button  type="button" onclick="show();" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%; float: left;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
 
 				<button  type="button" onclick="show();" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
              
@@ -168,11 +170,14 @@ $(document).ready(function(){
 				   I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my personal data,
 				   and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the Philippines, 
 				   Data Privacy Act of 2012 and Regulation (EU) 2016/679, General Data Protection Regulation, whichever is applicable, 
-				   and its corresponding implementing rules and regulations.</p>
+				   and its corresponding implementing rules and regulations."</p>
 					<div id="ckAgree" name="ckAgree" style="display: none;">
 						<label><input type="checkbox" name="chkAgree" id="chkAgree" onchange="document.getElementById('IUnderstand').disabled = !this.checked;" > I accept the Privacy Policy of Anderson Group Inc.</label>
 					</div>
-						<button type="button"  onclick="agree_name('e');" class="btn btn-primary pull-center"  id="IUnderstand" disabled="">I Agree</button>
+						<button type="button"  onclick="agree_name('e');" class="btn btn-primary pull-right"  id="IUnderstand" disabled="">I Agree</button>
+						<button type="button"  onclick="cancel();" class="btn btn-primary pull-left" id="cancelBack" >Back</button>
+
+						<br>
 
 				</form>
 				
@@ -191,14 +196,22 @@ $(document).ready(function(){
 					  display: none;
 					  text-align: center;
 				 }
+				 #cancelBack
+				 {
+					  display: none;
+					  text-align: center;
+				 }
 				 #okay_button
 				 {
 					 display: none;
 				 }
-				 #back_button
+				 #backRef
 				 {
-					 display: none;
+					  display: none;
+					  
 				 }
+
+
 				 </style>
 				 
 				 <script type="text/javascript">
@@ -212,14 +225,15 @@ $(document).ready(function(){
 					 document.getElementById("Reference").style.display ="none";
 					 document.getElementById("ref_code").style.display ="none";
 					 document.getElementById("okay_button").style.display ="none";
-					 
+					 document.getElementById("cancelBack").style.display = "block";
+
 					 document.getElementById("btn_experienced").style.display ="none";
 					 document.getElementById("btn_freshgrad").style.display ="none";
 					 document.getElementById("btn_intern").style.display ="none";
 					 document.getElementById("Candidatetype").style.display ="none";
 					 document.getElementById("ckAgree").style.display="block";
 				 }
-				 
+
 				 function hclick()
 				 {
 					document.getElementById("btn_experienced").style.display ="none";
@@ -228,9 +242,11 @@ $(document).ready(function(){
 					document.getElementById("Candidatetype").style.display ="none";
 					document.getElementById("OR").style.display ="none";
 					document.getElementById("okay_button").style.display ="block";
+					document.getElementById("backRef").style.display ="block";
 					document.getElementById("blk").style.display="none";
 					document.getElementById("agree_name").style.display="none";
 					document.getElementById("ckAgree").style.display="none";
+					
 				 }
 
 				 function agree_name(e){
@@ -238,7 +254,28 @@ $(document).ready(function(){
 				 	alert("Success! You have agreed to our privacy policy.");
 				 	$('#myModal').modal('hide');
 				 }
-				 
+
+				 function cancel(){
+					 document.getElementById("letter").style.display ="none"; 
+					 document.getElementById("Authorizationletter").style.display ="none";
+					 document.getElementById("IUnderstand").style.display ="none";
+					 document.getElementById("OR").style.display ="block";
+					 document.getElementById("Reference").style.display ="block";
+					 document.getElementById("ref_code").style.display ="block";
+					 document.getElementById("okay_button").style.display ="none";
+					 document.getElementById("cancelBack").style.display = "none";
+
+					 document.getElementById("btn_experienced").style.display ="block";
+					 document.getElementById("btn_freshgrad").style.display ="block";
+					 document.getElementById("btn_intern").style.display ="block";
+					 document.getElementById("Candidatetype").style.display ="block";
+					 document.getElementById("ckAgree").style.display="none";
+					 document.getElementById("backRef").style.display="none";
+					//for everting fields to original state when back button is pressed
+					document.getElementById("ref_code").value='';
+					document.getElementById("chkAgree").checked = false;
+					document.getElementById("IUnderstand").disabled = true;
+				 }
 				 </script>
 
 				<div class="strike" style="margin-bottom:3%;" id="OR">
@@ -266,10 +303,11 @@ $(document).ready(function(){
 
 		<div class="modal-footer">
 			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button" name="okay_button"disabled> Okay </button>
+			<button type="button" class="btn btn-primary pull-left" id="backRef" name="backRef" onclick="cancel()">Back</button>	
 		</div>
 
     </div>
-
+	
 	</div>
 
 </div>
@@ -718,8 +756,8 @@ $(document).ready(function(){
 
 										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
 
-										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)" >
-
+										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)">
+										
 											<?php  
 				      							include('connect.php');
 				      							$sql = "SELECT * FROM `tbl_sourceapplication` WHERE flag = '0'";
@@ -735,11 +773,17 @@ $(document).ready(function(){
 				      						?>
 
 										</select>
-
+									  	
 										<span style="color: red;display:none;" id="sourcevalidator">Select Application Source.</span>
-
+										
 									</div>
-									
+										<div id="" class="form-group label-floating" >
+
+										<input type="text" style="display:none;"  name="other_source" placeholder="Position" class="form-control" id="othersourceDiv" required/>
+
+										<div class="help-block with-errors" id="othersourceDiv2" style="color: red"></div>
+
+								</div>
 								</div>
 
 							</div>
@@ -1327,7 +1371,7 @@ $(document).ready(function(){
 
 					<!-- for married ones -->
 
-					<div id="married_div" class="row col-md-12">
+					<div id="married_div" class="row col-md-12" style="display: none;">
 
 						<h2 style="padding-top: 2%;" align="center"> Spouse </h2>
 
@@ -1383,7 +1427,7 @@ $(document).ready(function(){
 
 								<!-- for widowed ones -->
 
-					<div id="widowed_div" class="row col-md-12">
+					<div id="widowed_div" class="row col-md-12" style="display: none;">
 
 						<h2 style="padding-top: 2%;" align="center"> Spouse </h2>
 
@@ -3229,8 +3273,16 @@ $(document).ready(function(){
 			
 
 			});
+			
+			$("#source").on('change', function(e) {
 
-		    // document.getElementById('container2').style.display='none';/*hide all containers !first*/
+				$("#othersourceDiv").css("display","none");
+
+				$("#othersourceDiv2").css("display","none");
+
+			});
+		    document.getElementById('container2').style.display='none';/*hide all containers !first*/
+
 
 		    // document.getElementById('container3').style.display='none';/*hide all containers !first*/
 
@@ -4308,6 +4360,16 @@ $(document).ready(function(){
 		    else if (elem.value == "Separated") {
 
 		   		document.getElementById('married_div').style.display = "block";
+
+		   		document.getElementById('widowed_div').style.display = "none";
+
+		   		document.getElementById('other_div').style.display = "none";
+
+		   }
+
+ 			else if (elem.value == "Single") {
+
+		   		document.getElementById('married_div').style.display = "none";
 
 		   		document.getElementById('widowed_div').style.display = "none";
 
