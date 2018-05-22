@@ -97,7 +97,7 @@
 		__gaTracker('send','pageview');
 
 	</script>
-
+=
 <script>
 
 $(document).ready(function(){
@@ -138,8 +138,6 @@ $(document).ready(function(){
 
 <body>
 
-
-
 <!-- OnPageLoad Modal -->
 
 <div id="myModal" class="modal fade" role="dialog">
@@ -150,7 +148,7 @@ $(document).ready(function(){
 		<center> <img class="img-fluid logo" src="aa.png" style="width:80%;height:100%;"> </center>
 
 	</a>
-		<div class="modal-body">
+		<div class="modal-body" id="qweqwe">
             <hr>
 			<center><h6 id="Candidatetype">Choose Candidate Type:</h6></center>
 
@@ -175,6 +173,7 @@ $(document).ready(function(){
 						<label><input type="checkbox" name="chkAgree" id="chkAgree" onchange="document.getElementById('IUnderstand').disabled = !this.checked;" > I accept the Privacy Policy of Anderson Group Inc.</label>
 					</div>
 						<button type="button"  onclick="agree_name('e');" class="btn btn-primary pull-center"  id="IUnderstand" disabled="">I Agree</button>
+
 				</form>
 				
 				 <style>
@@ -327,8 +326,8 @@ $(document).ready(function(){
 		<div class="col-md-10">
 
 			<form action="serverside.php" name="myForm" autocomplete="on" novalidate id="myForm" ng-app="" method="post" enctype="multipart/form-data" data-toggle="validator">
-				<div class="card container" id="container1">
-					<img class="img" src="lady liberty.png" style=" width: 85%;" >
+				<div class="card container">
+					<!-- <img class="img" src="lady liberty.png" style=" width: 85%;" > -->
 					<a class="btn btn-raised btn-sm btn-primary pull-right" title="Temporary save your unfinished form. Please Come back to comple the form." id="saveQuit" style="color:white;float:right;text-decoration:none;margin-top:3%;">Save and Quit</a>
 
 					<div class="row col-md-12">
@@ -357,8 +356,7 @@ $(document).ready(function(){
 
 										<option disabled selected>Select Position</option>';
 
-									
-
+								
 										include('connect.php');
 
 										$sql = "SELECT * FROM `tbl_position` WHERE status = '1' ORDER BY position_name ASC";
@@ -668,11 +666,11 @@ $(document).ready(function(){
 
 									<div class="form-group label-static">
 
-										<label for="cstatus" class="control-label">Civil Status</label>
+										<label for="cstatus" class="control-label">Civil Status<label class="text-danger">*</label></label>
 
 				      					<select id="cstatus" class="select form-control" name="cstatus" onchange="showspec(this)">
 
-				      						<option value="Select Option">Select Option</option>
+				      						<option selected disabled hidden>Select Civil Status</option>
 
 				      						<option value="Single">Single</option>
 
@@ -688,6 +686,8 @@ $(document).ready(function(){
 
 				      					</select>
 
+				      					<span style="color: red;display:none;" id="cstatusvalidator">Select Civil Status.</span>
+
 									</div>
 
 								</div>
@@ -700,7 +700,7 @@ $(document).ready(function(){
 
 
 
-								<div class="col-md-6">
+					<!-- 		<div class="col-md-6">
 
 									<div id="other_div" class="form-group label-floating">
 
@@ -710,7 +710,7 @@ $(document).ready(function(){
 
 			      					</div>
 
-								</div>
+								</div> -->
 								
 								<div class="col-md-6">
 								
@@ -752,15 +752,11 @@ $(document).ready(function(){
 
 					<div class="col-md-12">
 
-					<button type="button" id="fnext" style="margin-bottom: 2%" class="fnext btn btn-primary pull-right">NEXT</button><!--  -->
-
-					</div>	
+					<!-- <button type="button" id="fnext" style="margin-bottom: 2%" class="fnext btn btn-primary pull-right">NEXT</button> -->
 
 					</div>
 
-					
-
-					
+					</div>
 
 				</div> <!-- End of container 1 -->
 
@@ -824,11 +820,11 @@ $(document).ready(function(){
 
 
 
-				<div class="card container" id="container2">
+				<div class="card container">
 
-					<img class="img" src="lady liberty.png" style=" width: 85%; " >
+					<!-- <img class="img" src="lady liberty.png" style=" width: 85%; " > -->
 
-					<a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit2" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a>
+					<!-- <a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit2" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a> -->
 
 					<h6 style="padding-top: 2%;"><i class="fa fa-user-o"></i> <b>PERSONAL INFORMATION</b></h6>
 
@@ -874,8 +870,6 @@ $(document).ready(function(){
 
 								<select class="select form-control" id="bloodtype" name="btype">
 
-									<option value="">Select Option</option>
-
 									<option value="A+">A+</option>
 									<option value="Am">A&#45;</option>
 
@@ -883,7 +877,7 @@ $(document).ready(function(){
 									<option value="Bm">B&#45;</option>
 
 									<option value="AB+">AB+</option>
-									<option value="ABm">AB&#45;</option>
+									<option value="ABm"> AB&#45;</option>
 
 									<option value="O+">O+</option>
 									<option value="Om">O&#45;</option>
@@ -1144,7 +1138,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno2">Mobile No.<small>(Optional)</small></label>
 
-									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2" required>
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2">
 
 								
 									<span style="color: red;display:none;" id="number_validator2">Invalid Contact Number.</span>
@@ -1162,7 +1156,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno3">Mobile No.<small>(Optional)</small></label>
 
-									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" required>
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3">
 
 
 									<span style="color: red;display:none;" id="number_validator3">Invalid Contact Number.</span>
@@ -1212,9 +1206,9 @@ $(document).ready(function(){
 
 					<!-- buttons -->
 
-					<button type="button" href="#container1" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container1').style.display='block';document.getElementById('container2').style.display='none';">PREVIOUS</button>
+					<!-- <button type="button" href="#container1" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container1').style.display='block';document.getElementById('container2').style.display='none';">PREVIOUS</button>
 
-					<button type="button" style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" id='snext'>NEXT</button> <!--  -->
+					<button type="button" style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" id='snext'>NEXT</button> -->
 
 				</div> <!-- End of container 2 -->
 
@@ -1321,11 +1315,11 @@ $(document).ready(function(){
 
 
 
-				<div class="card container" id = "container3">
+				<div class="card container">
 
-					<img class="img" src="lady liberty.png" style=" width: 85%;">
+					<!-- <img class="img" src="lady liberty.png" style=" width: 85%;"> -->
 
-					<a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit3" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a>
+					<!-- <a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit3" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a> -->
 
 					<h6 style="padding-top: 30px"><i class="fa fa-group"> </i><b> FAMILY BACKGROUND</b></h6>
 
@@ -1790,9 +1784,9 @@ $(document).ready(function(){
 
 					<!-- buttons -->
 
-					<button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container2').style.display='block';document.getElementById('container3').style.display='none';">PREVIOUS</button>
+					<!-- <button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container2').style.display='block';document.getElementById('container3').style.display='none';">PREVIOUS</button>
 
-					<button type="button" style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" onclick="document.getElementById('container3').style.display='none'; document.getElementById('container4').style.display='block';">NEXT</button>	
+					<button type="button" style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" onclick="document.getElementById('container3').style.display='none'; document.getElementById('container4').style.display='block';">NEXT</button>	 -->
 
 				</div> <!-- end of container 3 -->
 
@@ -1952,11 +1946,11 @@ $(document).ready(function(){
 				</div>
 				<!-- END OF MOTHER'S BIRTH PLACE MODAL -->
 
-                <div class="card container" id = "container4">
+                <div class="card container">
 
-                	<img class="img" src="lady liberty.png" style=" width: 85%;">
+                	<!-- <img class="img" src="lady liberty.png" style=" width: 85%;"> -->
 
-					<a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit4" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a>
+					<!-- <a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit4" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a> -->
 
 					<div id="removeWorkid">
 
@@ -2030,11 +2024,8 @@ $(document).ready(function(){
 
                               <label class="control-label" for="employers_contact_number">Contact number</label>
 
-                              <input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="contact_num" class="form-control" id="contact_number" required >
+                              <input class="form-control" type="number" name="contactnum" id="employers_contact_number" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
-										<span style="color: red;display:none;" id="number_validator">Invalid Contact Number.</span>
-
-										<div class="help-block with-errors" style="color: red"></div>
                             </div>
 
                           </div>
@@ -2504,19 +2495,19 @@ $(document).ready(function(){
 
                         <!-- buttons -->
 
-                    <button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container3').style.display='block';document.getElementById('container4').style.display='none';">PREVIOUS</button>
+                    <!-- <button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container3').style.display='block';document.getElementById('container4').style.display='none';">PREVIOUS</button>
 
-                    <button type="button" style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" id="frnext">NEXT</button>
+                    <button type="button" style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" id="frnext">NEXT</button> -->
 
                 </div> <!-- end of container 4 -->
 
 
 
-                <div class="card container" id="container5">
+                <div class="card container">
 
-					<img class="img" src="lady liberty.png" style=" width: 85%;" >
+					<!-- <img class="img" src="lady liberty.png" style=" width: 85%;" > -->
 
-					<a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit5" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a>
+					<!-- <a class="btn btn-raised btn-sm btn-primary pull-right" value="" id="saveQuit5" style="color:white;float:right;text-decoration:none;margin-top:2%;">Save and Quit</a> -->
 
                 	<h6 style="padding-top: 30px"><i class="fa fa-language"> </i><b> Language proficiency</b> </h6>  
 
@@ -2870,19 +2861,17 @@ $(document).ready(function(){
 
                 	<!-- buttons -->
 
-                	<button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container4').style.display='block';document.getElementById('container5').style.display='none';">PREVIOUS</button>
+                	<!-- <button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container4').style.display='block';document.getElementById('container5').style.display='none';">PREVIOUS</button>
 
-                    <button type="button" id='lnext' style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" >NEXT</button>
+                    <button type="button" id='lnext' style="margin-bottom: 1%" class="btn btn-raised btn-primary pull-right" >NEXT</button> -->
 
                 </div><!-- end of container 5 -->
 
 				<!-- Start of container 6 -->
 
-				<div class="card container" id="container6">
+				<div class="card container">
 
-					<img class="img" src="lady liberty.png" style=" width: 85%;">
-
-					
+					<!-- <img class="img" src="lady liberty.png" style=" width: 85%;"> -->
 
 					<h6 style="padding-top: 30px"><i class="fa fa-book"> </i><b> Essay Questions</b> </h6>  
 
@@ -2928,7 +2917,7 @@ $(document).ready(function(){
 
 					?>
 
-						<button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container5').style.display='block';document.getElementById('container6').style.display='none';">PREVIOUS</button>
+						<!-- <button type="button" class="btn btn-raised btn-primary pull-left" onclick="document.getElementById('container5').style.display='block';document.getElementById('container6').style.display='none';">PREVIOUS</button> -->
 
 						<button type="button" id="agreement" style="margin-bottom: 1%" class="btn btn-raised btn-info btn-md pull-right" name="checker" data-toggle="modal" data-target="#confirmModal">SUBMIT</button>
 
@@ -2941,6 +2930,7 @@ $(document).ready(function(){
 				<!--START OF REVIEW INFORMATION MODAL-->
 
 				<div class="container">
+
 					<div id="confirmModal" role="dialog" class="modal fade">
 						<div class="modal-dialog">
 						  <div class="modal-content">
@@ -3134,6 +3124,7 @@ $(document).ready(function(){
 
 			</form>	
 
+
 			<center>
 
 				<div class="panel-footer" id="footer">
@@ -3145,14 +3136,10 @@ $(document).ready(function(){
 			</center>
 
 	</div>
-
-	
-
-		
-
-	
-
 <!--End of Formbody -->
+
+
+
 	<script type="text/javascript" src="formvalidator.js"></script>
 
 	<script type="text/javascript" src="js/validator.js"></script>
@@ -3243,23 +3230,23 @@ $(document).ready(function(){
 
 			});
 
-		    document.getElementById('container2').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container2').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container3').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container3').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container4').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container4').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container5').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container5').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container6').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container6').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('other_div').style.display='none';/*hide specify civil status*/
+		    // document.getElementById('other_div').style.display='none';/*hide specify civil status*/
 
 		    document.getElementById('married_div').style.display='none';/*hide married status*/
 
 		    document.getElementById('widowed_div').style.display='none';/*hide widowed status*/
 
-		    document.getElementById('souceothers').style.display='none';
+		    // document.getElementById('souceothers').style.display='none';
 
 		    document.getElementById('country').style.display='none';
 
@@ -3417,12 +3404,12 @@ $(document).ready(function(){
 
 				$("#children").hide();
 
-				/*document.getElementById("siblingchild").value=0;
+				document.getElementById("siblingchild").value=0;
 
 				$('.wawchild input[type="text"]').val('');
 
 				$('.wawchild input[type="number"]').val('');
-*/
+
 				
 
 				} else {
@@ -3433,11 +3420,11 @@ $(document).ready(function(){
 
 				$("#siblings").hide();
 
-				/*document.getElementById("siblingchild").value=1;
+				document.getElementById("siblingchild").value=1;
 
 				$('.wawsibling input[type="text"]').val('');
 
-				$('.wawsibling input[type="number"]').val('');*/
+				$('.wawsibling input[type="number"]').val('');
 
 				
 
@@ -3454,8 +3441,6 @@ $(document).ready(function(){
 		function countryfunction(selectedCountry){
 
 			$( "#birthPlaceCountry" ).val( selectedCountry.options[selectedCountry.selectedIndex].text )
-
-
 
 			var country = $('#countryid').val();
 
@@ -4286,9 +4271,6 @@ $(document).ready(function(){
 		}
 
 
-
-
-
 		// function for select civil status
 
 		function showspec(elem){
@@ -4333,8 +4315,6 @@ $(document).ready(function(){
 
 		   }
 
-
-
 		  else{
 
 		  		document.getElementById('other_div').style.display = "none";
@@ -4346,8 +4326,6 @@ $(document).ready(function(){
 		  }
 
 		}
-
-
 
 		function showCountry(){
 
