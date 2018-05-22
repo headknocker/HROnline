@@ -888,7 +888,7 @@ $(document).ready(function(){
 
 										<label for="feet" class="control-label">Feet (ft.)</label>
 
-										<input type="number" name="feet" class="form-control" id="feet" min="0" maxlength="1" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+										<input type="text" name="feet" id="feet" minlength="0" class="form-control" id="pounds" maxlength="1" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
 
 									</div>
 
@@ -900,7 +900,7 @@ $(document).ready(function(){
 
 										<label for="inches" class="control-label">Inches (in.)</label>
 
-										<input type="number" name="inch" class="form-control" id="inches" min="0" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
+										<input type="text" name="inch" id="inches" minlength="0" class="form-control" id="pounds" maxlength="3" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
 
 									</div>
 
