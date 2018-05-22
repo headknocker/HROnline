@@ -148,7 +148,9 @@ $(document).ready(function(){
 		<center> <img class="img-fluid logo" src="aa.png" style="width:80%;height:100%;"> </center>
 
 	</a>
+
 		<div class="modal-body" id = "chooseCandidate">
+
             <hr>
 			<center><h6 id="Candidatetype">Choose Candidate Type:</h6></center>
 
@@ -176,6 +178,7 @@ $(document).ready(function(){
 						<button type="button"  onclick="cancel();" class="btn btn-primary pull-left" id="cancelBack" >Back</button>
 
 						<br>
+
 				</form>
 				
 				 <style>
@@ -3280,21 +3283,22 @@ $(document).ready(function(){
 			});
 		    document.getElementById('container2').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container3').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container4').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container3').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container5').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container4').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('container6').style.display='none';/*hide all containers !first*/
+		    // document.getElementById('container5').style.display='none';/*hide all containers !first*/
 
-		    document.getElementById('other_div').style.display='none';/*hide specify civil status*/
+		    // document.getElementById('container6').style.display='none';/*hide all containers !first*/
+
+		    // document.getElementById('other_div').style.display='none';/*hide specify civil status*/
 
 		    document.getElementById('married_div').style.display='none';/*hide married status*/
 
 		    document.getElementById('widowed_div').style.display='none';/*hide widowed status*/
 
-		    document.getElementById('souceothers').style.display='none';
+		    // document.getElementById('souceothers').style.display='none';
 
 		    document.getElementById('country').style.display='none';
 
@@ -3489,8 +3493,6 @@ $(document).ready(function(){
 		function countryfunction(selectedCountry){
 
 			$( "#birthPlaceCountry" ).val( selectedCountry.options[selectedCountry.selectedIndex].text )
-
-
 
 			var country = $('#countryid').val();
 

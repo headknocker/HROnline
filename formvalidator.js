@@ -158,10 +158,11 @@ $( "#agreement" ).on( "click", function() {
 					$("#source").focus();
 					document.getElementById("source").style.borderColor = "red";
 					document.getElementById("sourcevalidator").style.display="block";	
-				}else{
-					document.getElementById("container1").style.display="none";
-					document.getElementById("container2").style.display="block";
 				}
+				// else{
+				// 	document.getElementById("container1").style.display="none";
+				// 	document.getElementById("container2").style.display="block";
+				// }
 			}
 		}else{
 			if(apply_position =="Select Position"){
@@ -189,10 +190,11 @@ $( "#agreement" ).on( "click", function() {
 				$("#source").focus();
 				document.getElementById("source").style.borderColor = "red";
 				document.getElementById("sourcevalidator").style.display="block";	
-			}else{
-				document.getElementById("container1").style.display="none";
-				document.getElementById("container2").style.display="block";
 			}
+			// else{
+			// 	document.getElementById("container1").style.display="none";
+			// 	document.getElementById("container2").style.display="block";
+			// }
 		}
 		 
 });
@@ -325,8 +327,8 @@ $( "#agreement" ).on( "click", function() {
 		$('#email').focus();
 	}else{ 
 		document.getElementById("email_validator").style.display="none";		
-		document.getElementById("container2").style.display="none";
-		document.getElementById("container3").style.display="block";
+		// document.getElementById("container2").style.display="none";
+		// document.getElementById("container3").style.display="block";
 	}
 
 });
@@ -385,10 +387,10 @@ $( "#agreement" ).on( "click", function() {
 		document.getElementById("source").style.borderColor = "red";
 		document.getElementById("sourcevalidator").style.display="block";
 	}
-	else{
-		document.getElementById('container6').style.display='block';
-		document.getElementById('container5').style.display='none';
-	}
+	// else{
+	// 	document.getElementById('container6').style.display='block';
+	// 	document.getElementById('container5').style.display='none';
+	// }
 
 });
 $( "#agreement" ).on( "click", function() {
@@ -433,10 +435,11 @@ $( "#agreement" ).on( "click", function() {
 		}else if(rson==''){
 			frnext_required();
 			$("#reason").focus();
-		}else{
-			document.getElementById('container4').style.display='none'; 
-			document.getElementById('container5').style.display='block';
 		}
+		// else{
+		// 	document.getElementById('container4').style.display='none'; 
+		// 	document.getElementById('container5').style.display='block';
+		// }
 
 	}else if(stat_ap=='grad'){	
 		$('#employers_name1').attr('required', false);

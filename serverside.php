@@ -93,7 +93,7 @@ include("connect.php");
 	
 	//CIVIL STATUS
 	$cstatus=mysqli_real_escape_string($conn,$_POST['cstatus']);
-	$cstatusspec=mysqli_real_escape_string($conn,$_POST['cstatusspec']);
+	$cstatusspec=mysqli_real_escape_string($conn,$_POST['cstatus']);
 		if($cstatus == "Others"){
 		$cstatus = $cstatusspec;
 	} 
