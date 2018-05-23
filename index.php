@@ -708,9 +708,9 @@ $(document).ready(function(){
 
 				      					<select id="cstatus" class="select form-control" name="cstatus" onchange="showspec(this)">
 
+
 				      						<option selected disabled hidden>Select Civil Status</option>
 				      						
-
 				      						<option value="Single">Single</option>
 
 				      						<option value="Married">Married</option>
@@ -726,6 +726,14 @@ $(document).ready(function(){
 				      					</select>
 
 				      					<span style="color: red;display:none;" id="cstatusvalidator">Select Civil Status.</span>
+
+									</div>
+
+									<div id="" class="form-group label-floating" >
+
+										<input type="text" style="display:none;"  name="other_civStatus" placeholder="Position" class="form-control" id="othercivStatusDiv" required/>
+
+										<div class="help-block with-errors" id="othercivStatusDiv2" style="color: red"></div>
 
 									</div>
 
@@ -3275,6 +3283,25 @@ $(document).ready(function(){
 				$("#othersourceDiv2").css("display","none");
 
 			});
+			
+			$("#cstatus").on('change', function(e) {
+
+				$("#othercivStatusDiv").css("display","none");
+
+				$("#othercivStatusDiv2").css("display","none");
+
+				var civStat = document.getElementById('cstatus').value;
+				if (civStat =="Select Civil Status")
+				{
+					document.getElementById("cstatusvalidator").style.display = 'block';
+				}
+				else
+				{
+					document.getElementById("cstatusvalidator").style.display = 'none';
+				}
+
+			});
+			
 		    document.getElementById('container2').style.display='none';/*hide all containers !first*/
 
 
