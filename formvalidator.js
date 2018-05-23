@@ -447,8 +447,8 @@ $( "#agreement" ).on( "click", function() {
 		$('#position-title').attr('required', false);
 		$('#reason').attr('required', false);
 		$('#monthlysalary').attr('required', false);
-		document.getElementById('container4').style.display='none'; 
-		document.getElementById('container5').style.display='block';
+		// document.getElementById('container4').style.display='none'; 
+		// document.getElementById('container5').style.display='block';
 }
 });
 $( "#source" ).on( "change", function() {
