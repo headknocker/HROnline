@@ -422,6 +422,11 @@
 	}
 	body{
 		font-family: 'Open Sans', sans-serif;
+		background-image: url('../lady liberty.png');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center; 
+		background-size: 100%;
 	}
 	.fade-scale {
 	  transform: scale(0);
@@ -434,5 +439,6 @@
 	  opacity: 1;
 	  transform: scale(1);
 	}
+
 
 /*end custom css for index.php*/

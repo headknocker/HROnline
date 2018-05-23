@@ -4171,7 +4171,8 @@ tbody.collapse.in {
   position: relative;
   display: block;
   margin-bottom: 0.75rem;
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background-color: rgba(245, 245, 245, 0.4);
   border-radius: 0.25rem;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -4222,6 +4223,7 @@ tbody.collapse.in {
   margin-bottom: 0;
   background-color: #f5f5f5;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  opacity: 1;
 }
 
 .card-header::after {
@@ -4238,6 +4240,7 @@ tbody.collapse.in {
   padding: 0.75rem 1.25rem;
   background-color: #f5f5f5;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+  opacity: 1;
 }
 
 .card-footer::after {
