@@ -709,6 +709,7 @@ $(document).ready(function(){
 				      					<select id="cstatus" class="select form-control" name="cstatus" onchange="showspec(this)">
 
 				      						<option selected disabled hidden>Select Civil Status</option>
+				      						
 
 				      						<option value="Single">Single</option>
 
@@ -1593,9 +1594,7 @@ $(document).ready(function(){
                               <div class="form-group label-floating">
 
                                 <label class="control-label" for="sage">Age</label>
-
-                                <input id="sage" class="form-control" type="number" name="sibling_age1" min="0" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
-
+                                <input type="text" class="form-control" name="sibling_age1" id="sage" minlength="1" class="form-control" maxlength="2" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
                               </div>
 
                             </div>
@@ -1625,8 +1624,7 @@ $(document).ready(function(){
                               <div class="form-group label-floating">
 
                                 <label class="control-label" for="sage">Age</label>
-
-                                <input id="sage" class="form-control" type="number" name="sibling_age2" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+                              	<input type="text" class="form-control" name="sibling_age2" id="sage" minlength="1" class="form-control" maxlength="2" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
 
                               </div>
 
@@ -1660,8 +1658,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sage">Age</label>
 
-                                <input id="sage" class="form-control" type="number" name="sibling_age3" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
-
+                                <input type="text" class="form-control" name="sibling_age1" id="sage" minlength="1" class="form-control" maxlength="2" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
                               </div>
 
                             </div>
@@ -1731,9 +1728,7 @@ $(document).ready(function(){
 	                              <div class="form-group label-floating">
 
 	                                <label class="control-label" for="age">Age</label>
-
-	                                <input id="age" class="form-control" type="number" name="child_age1" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
-
+	                                <input type="text" class="form-control" name="child_age1" id="age" minlength="1" class="form-control" maxlength="2" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
 	                              </div>
 
 	                            </div>
@@ -1770,8 +1765,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="age">Age</label>
 
-                                <input id="age" class="form-control" type="number" name="child_age2" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
-
+                                <input type="text" class="form-control" name="child_age2" id="age" minlength="1" class="form-control" maxlength="2" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
                               </div>
 
                             </div>
@@ -1810,7 +1804,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="age">Age</label>
 
-                                <input id="age" class="form-control" type="number" name="child_age3" maxlength="2" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
+                                <input type="text" class="form-control" name="child_age3" id="age" minlength="1" class="form-control" maxlength="2" onkeypress='return disableLettersOthers(event);' onkeyup='(event);'>
 
                               </div>
 
@@ -4560,7 +4554,7 @@ $(document).ready(function(){
 
                         x++; //text box increment
 
-                        $(wrapper).append('<div class="row col-md-12"><div class="col-md-6"></div><div class="col-md-6"><div class="col-md-7"><div class="form-group label-floating"><label class="control-label" for="child" >Enter child name</label><input type="text" name="child_name' + x + '" id="child" class="form-control"></div></div> <div class="col-md-3"><div class="form-group label-floating"><label class="control-label" for="age">Age</label><input id="age" class="form-control" type="number" name="child_age' + x + '"/></div></div><button type=button style="margin-top: 8%" class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button></div></div>'); //add input box
+                        $(wrapper).append('<div class="row col-md-12"><div class="col-md-6"></div><div class="col-md-6"><div class="col-md-7"><div class="form-group label-floating"><label class="control-label" for="child" >Enter child name</label><input type="text" name="child_name' + x + '" id="child" class="form-control"></div></div> <div class="col-md-3"><div class="form-group label-floating"><label class="control-label" for="age">Age</label><input id="age" class="form-control" type="text" onkeypress=return disableLettersOthers(event); maxlength="2" name="child_age' + x + '"/></div></div><button type=button style="margin-top: 8%" class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button></div></div>'); //add input box
 
                     }
 
@@ -4606,7 +4600,7 @@ $(document).ready(function(){
 
                         x++; //text box increment
 
-                        $(wrapper).append('<div class="row col-md-12"><div class="col-md-6"><div class="col-md-7"><div class="form-group label-floating"><label class="control-label" for="sibling" >Enter sibling name</label><input type="text" id="sibling" class="form-control" name="sibling' + x + '"></div></div> <div class="col-md-3"><div class="form-group label-floating"><label class="control-label" for="sage">Age</label><input id="sage" name="sibling_age' + x + '" class="form-control" type="number"/></div></div><button type=button style="margin-top: 7%" class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button></div></div>'); //add input box
+                        $(wrapper).append('<div class="row col-md-12"><div class="col-md-6"><div class="col-md-7"><div class="form-group label-floating"><label class="control-label" for="sibling" >Enter sibling name</label><input type="text" id="sibling" class="form-control" name="sibling' + x + '"></div></div> <div class="col-md-3"><div class="form-group label-floating"><label class="control-label" for="sage">Age</label><input id="sage" name="sibling_age' + x + '" class="form-control" type="text" onkeypress=return disableLettersOthers(event); maxlength="2"/></div></div><button type=button style="margin-top: 7%" class="btn btn-raised btn-sm btn-danger remove_field pull-right">Remove</button></div></div>'); //add input box
 
                     }
 
