@@ -1174,7 +1174,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno2">Mobile No.<small>(Optional)</small></label>
 
-									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2" required>
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num2" class="form-control" id="celno2">
 
 								
 									<span style="color: red;display:none;" id="number_validator2">Invalid Contact Number.</span>
@@ -1192,7 +1192,7 @@ $(document).ready(function(){
 
 									<label class="control-label" for="celno3">Mobile No.<small>(Optional)</small></label>
 
-									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3" required>
+									<input data-inputmask="'mask': '(+63) 999-999-9999'" type="text" name="mobile_num3" class="form-control" id="celno3">
 
 
 									<span style="color: red;display:none;" id="number_validator3">Invalid Contact Number.</span>
