@@ -224,7 +224,7 @@
 		// remove application source
 		 function remove_applicant(e) {
             var id = $(e).attr('data-content');
-            var del = confirm("Are you sure to remove this source application?");
+            var del = confirm("Are you sure to remove this record?");
             if (del == true) {
                 $.ajax({
                     type: "POST",
