@@ -755,21 +755,22 @@ $(document).ready(function(){
 										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
 
 										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)" >
+											<option selected disabled value="Select Source">Select Source</option>
+											<?php
 
-											<?php  
 				      							include('connect.php');
 				      							$sql = "SELECT * FROM `tbl_sourceapplication` WHERE flag = '0'";
 				      							$result = $conn->query($sql);
 				      							while($row = $result->fetch_assoc()){
 				      								if ($row['application_num'] == 10) {
-				      									echo "<option value='".$row['source_name']."' selected>".$row['source_name']."</option>";
+				      									echo "<option value='".$row['source_name']."'>".$row['source_name']."</option>";
 				      								}
 				      								else{
 				      									echo "<option value='".$row['source_name']."'>".$row['source_name']."</option>";		
 				      								}
 				      							}
 				      						?>
-
+				      						
 										</select>
 
 										<span style="color: red;display:none;" id="sourcevalidator">Select Application Source.</span>
