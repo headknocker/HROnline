@@ -22,6 +22,7 @@
 		echo '<th>Education Status</th>';
 		echo '<th>School</th>';
 		echo '<th>Course</th>';
+		echo '<th>Action</th>';
 		echo '</tr>';
 		echo '</thead>';
 		echo '<tbody>';
@@ -37,6 +38,12 @@
                        		{ echo "<td> Undergraduate </td>"; }
 			echo '<td>'.$row['COL_Name of School'].'</td>';
 			echo '<td>'.$row['GRAD_Degree Course'].'</td>';
+			echo '<td>
+					<button class="btn btn-danger btn-sm" onClick="return remove_applicant(this);" data-dismiss="modal" title="Remove" style="padding-left:20px;padding-right:20px;color: black" data-dismiss="toggle"
+					 	data-content="<?php echo '.$row['ID'].'; ?>">
+					 <span class="fa fa-trash"></span>
+	                </button>
+	             </td>';
 			echo '</tr>';
 		}
 		echo '</tbody>';
@@ -60,4 +67,26 @@
                }
            });
 	});
+</script>
+
+<script type="text/javascript">
+		// remove application source
+		 function remove_applicant(e) {
+            var id = $(e).attr('data-content');
+            var del = confirm("Are you sure to remove this source application?");
+            if (del == true) {
+                $.ajax({
+                    type: "POST",
+                    url: 'config/remove_applicant.php',
+                    data: {id : id},
+                    success:(function(data){
+                        alert(data);
+                        location.reload();
+                    })
+                });
+                return true;
+            } else {
+                return false;
+            }
+        }
 </script>

@@ -65,8 +65,7 @@
 								<th>Education Status</th>
 								<th>School</th>
 								<th>Course</th>
-
-
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody id="result">
@@ -95,12 +94,18 @@
                        			?></td>
                        			<td><?php echo $row['COL_Name of School']; ?></td>
                        			<td><?php echo $row['GRAD_Degree Course']; ?></td>
-                       		</tr>
+                       			<td>
+                       				<!-- Button for remove record. Reported bug: modal still appearing -->
+	                       			<button class="btn btn-danger btn-sm" onClick="return remove_applicant(this);" data-dismiss="modal" title="Remove" style="padding-left:20px;padding-right:20px;color: black" data-content="<?php echo $row['ID']; ?>"><span class="fa fa-trash"></span>
+	                       			</button>
+	                       		</td>
+	                       		</tr>
                        		 <?php
-                            }
-                            }
+	                            }
+	                            	}
                             $conn->close();
                             ?>
+
 						</tbody>
 					</table>
 					<center>
@@ -128,6 +133,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/csv.js"></script>
@@ -212,6 +218,28 @@
                }
            });
 		});
+	</script>
+
+	<script type="text/javascript">
+		// remove application source
+		 function remove_applicant(e) {
+            var id = $(e).attr('data-content');
+            var del = confirm("Are you sure to remove this source application?");
+            if (del == true) {
+                $.ajax({
+                    type: "POST",
+                    url: 'config/remove_applicant.php',
+                    data: {id : id},
+                    success:(function(data){
+                        alert(data);
+                        location.reload();
+                    })
+                });
+                return true;
+            } else {
+                return false;
+            }
+        }
 	</script>
 </body>
 </html>
