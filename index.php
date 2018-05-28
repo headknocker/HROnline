@@ -706,7 +706,7 @@ $(document).ready(function(){
 
 				      					<select id="cstatus" class="select form-control" name="cstatus" onchange="showspec(this)">
 
-				      						<option selected disabled hidden>Select Civil Status</option>
+				      						<option selected disabled hidden value="Select Civil Status">Select Civil Status</option>
 
 				      						<option value="Single">Single</option>
 
@@ -722,7 +722,7 @@ $(document).ready(function(){
 
 				      					</select>
 
-				      					<span style="color: red;display:none;" id="cstatusvalidator">Select Civil Status.</span>
+				      					<span style="color: red;display:none;" id="cstatusvalidator">Please select one</span>
 
 									</div>
 
@@ -770,7 +770,7 @@ $(document).ready(function(){
 				      								}
 				      							}
 				      						?>
-				      						
+
 										</select>
 
 										<span style="color: red;display:none;" id="sourcevalidator">Select Application Source.</span>

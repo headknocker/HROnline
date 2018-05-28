@@ -120,9 +120,9 @@ $( "#agreement" ).on( "click", function() {
 			document.getElementById("sourcevalidator").style.display="block";	
 		}
 
-		if (cstatus== "Select Civil Status"){
-			$("cstatus").blur();
-			$("cstatus").focus();
+		if (civilstatus=="Select Civil Status"){
+			$("#cstatus").blur();
+			$("#cstatus").focus();
 			document.getElementById("cstatus").style.borderColor = "red";
 			document.getElementById("cstatusvalidator").style.display="block";
 		}
