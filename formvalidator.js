@@ -100,7 +100,7 @@ $( "#agreement" ).on( "click", function() {
 		var placeofbirth = document.getElementById("placeofbirth").value;
 		var otherpos = document.getElementById("otherpositionDiv").value;
 		var source = document.getElementById("source").value;
-		var civilstatus = document.getElementById("cstatus").value;
+		var cstatus = document.getElementById("cstatus").value;
 		
 		function fnext_required(){
 			$("#apply_position").blur();
@@ -116,14 +116,14 @@ $( "#agreement" ).on( "click", function() {
 		if(source=="Select Source"){
 			$("#source").blur();
 			$("#source").focus();
-			document.getElementById("source").style.borderColor = "red";
+			document.getElementById("source").style.borderColor = "10px solid red";
 			document.getElementById("sourcevalidator").style.display="block";	
 		}
 
-		if (civilstatus=="Select Civil Status"){
+		if (cstatus=="Select Civil Status"){
 			$("#cstatus").blur();
 			$("#cstatus").focus();
-			document.getElementById("cstatus").style.borderColor = "red";
+			document.getElementById("cstatus").style.borderColor = "10px solid red";
 			document.getElementById("cstatusvalidator").style.display="block";
 		}
 		
@@ -305,6 +305,7 @@ $( "#agreement" ).on( "click", function() {
 		$("#contactperson").blur();
 	}else if(cperson_contact==""){
 		snext_required();
+		$("#contactpersonno").blur();
 		$("#contactpersonno").focus();
 	}else if(num.length!=12){
 		document.getElementById("number_validator").style.display="block";
@@ -343,6 +344,8 @@ $( "#agreement" ).on( "click", function() {
 	var cname3 = document.getElementById('cname3').value;
 	var eadd3 = document.getElementById('eadd3').value;
 	var source = document.getElementById('source').value;
+	var cstatus = document.getElementById("cstatus").value;
+
 	
 	function lnext_required(){
 		$("#rname").blur();
@@ -354,6 +357,7 @@ $( "#agreement" ).on( "click", function() {
 		$("#rname3").blur();
 		$("#cname3").blur()
 		$("#eadd3").blur();
+		$("#cstatus").blur();
 	}
 	if(rname1==''){
 		lnext_required();
@@ -382,11 +386,16 @@ $( "#agreement" ).on( "click", function() {
 	}else if(eadd3==''){
 		lnext_required();
 		$("#eadd3").focus();
-	}else if(source=='Select Source'){
-		lnext_required();
-		document.getElementById("source").style.borderColor = "red";
-		document.getElementById("sourcevalidator").style.display="block";
 	}
+	// else if(source=='Select Source'){
+	// 	lnext_required();
+	// 	document.getElementById("source").style.borderColor = "10px solid red";
+	// 	document.getElementById("sourcevalidator").style.display="block";
+	// }else if (cstatus=='Select Civil Status'){
+	// 	lnext_required();
+	// 	document.getElementById("cstatus").style.display="block"
+	// 	document.getElementById("cstatusvalidator").style.borderColor = "10px solid red";
+	// }
 	// else{
 	// 	document.getElementById('container6').style.display='block';
 	// 	document.getElementById('container5').style.display='none';
@@ -455,7 +464,9 @@ $( "#source" ).on( "change", function() {
 	var source2 = document.getElementById("source").value;
 	document.getElementById("sourcevalidator").style.display = 'none';
 	if(source2=='Select Source'){
+		document.getElementById("source").style.borderColor = '10px solid red';
 		document.getElementById("sourcevalidator").style.display = 'block';
+
 	}
 });
 
@@ -464,6 +475,7 @@ $( "#cstatus" ).on( "change", function() {
 	document.getElementById("cstatusvalidator").style.display = 'none';
 	if(civilstatus=='Select Civil Status'){
 		document.getElementById("cstatusvalidator").style.display = 'block';
+		
 	}
 });
 

@@ -754,7 +754,7 @@ $(document).ready(function(){
 
 										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
 
-										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)" >
+										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)" required>
 											<option selected disabled value="Select Source">Select Source</option>
 											<?php
 
@@ -773,7 +773,7 @@ $(document).ready(function(){
 
 										</select>
 
-										<span style="color: red;display:none;" id="sourcevalidator">Select Application Source.</span>
+										<span style="color:red; display:none;" id="sourcevalidator">Select Application Source.</span>
 
 									</div>
 									
@@ -1228,8 +1228,6 @@ $(document).ready(function(){
 										<input class="form-control" data-inputmask="'mask': '(+999) 999-999-9999'" type="text" name="contact_details" id="contactpersonno" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" required>
 
 										<div class="help-block with-errors" style="color: red"></div>
-
-								
 
 								</div>
 
