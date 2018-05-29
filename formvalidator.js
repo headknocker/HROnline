@@ -459,6 +459,14 @@ $( "#source" ).on( "change", function() {
 	}
 });
 
+$( "#cstatus" ).on( "change", function() {
+	var civilstatus = document.getElementById("cstatus").value;
+	document.getElementById("cstatusvalidator").style.display = 'none';
+	if(civilstatus=='Select Civil Status'){
+		document.getElementById("cstatusvalidator").style.display = 'block';
+	}
+});
+
 $( "#apply_position" ).on( "change", function() {
 	var apply_position1 = document.getElementById("apply_position").value;
 	document.getElementById("positionErrorMessage").style.display = 'none';

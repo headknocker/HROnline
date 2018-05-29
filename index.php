@@ -700,7 +700,7 @@ $(document).ready(function(){
 
 								<div class="col-md-6">
 
-									<div class="form-group label-static">
+									<div class="form-group label-floating">
 
 										<label for="cstatus" class="control-label">Civil Status<label class="text-danger">*</label></label>
 
