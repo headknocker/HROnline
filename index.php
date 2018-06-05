@@ -97,7 +97,7 @@
 		__gaTracker('send','pageview');
 
 	</script>
-=
+
 <script>
 
 $(document).ready(function(){
