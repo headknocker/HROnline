@@ -1,3 +1,4 @@
+
 <?php 
 
     require 'connect.php';
@@ -24,15 +25,15 @@
             $admin_id = $row['id'];
 
             //save to database 
-            $sql = "INSERT INTO `tbl_reset_code` (reset_code_id, id, reset_code_timestamp, reset_code, admin_email) VALUES(NULL, '{$admin_id}', CURRENT_TIMESTAMP, '{$random_code}', '{$admin_email}')";
+            $sql = "INSERT INTO `tbl_reset_code` (reset_code_id, admin_id, reset_code_timestamp, reset_code, admin_email) VALUES(NULL, '{$admin_id}', CURRENT_TIMESTAMP, '{$random_code}', '{$admin_email}')";
             $result = $conn->query($sql);
 
             //send to email 6 digit code
-            $to = $admin_email;
-            $subject = "PASSWORD RESET CODE";
-            $reset_code = $random_code;
-            $headers = "From: Anderson Group BPO";
-            mail($to,$subject,$reset_code,$headers);
+            // $to = $admin_email;
+            // $subject = "PASSWORD RESET CODE";
+            // $reset_code = $random_code;
+            // $headers = "From: Anderson Group BPO";
+            // mail($to,$subject,$reset_code,$headers);
 
             //retrieve the latest timestamp of specific user
             $sql = "SELECT MAX(reset_code_timestamp) FROM tbl_reset_code WHERE admin_email ='{$admin_email}'";
@@ -42,7 +43,7 @@
             echo $row;
 
             //redirect to change password
-            // header("Location: http://localhost/HROnline/adminChangePassword.php?id=$admin_id"); 
+            header("Location: ../HRonline-master/adminChangePassword.php?id=$admin_id"); 
 
         }else{
             echo '<script type="text/javascript">';

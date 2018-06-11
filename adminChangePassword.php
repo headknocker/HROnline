@@ -4,26 +4,41 @@
     require 'validation_form.php';
 
     //variable declaration
+    if (isset($_POST['admin_id'])){
+        $id = $_POST['admin_id'];
+    }
+   
     $new_password = '';
     $confirm_password = '';
 
 
-    if(isset($_POST['btnChangePassword'])){
-        //retrieving form data
-        inputValidation($new_password = $_POST['txtNewPassword']);
-        inputValidation($confirm_password = $_POST['txtConfirmPassword']);
+    // function for the submit button
+    // if(isset($_POST['btnChangePassword'])){
+    //     //retrieving form data
+    //     inputValidation($new_password = $_POST['txtNewPassword']);
+    //     inputValidation($confirm_password = $_POST['txtConfirmPassword']);
 
-        //retrieving code from database
-        // $sql = "SELECT reset_code_timestamp, reset_code, reset_code_id FROM tbl_reset_code WHERE "
+    //     // retrieving code from database
+    //     $sql = "SELECT `reset_code_timestamp`, `reset_code`, `reset_code_id`, `admin_id` FROM `tbl_reset_code` WHERE `admin_id` = '".$id."' AND `reset_code` = '".$_POST['input_reset_code']."' ";
+    //     $result = $conn->query($sql);
 
-        if($new_password === $confirm_password){
+    //     if ($result->num_rows===1){
 
-        }else{
+    //         if($admin_new_password === $admin_confirm_password){
+    //             $sqlmodifypw = "UPDATE tbl_admin SET password = '".$admin_new_password."' WHERE id = '".$id."' ";
+    //             $resultmodify = $conn->execute($sqlmodifypw);
+    //             if($resultmodify == true){
+    //                 echo 'Password is now modified';
+    //             }else{
+    //                 echo 'An error has occured!';
+    //             }
+    //         }else if (($admin_confirm_password !== $admin_new_password) || ($admin_new_password !== $admin_confirm_password)){
+    //             echo 'Input password mismatched';
+    //         }
+    //     }
 
-        }
 
-
-    }
+    // }
 
 
 ?>
@@ -69,10 +84,10 @@
                     <input type="password" class="form-control" id="admin_confirm_password" placeholder="Confirm Password" name="txtConfirmPassword" required>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="input_reset_code"> 6 Digit Code </label>
                     <input type="number" class="form-control" id="input_reset_code" placeholder="Enter 6 digit code" name="txtResetCode" required>
-                </div>
+                </div> -->
                 
                 <button type="submit" class="btn btn-default" name="btnChangePassword">Reset</button>
 
