@@ -110,7 +110,7 @@ background: none;
                         Jomariette Kristine Suarez  &nbsp|&nbsp
                         Neco Caramonte &nbsp|&nbsp
                     	Mark Arjel Cabais &nbsp|&nbsp
-                    	John Adrell Abong &nbsp|&nbsp
+                    	John Edrell Abong &nbsp|&nbsp
                     	Bryan Diola
                     	</strong></p></br>
 					</CENTER>
